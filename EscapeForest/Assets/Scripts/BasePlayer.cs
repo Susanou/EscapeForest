@@ -77,7 +77,6 @@ public class BasePlayer : MonoBehaviour
 
     private void playerMovement()
     {
-        Vector2 pos = playerTransform.position;
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {

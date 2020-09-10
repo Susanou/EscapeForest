@@ -25,6 +25,7 @@ public class EventManager : MonoBehaviour
         elementEvent.Add(BasePlayer.element.Water, onWater);
     }
 
+    //TODO: Sanity Event
  
     private void Update()
     {
