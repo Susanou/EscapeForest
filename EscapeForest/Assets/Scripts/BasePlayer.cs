@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class BasePlayer : MonoBehaviour
 {
+    /**
+     * Class for BasePlayer behavior and interactions wtih Sanity and elements
+     * 
+     * @author 
+     * 
+     */
 
-    private enum element { None,Air,Earth,Fire,Water};
-    private element currenElement = element.None;
+    public enum element { None,Air,Earth,Fire,Water};
+    private element currentElement = element.None;
+
+    public element getCurrentElement()
+    {
+        return currentElement;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +29,10 @@ public class BasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            currenElement = (element)Random.Range(0, 4);
-            Debug.Log(currenElement);
+            currentElement = (element)Random.Range(0, 5);
+            Debug.Log(currentElement);
         }
     }
 }
