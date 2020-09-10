@@ -10,14 +10,15 @@ public class BasePlayer : MonoBehaviour
      * @author 
      * 
      */
-    [SerializeField] private Transform playerTransform;
 
     private float speed = 25f;
+    private int maxSanity = 100;
     public enum element { None,Air,Earth,Fire,Water};
     private element currentElement = element.None;
 
-    //TODO Sanity
-    private int sanityLevel = 25;
+    private int currentSanity = 100;
+
+    Transform playerTransform;
 
     public element getCurrentElement()
     {
@@ -26,23 +27,30 @@ public class BasePlayer : MonoBehaviour
 
     public int getSanity()
     {
-        return sanityLevel;
+        return currentSanity;
     }
 
     public void increaseSanity(int amount)
     {
-        sanityLevel += amount;
+        if ((currentSanity += amount) > maxSanity)
+        {
+            currentSanity = 100;
+        }
+        else
+        {
+            currentSanity += amount;
+        }
     }
 
     public void decreaseSanity(int amount)
     {
-        if (sanityLevel -amount < 0)
+        if (currentSanity -amount < 0)
         {
-            sanityLevel = 0;
+            currentSanity = 0;
         }
         else
         {
-            sanityLevel -= amount;
+            currentSanity -= amount;
         }
     }
 
@@ -50,13 +58,14 @@ public class BasePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerTransform = this.GetComponentInParent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
         playerMovement();
+        sanityCheck();
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentElement = (element)Random.Range(0, 5);
@@ -66,15 +75,20 @@ public class BasePlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             increaseSanity(5);
-            Debug.Log(sanityLevel);
+            Debug.Log(currentSanity);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             decreaseSanity(10);
-            Debug.Log(sanityLevel);
+            Debug.Log(currentSanity);
         }
     }
 
+    /**
+     * Basic Player movement
+     * TODO improve
+     * 
+     */
     private void playerMovement()
     {
 
@@ -93,6 +107,31 @@ public class BasePlayer : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             playerTransform.position += Vector3.right * speed * Time.deltaTime;
+        }
+    }
+
+
+    /**
+     * Triggers methods in Event Manager to send out sanity events to other objects
+     * 
+     */
+    private void sanityCheck()
+    {
+        if(currentSanity <= 25)
+        {
+            EventManager.underQuarterEventTrigger();
+        }
+        else if (currentSanity <= 50)
+        {
+            EventManager.underHalfEventTrigger();
+        }
+        else if(currentSanity <= 75)
+        {
+            EventManager.underThreeFourthsEventTrigger();
+        }
+        else
+        {
+            EventManager.fullSanityEventTrigger();
         }
     }
 }

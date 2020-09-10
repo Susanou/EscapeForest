@@ -5,6 +5,9 @@ using UnityEngine;
 public class ChangeColorByElement : MonoBehaviour
 {
     SpriteRenderer spriteRenderer; 
+
+    //Events must be subscribed += and unsubscribed to -= on enable and disable to prevent memory errors
+    //TODO: simplifiy events
     private void OnEnable()
     {
         EventManager.onNone += changeColorNone;
