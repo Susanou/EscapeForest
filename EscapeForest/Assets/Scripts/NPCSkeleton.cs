@@ -5,7 +5,9 @@ using UnityEngine;
 public class NPCSkeleton : MonoBehaviour
 {
 
-    public string hint = "";
+    public string hint;
+
+    [SerializeField] private KeyCode interactKey;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,8 @@ public class NPCSkeleton : MonoBehaviour
     {
 
         if(Input.GetKey(KeyCode.Space)){
+            Debug.Log(hint);
+        }else if(Input.GetKey(interactKey)){
             Debug.Log(hint);
         }
         
