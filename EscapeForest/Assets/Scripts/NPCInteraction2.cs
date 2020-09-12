@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteraction : MonoBehaviour
+public class NPCInteraction2 : MonoBehaviour
 {
 	/**
 	 * Skeleton: Cameron
@@ -16,6 +16,7 @@ public class NPCInteraction : MonoBehaviour
 	 * */
 
 	public string hint;
+	public Text hintText; //Need to choose which one to use.
 	public int sanityDecreaseValue;
 
 	[SerializeField] private KeyCode interactKey;
@@ -47,7 +48,7 @@ public class NPCInteraction : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		//If the player enters interaction range, make the hint/prompt show up
-		if (collision.gameObject.tag == "Player")
+		if (collision.gameObject.tag == "NPC")
 		{
 			touchingNPC = true;
 			hintPrompt.SetActive(true);
@@ -57,7 +58,7 @@ public class NPCInteraction : MonoBehaviour
 	void OnTriggerExit2D(Collider2D collision)
 	{
 		//If the player leaves, make the hint/prompt go away
-		if (collision.gameObject.tag == "Player")
+		if (collision.gameObject.tag == "NPC")
 		{
 			touchingNPC = false;
 			hintPrompt.SetActive(false);
@@ -74,6 +75,7 @@ public class NPCInteraction : MonoBehaviour
 			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
 			hintUsed = true;
 			FindObjectsOfType<BasePlayer>()[0].DecreaseSanity(sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
+			hintPrompt.SetActive(true);
 		}
 		else
 		{ //Hint has been used before
