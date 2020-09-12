@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-
+    // James
 
     public GameObject currentInterObj = null;
 
@@ -12,13 +12,14 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && currentInterObj)
         {
-            // pick up the object? 
-            Debug.Log("Pickup");
+            // TODO: pick up the object? 
+            currentInterObj.SendMessage("DoInteraction");
             
         }
     }
 
     // Detects interactble objects by looking at a tag.
+
     // When the player gets in the range of the object's collider, 
     // this code will return(log) the name of the interactable object and sets the current object as a current interactable object.
 
