@@ -74,7 +74,7 @@ public class NPCInteraction2 : MonoBehaviour
 		{
 			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
 			hintUsed = true;
-			FindObjectsOfType<BasePlayer>()[0].DecreaseSanity(sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
+			GameObject.FindGameObjectsWithTag("Player")[0].DecreaseSanity(sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
 			hintPrompt.SetActive(true);
 		}
 		else
