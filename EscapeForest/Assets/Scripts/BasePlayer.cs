@@ -11,14 +11,13 @@ public class BasePlayer : MonoBehaviour
      * 
      */
 
-    private float speed = 25f;
+   
     private int maxSanity = 100;
     public enum element { None,Air,Earth,Fire,Water};
     private element currentElement = element.None;
 
     private int currentSanity = 100;
 
-    Transform playerTransform;
 
     public element getCurrentElement()
     {
@@ -58,13 +57,12 @@ public class BasePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = this.GetComponentInParent<Transform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerMovement();
         sanityCheck();
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -84,33 +82,7 @@ public class BasePlayer : MonoBehaviour
         }
     }
 
-    /**
-     * Basic Player movement
-     * TODO improve
-     * 
-     */
-    private void playerMovement()
-    {
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
-        {
-            playerTransform.position += Vector3.up * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerTransform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            playerTransform.position += Vector3.down * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerTransform.position += Vector3.right * speed * Time.deltaTime;
-        }
-    }
-
-
+    
     /**
      * Triggers methods in Event Manager to send out sanity events to other objects
      * 
