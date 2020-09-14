@@ -8,11 +8,12 @@ public class PlayerInteract : MonoBehaviour
 
     public GameObject currentInterObj = null;
 
+    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && currentInterObj)
         {
-            // TODO: pick up the object? 
             currentInterObj.SendMessage("DoInteraction");
             
         }
@@ -25,15 +26,27 @@ public class PlayerInteract : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+
+        // detects pickupable item
+
         if (collision.CompareTag("interactable"))
         {
             Debug.Log(collision.name);
             currentInterObj = collision.gameObject;
         }
 
+
+        // detects terrain (?)
+
+        if (collision.CompareTag("onWater") || collision.CompareTag("onFire") || collision.CompareTag("onEarth") || collision.CompareTag("onAir"))
+        {
+            Debug.Log(collision.name);
+        }
+
     }
 
     // if the player gets out of the range of the object's collider, the current interactable object sets to null.
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("interactable"))
