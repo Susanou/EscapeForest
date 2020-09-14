@@ -7,9 +7,11 @@ public class InteractionObject : MonoBehaviour
     // James
     public void DoInteraction()
     {
-        // Todo: pick up the obejct, put it in the inventory
+        // Todo: Detect if it's a pickupable item or not. (pickup items vs. plant, torch, etc. )
 
-        // disable the object
+        // if picupable, put it in the inventory & disable the object.
+
+        // Todo: implement inventory 
         gameObject.SetActive(false);
     }
 }
