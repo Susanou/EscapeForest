@@ -6,12 +6,8 @@ public class EventManager : MonoBehaviour
 {
     GameObject player;
 
-    public delegate void ChangeElement();
-    public static event ChangeElement onNone;
-    public static event ChangeElement onAir;
-    public static event ChangeElement onEarth;
-    public static event ChangeElement onFire;
-    public static event ChangeElement onWater;
+    public delegate void ChangeElement(BasePlayer.element currentElement);
+    public static event ChangeElement elementChanged;
 
     public delegate void ChangeSanity();
     public static event ChangeSanity underQuarter;
@@ -19,16 +15,8 @@ public class EventManager : MonoBehaviour
     public static event ChangeSanity underThreeFourths;
     public static event ChangeSanity fullSanity;
 
-    Dictionary<BasePlayer.element, ChangeElement> elementEvent = new Dictionary<BasePlayer.element, ChangeElement>();
-
     private void Start()
     {
-        elementEvent.Add(BasePlayer.element.None, onNone);
-        elementEvent.Add(BasePlayer.element.Air, onAir);
-        elementEvent.Add(BasePlayer.element.Earth, onEarth);
-        elementEvent.Add(BasePlayer.element.Fire, onFire);
-        elementEvent.Add(BasePlayer.element.Water, onWater);
-
         player = GameObject.Find("Player");
     }
 
@@ -53,13 +41,9 @@ public class EventManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            BasePlayer.element currentElement = player.GetComponent<BasePlayer>().getCurrentElement();
-            ChangeElement eventToCall = elementEvent[currentElement];
-
-
-            if (eventToCall != null)
+            if (elementChanged != null)
             {
-                eventToCall();
+                elementChanged(player.GetComponent<BasePlayer>().getCurrentElement());
             }
         }
     }

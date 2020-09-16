@@ -4,51 +4,33 @@ using UnityEngine;
 
 public class ChangeColorByElement : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer; 
+    SpriteRenderer spriteRenderer;
+
+    private Dictionary<BasePlayer.element, Color> colors = new Dictionary<BasePlayer.element, Color>();
 
     //Events must be subscribed += and unsubscribed to -= on enable and disable to prevent memory errors
-    //TODO: simplifiy events
     private void OnEnable()
     {
-        EventManager.onNone += changeColorNone;
-        EventManager.onAir += changeColorAir;
-        EventManager.onEarth += changeColorEarth;
-        EventManager.onFire += changeColorFire;
-        EventManager.onWater += changeColorWater;
+        //Fill Dictionary with Enum values and colors
+        colors.Add(BasePlayer.element.None, Color.white);
+        colors.Add(BasePlayer.element.Air, Color.magenta);
+        colors.Add(BasePlayer.element.Earth, Color.black);
+        colors.Add(BasePlayer.element.Fire, Color.red);
+        colors.Add(BasePlayer.element.Water, Color.blue);
+
 
         spriteRenderer = this.GetComponent<SpriteRenderer>();
+
+        EventManager.elementChanged += changeColor;
     }
 
     private void OnDisable()
     {
-        EventManager.onNone -= changeColorNone;
-        EventManager.onAir -= changeColorAir;
-        EventManager.onEarth -= changeColorEarth;
-        EventManager.onFire -= changeColorFire;
-        EventManager.onWater -= changeColorWater;
+        EventManager.elementChanged -= changeColor;
     }
 
-    private void changeColorNone()
+    private void changeColor(BasePlayer.element currentElement)
     {
-        spriteRenderer.color = Color.white;
-    }
-    private void changeColorAir()
-    {
-        spriteRenderer.color = Color.magenta;
-    }
-
-    private void changeColorEarth()
-    {
-        spriteRenderer.color = Color.black;
-    }
-
-    private void changeColorFire()
-    {
-        spriteRenderer.color = Color.red;
-    }
-
-    private void changeColorWater()
-    {
-        spriteRenderer.color = Color.blue;
+        spriteRenderer.color = colors[currentElement];
     }
 }
