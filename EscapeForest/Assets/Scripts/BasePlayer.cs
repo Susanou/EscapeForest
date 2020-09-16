@@ -30,28 +30,21 @@ public class BasePlayer : MonoBehaviour
         return currentSanity;
     }
 
-    public void increaseSanity(int amount)
+
+
+    public void addSanityOf(int amount)
     {
-        if ((currentSanity += amount) > maxSanity)
+        if (currentSanity -amount < 0)
+        {
+            currentSanity = 0;
+        }
+        else if((currentSanity += amount) > maxSanity)
         {
             currentSanity = 100;
         }
         else
         {
             currentSanity += amount;
-        }
-        sanityBar.setSanity(currentSanity);
-    }
-
-    public void decreaseSanity(int amount)
-    {
-        if (currentSanity -amount < 0)
-        {
-            currentSanity = 0;
-        }
-        else
-        {
-            currentSanity -= amount;
         }
         sanityBar.setSanity(currentSanity);
     }
@@ -71,12 +64,12 @@ public class BasePlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            increaseSanity(5);
+            addSanityOf(5);
             Debug.Log(currentSanity);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            decreaseSanity(10);
+            addSanityOf(10);
             Debug.Log(currentSanity);
         }
     }

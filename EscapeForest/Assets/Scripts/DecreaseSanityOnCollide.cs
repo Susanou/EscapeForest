@@ -29,7 +29,7 @@ public class DecreaseSanityOnCollide : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(sanityCosts[playerScript.getCurrentElement()]);
-        playerScript.decreaseSanity(sanityCosts[playerScript.getCurrentElement()]);
+        playerScript.addSanityOf(sanityCosts[playerScript.getCurrentElement()]);
     }
 
 
