@@ -64,7 +64,7 @@ public class BasePlayer : MonoBehaviour
     void Update()
     {
         sanityCheck();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))    //TODO Reed
         {
             currentElement = (element)Random.Range(0, 5);
             Debug.Log(currentElement);
