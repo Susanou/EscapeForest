@@ -17,6 +17,7 @@ public class BasePlayer : MonoBehaviour
     private element currentElement = element.None;
 
     private int currentSanity = 100;
+    public SanityBar sanityBar;
 
 
     public element getCurrentElement()
@@ -39,6 +40,7 @@ public class BasePlayer : MonoBehaviour
         {
             currentSanity += amount;
         }
+        sanityBar.setSanity(currentSanity);
     }
 
     public void decreaseSanity(int amount)
@@ -51,14 +53,11 @@ public class BasePlayer : MonoBehaviour
         {
             currentSanity -= amount;
         }
+        sanityBar.setSanity(currentSanity);
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
