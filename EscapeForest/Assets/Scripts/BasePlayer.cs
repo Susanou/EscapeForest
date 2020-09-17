@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,6 +61,27 @@ public class BasePlayer : MonoBehaviour
             currentElement = (element)Random.Range(0, 5);
             Debug.Log(currentElement);
             
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {   Debug.Log("AIR");
+            currentElement = element.Air;
+            Debug.Log(currentElement);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentElement = element.Earth;
+            Debug.Log(currentElement);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentElement = element.Fire;
+            Debug.Log(currentElement);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            currentElement = element.Water;
+            Debug.Log(currentElement);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
