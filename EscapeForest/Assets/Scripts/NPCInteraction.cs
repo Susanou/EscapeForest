@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteraction : MonoBehaviour
+public class NPCInteraction2 : MonoBehaviour
 {
 	/**
 	 * Skeleton: Cameron
 	 * New items: Talia
+	 * Some (hopefully) refinements: Drew
 	 * 
-	 * Note: I implemented a Dropdown object for selecting if the player would like a hint, but we can
-	 * change this to buttons or another method of choosing later on down the road if need be
+	 * Note: I wrote these changes with a slightly different design in mind. Instead of a prompt with a dropdown, assumed we could just change the text in the box.
+	 *		The flow would be: Player walks up, prompt shows up, player can walk away and prompt will disappear. If player interacts while within range, text in 
+	 *		prompt changes to be the hint, and the box still goes away/comes back as the players moves in/out of range. Can interact while hint is there to make it go away.
 	 * */
 
 	public string hint;
+	public Text hintText; //Need to choose which one to use.
 	public int sanityDecreaseValue;
 
 	[SerializeField] private KeyCode interactKey;
-	[SerializeField] private GameObject hintPrompt; //A Text object on the Canvas saying "Would you like to use a hint?" with a Dropdown child of options "yes" and "no"
-	[SerializeField] private Dropdown hintOptions; //The aforementioned Dropdown child
-	[SerializeField] private Text hintText;
+	[SerializeField] private GameObject hintPrompt; //A Text object on the Canvas saying "Would you like to use a hint?" 
 
 	private bool touchingNPC = false;
 	private bool hintUsed = false;
@@ -28,61 +29,57 @@ public class NPCInteraction : MonoBehaviour
 	void Start()
 	{
 
-		hintText.enabled = false;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (touchingNPC) {
-			if (Input.GetKey (KeyCode.Space) || Input.GetKey(interactKey)) {
-				Debug.Log (hint);
-				Hint ();
+		if (touchingNPC)
+		{
+			if (Input.GetKey(KeyCode.Space) || Input.GetKey(interactKey))
+			{
+				Debug.Log(hint);
+				Hint();
 			}
 		}
-
-		if (hintOptions.value == 1) {// player has selected "Yes"
-			hintUsed = true;
-			hintPrompt.SetActive (false);
-			Hint ();
-
-		} else if (hintOptions.value == 2) { //player has selected "No."
-			hintPrompt.SetActive(false);
-			hintOptions.value = 0; //Resets the dropdown menu to "select"
-		}
-
 	}
 
 
-	void OnTriggerEnter2D(Collider2D collision){
-		if (collision.gameObject.tag == "NPC") {
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		//If the player enters interaction range, make the hint/prompt show up
+		if (collision.gameObject.tag == "NPC")
+		{
 			touchingNPC = true;
+			hintPrompt.SetActive(true);
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D collision){
-		if (collision.gameObject.tag == "NPC") {
+	void OnTriggerExit2D(Collider2D collision)
+	{
+		//If the player leaves, make the hint/prompt go away
+		if (collision.gameObject.tag == "NPC")
+		{
 			touchingNPC = false;
+			hintPrompt.SetActive(false);
 		}
 
 
 	}
 
-	void Hint(){
-
-		if (!hintUsed) {
-			hintPrompt.SetActive (true);
-		} else {
-			hintText.text = hint;
-			hintText.enabled = true;
-			FindObjectsOfType<BasePlayer> () [0].DecreaseSanity (sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
-			}
-		/**
-		 * I am also struggling to find a way to make it so that the hint goes away on a click/button press but reappears when
-		 * the player returns to the spirit NPC and clicks/presses button again
-		 * */
-			
+	void Hint()
+	{
+		//The hint hasn't been used before
+		if (!hintUsed)
+		{
+			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
+			hintUsed = true;
+			GameObject.FindGameObjectsWithTag("Player")[0].DecreaseSanity(sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
+			hintPrompt.SetActive(true);
 		}
-		
-
+		else
+		{ //Hint has been used before
+			hintPrompt.SetActive(false);
+		}
+	}
 }
