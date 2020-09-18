@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    private Rigidbody2D rigidBody;
-    private Transform transform;
 
+    public Transform feet;
+    public LayerMask groundLayer;
+    public float jumpTime; // So that player can jump higher the longer he presses SPACE
     [SerializeField] private float speed = 25f;
     [SerializeField] private float jump = 1.5f;
-
-    [SerializeField] private bool onGround = true;
-    private float groundCheckRadius = 0.3f; // Probably not needed. Radius would be caclculated from the center of the platform not the edges. 
+    private float jumpTimeCounter;
+    private Rigidbody2D rigidBody;
+    private Transform transform;
+    private float groundCheckRadius = 0.3f;
+    private bool onGround;
+    private bool isJumping;
 
     private void Awake()
     {
@@ -21,33 +25,39 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //groundCheck();
-
-
-
         playerMovement();
        
     }
 
-
-    //TODO Finish ground check
-/*    private bool groundCheck()
-    {
-        List<Collider2D> colliders = new List<Collider2D>(Physics2D.OverlapCircleAll(transform.position,groundCheckRadius,));
-
-        return colliders.;
-    }*/
-
-
-
     private void playerMovement()
     {
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && onGround)
+        onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
+
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && onGround)
         {
-            transform.position += jump * Vector3.up * speed * Time.deltaTime;
-            onGround = false;
-            Debug.Log(onGround);
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+            rigidBody.velocity = Vector2.up * jump;
         }
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                
+                rigidBody.velocity = Vector2.up * jump;
+                jumpTimeCounter -= Time.deltaTime;
+                
+            }else{
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
@@ -59,16 +69,6 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-    }
-
-    //Platoforms need 2 hitboxes, one for the actual platform, the other a little bit larger to detect if the player entered again.
-    // (Also would allow for climbing possibly)
-    private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Triggered");
-        
-        if (other.collider.tag == "Environement"){
-            onGround = true;
         }
     }
 }
