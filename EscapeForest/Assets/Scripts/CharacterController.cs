@@ -7,10 +7,11 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Transform transform;
 
-    private float speed = 25f;
+    [SerializeField] private float speed = 25f;
+    [SerializeField] private float jump = 1.5f;
 
-    private bool onGround = false;
-    private float groundCheckRadius = 0.3f;
+    [SerializeField] private bool onGround = true;
+    private float groundCheckRadius = 0.3f; // Probably not needed. Radius would be caclculated from the center of the platform not the edges. 
 
     private void Awake()
     {
@@ -41,9 +42,11 @@ public class CharacterController : MonoBehaviour
 
     private void playerMovement()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))// && onGround)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && onGround)
         {
-            transform.position += 1.5f * Vector3.up * speed * Time.deltaTime;
+            transform.position += jump * Vector3.up * speed * Time.deltaTime;
+            onGround = false;
+            Debug.Log(onGround);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -56,6 +59,16 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+    }
+
+    //Platoforms need 2 hitboxes, one for the actual platform, the other a little bit larger to detect if the player entered again.
+    // (Also would allow for climbing possibly)
+    private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Triggered");
+        
+        if (other.collider.tag == "Environement"){
+            onGround = true;
         }
     }
 }
