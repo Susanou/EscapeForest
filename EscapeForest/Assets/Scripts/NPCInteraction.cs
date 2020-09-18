@@ -76,7 +76,7 @@ public class NPCInteraction2 : MonoBehaviour
 		{
 			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
 			hintUsed = true;
-			player.minusSanity(sanityDecreaseValue);
+			player.addSanityOf(-sanityDecreaseValue);//player.minusSanity(sanityDecreaseValue);
 			hintPrompt.SetActive(true);
 		}
 		else

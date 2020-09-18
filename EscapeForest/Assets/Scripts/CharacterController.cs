@@ -17,7 +17,9 @@ public class CharacterController : MonoBehaviour
     private bool onGround;
     private bool isJumping;
 
-    private void Awake()
+    private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
+
+private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
@@ -33,14 +35,14 @@ public class CharacterController : MonoBehaviour
     {
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && onGround)
+        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jump;
         }
 
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && isJumping)
+        if ((Input.GetKey(inputKeyCodes[0]) || Input.GetKey(inputKeyCodes[4])) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -53,22 +55,41 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space))
+        if(Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(inputKeyCodes[1]))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(inputKeyCodes[2]))
         {
             //TODO implement crouching animation and collider adjustments
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+    }
+
+    public void resetInputKeyCodes(bool random)
+    {
+        if (!random)
+        {
+            inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
+        }
+        else
+        {
+            int len = inputKeyCodes.Length;
+            for(int i = 0; i < len - 1; i++) 
+            {
+                int rnd = Random.Range(i, len);
+                KeyCode temp = inputKeyCodes[rnd];
+                inputKeyCodes[rnd] = inputKeyCodes[i];
+                inputKeyCodes[i] = temp;
+            }
         }
     }
 }

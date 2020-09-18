@@ -10,10 +10,12 @@ public class EventManager : MonoBehaviour
     public static event ChangeElement elementChanged;
 
     public delegate void ChangeSanity();
+    public static event ChangeSanity randomMovement;
     public static event ChangeSanity underQuarter;
     public static event ChangeSanity underHalf;
     public static event ChangeSanity underThreeFourths;
     public static event ChangeSanity fullSanity;
+    
 
     private void Start()
     {
@@ -47,6 +49,8 @@ public class EventManager : MonoBehaviour
             }
         }
     }
+
+
 
     public static void underQuarterEventTrigger()
     {
