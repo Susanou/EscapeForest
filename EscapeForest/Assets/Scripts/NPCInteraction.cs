@@ -22,13 +22,15 @@ public class NPCInteraction2 : MonoBehaviour
 	[SerializeField] private KeyCode interactKey;
 	[SerializeField] private GameObject hintPrompt; //A Text object on the Canvas saying "Would you like to use a hint?" 
 
+	private BasePlayer player;
+
 	private bool touchingNPC = false;
 	private bool hintUsed = false;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-
+		player = GameObject.FindObjectOfType<BasePlayer>();
 	}
 
 	// Update is called once per frame
@@ -74,7 +76,7 @@ public class NPCInteraction2 : MonoBehaviour
 		{
 			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
 			hintUsed = true;
-			GameObject.FindGameObjectsWithTag("Player")[0].DecreaseSanity(sanityDecreaseValue); //there should only be one game object in scene with BasePlayer attribute, but we can change this to a serialized field later if need be
+			player.minusSanity(sanityDecreaseValue);
 			hintPrompt.SetActive(true);
 		}
 		else
