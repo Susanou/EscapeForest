@@ -14,15 +14,18 @@ public class BasePlayer : MonoBehaviour
     // Sanity Variables
     private int maxSanity = 100;
     private int randomMovementThreshold = 10;
+    private int randomElementThreshold = 15;
     private int currentSanity = 100;
     [SerializeField] private SanityBar sanityBar;
 
     private bool randomMovementEnabled = false;
+    private bool randomElementEnabled = false;
 
     //Element variables
     public enum element { None,Air,Earth,Fire,Water};
     private element currentElement = element.None;
 
+    private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
     
 
 
@@ -85,23 +88,22 @@ public class BasePlayer : MonoBehaviour
         }
 
  
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(inputKeyCodes[0]))
         {
-            Debug.Log("AIR");
             currentElement = element.Air;
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(inputKeyCodes[1]))
         {
             currentElement = element.Earth;
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(inputKeyCodes[2]))
         {
             currentElement = element.Fire;
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(inputKeyCodes[3]))
         {
             currentElement = element.Water;
             Debug.Log(currentElement);
@@ -132,6 +134,7 @@ public class BasePlayer : MonoBehaviour
      */
     private void sanityCheck()
     {
+        //Random Movement Effect
         CharacterController characterController = this.GetComponentInParent<CharacterController>();
 
         if ((currentSanity < randomMovementThreshold)  && !randomMovementEnabled)
@@ -147,7 +150,23 @@ public class BasePlayer : MonoBehaviour
             Debug.Log("Normal movement");
         }
 
+        //Random Element Effect
+        if ((currentSanity < randomElementThreshold) && !randomElementEnabled)
+        {
+            resetInputKeyCodes(true);
+            randomElementEnabled = true;
+            Debug.Log("Random elements");
+        }
+        else if ((currentSanity >= randomElementThreshold) && randomElementEnabled)
+        {
+            resetInputKeyCodes(false);
+            randomElementEnabled = false;
+            Debug.Log("Normal elements");
+        }
 
+
+
+        //Scene changes at sanity thresholds 
         if (currentSanity <= 25)
         {
             EventManager.underQuarterEventTrigger();
@@ -165,6 +184,24 @@ public class BasePlayer : MonoBehaviour
             EventManager.fullSanityEventTrigger();
         }
 
+    }
 
+    private void resetInputKeyCodes(bool random)
+    {
+        if (!random)
+        {
+            inputKeyCodes = new[]  {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
+        }
+        else
+        {
+            int len = inputKeyCodes.Length;
+            for (int i = 0; i < len - 1; i++)
+            {
+                int rnd = Random.Range(i, len);
+                KeyCode temp = inputKeyCodes[rnd];
+                inputKeyCodes[rnd] = inputKeyCodes[i];
+                inputKeyCodes[i] = temp;
+            }
+        }
     }
 }
