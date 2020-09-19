@@ -35,7 +35,7 @@ private void Awake()
     {
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
 
-        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
+        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround && !Input.GetKeyDown(inputKeyCodes[2]))
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
