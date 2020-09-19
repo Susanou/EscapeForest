@@ -58,10 +58,12 @@ private void Awake()
         if (Input.GetKey(inputKeyCodes[1]))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            isJumping = false;
         }
         if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            isJumping = false;
         }
     }
 
