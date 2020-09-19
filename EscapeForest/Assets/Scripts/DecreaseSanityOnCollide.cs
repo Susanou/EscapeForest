@@ -18,10 +18,10 @@ public class DecreaseSanityOnCollide : MonoBehaviour
     void Start()
     {
         sanityCosts.Add(BasePlayer.element.None, 0);
-        sanityCosts.Add(BasePlayer.element.Air, setSanityCosts[1]);
-        sanityCosts.Add(BasePlayer.element.Earth, setSanityCosts[2]);
-        sanityCosts.Add(BasePlayer.element.Fire, setSanityCosts[3]);
-        sanityCosts.Add(BasePlayer.element.Water, setSanityCosts[4]);
+        sanityCosts.Add(BasePlayer.element.Air, setSanityCosts[0]);
+        sanityCosts.Add(BasePlayer.element.Earth, setSanityCosts[1]);
+        sanityCosts.Add(BasePlayer.element.Fire, setSanityCosts[2]);
+        sanityCosts.Add(BasePlayer.element.Water, setSanityCosts[3]);
 
         playerScript = GameObject.Find("Player").GetComponent<BasePlayer>();
     }
