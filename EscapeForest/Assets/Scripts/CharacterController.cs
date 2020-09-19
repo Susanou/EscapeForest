@@ -55,21 +55,9 @@ private void Awake()
             }
         }
 
-
-    private void playerMovement()
-    {
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !Input.GetKey(KeyCode.S))// && onGround)
-        {
-            isJumping = false;
-        }
-
         if (Input.GetKey(inputKeyCodes[1]))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-        }
-        if (Input.GetKey(inputKeyCodes[2]))
-        {
-            //TODO implement crouching animation and collider adjustments
         }
         if (Input.GetKey(inputKeyCodes[3]))
         {
@@ -95,24 +83,6 @@ private void Awake()
             }
         }
     }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
-        {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
-        }
-    }
-    
-    /*
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "FallThrough")
-        {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), false);
-        }
-    }
-    */
 
     void OnCollisionStay2D(Collision2D collision)
     {
