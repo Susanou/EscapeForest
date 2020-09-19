@@ -55,7 +55,10 @@ private void Awake()
             }
         }
 
-        if(Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(KeyCode.Space))
+
+    private void playerMovement()
+    {
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !Input.GetKey(KeyCode.S))// && onGround)
         {
             isJumping = false;
         }
@@ -92,4 +95,22 @@ private void Awake()
             }
         }
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
+        }
+    }
+    
+    /*
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "FallThrough")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), false);
+        }
+    }
+    */
 }
