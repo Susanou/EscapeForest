@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
 
     private void playerMovement()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))// && onGround)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !Input.GetKey(KeyCode.S))// && onGround)
         {
             transform.position += 1.5f * Vector3.up * speed * Time.deltaTime;
         }
@@ -58,4 +58,22 @@ public class CharacterController : MonoBehaviour
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
+        }
+    }
+    
+    /*
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "FallThrough")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), false);
+        }
+    }
+    */
 }
