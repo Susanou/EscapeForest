@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 832610922}
   - component: {fileID: 832610924}
   - component: {fileID: 832610925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ Camera:
   m_GameObject: {fileID: 853860066}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1002,7 +1002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249098430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1142,8 +1142,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210.9, y: 136.7}
-  m_SizeDelta: {x: 242.5, y: 142.2}
+  m_AnchoredPosition: {x: -267.1, y: 99.8}
+  m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588858825
 MonoBehaviour:
@@ -1177,8 +1177,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Instructions: \nWASD move\nE to randomly switch elements + ground colors
-    \nUp and down arrows to change sanity"
+  m_Text: "Instructions: \nWASD move, Space to jump\nNum Keys 1-4 change elements
+    and ground color reacts\nUp and down arrows to change sanity and global lighting
+    reacts"
 --- !u!222 &1588858826
 CanvasRenderer:
   m_ObjectHideFlags: 0
