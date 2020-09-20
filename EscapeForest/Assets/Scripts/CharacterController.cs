@@ -25,7 +25,7 @@ private void Awake()
         transform = GetComponent<Transform>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         playerMovement();
        
