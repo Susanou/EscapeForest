@@ -56,7 +56,7 @@ public class BasePlayer : MonoBehaviour
 
     public void addSanityOf(int amount)
     {
-        if((currentSanity += amount) > maxSanity)
+        if(currentSanity + amount > maxSanity)
         {
             currentSanity = 100;
         }
