@@ -60,7 +60,7 @@ public class BasePlayer : MonoBehaviour
         {
             currentSanity = 100;
         }
-        else if (currentSanity - amount < 0)
+        else if (currentSanity + amount < 0)
         {
             currentSanity = 0;
         }
@@ -70,19 +70,6 @@ public class BasePlayer : MonoBehaviour
         }
         sanityBar.setSanity(currentSanity);
     }
-
-/*    public void minusSanity(int amount){
-        if (currentSanity - amount < 0)
-        {
-            currentSanity = 0;
-        }
-        else
-        {
-            currentSanity -= amount;
-        } 
-        sanityBar.setSanity(currentSanity);
-    }*/
-
 
 
     // Update is called once per frame
