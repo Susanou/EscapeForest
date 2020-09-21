@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1096,7 +1096,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7c3de2f7def88b34f865d1e2e95e4113, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 758feb8d69a59d342805c33a0238924f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1115,8 +1115,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832610919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.38, y: 0.94, z: 0}
-  m_LocalScale: {x: 0.29676557, y: 0.29676557, z: 0.29676557}
+  m_LocalPosition: {x: -26.875, y: 2.545, z: 0}
+  m_LocalScale: {x: 0.5976831, y: 0.61774415, z: 0.29676557}
   m_Children:
   - {fileID: 1249098430}
   - {fileID: 853860069}
@@ -1138,9 +1138,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 2.1699998, y: 0, z: 2.59, w: 3.59}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.03, y: 17.95}
+    oldSize: {x: 10, y: 10}
     newSize: {x: 8.03, y: 17.95}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
