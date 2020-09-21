@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
 
-private void Awake()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
@@ -46,11 +46,13 @@ private void Awake()
         {
             if (jumpTimeCounter > 0)
             {
-                
+
                 rigidBody.velocity = Vector2.up * jump;
                 jumpTimeCounter -= Time.deltaTime;
-                
-            }else{
+
+            }
+            else
+            {
                 isJumping = false;
             }
         }

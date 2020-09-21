@@ -10,6 +10,15 @@ public class BasePlayer : MonoBehaviour
      * @author 
      * 
      */
+    static BasePlayer _instance;
+    public static BasePlayer instance {
+        get {
+            return _instance;
+        }
+    }
+    private void Awake() {
+        _instance = this;
+    }
 
     // Sanity Variables
     private int maxSanity = 100;
