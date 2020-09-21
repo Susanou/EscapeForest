@@ -10,6 +10,15 @@ public class BasePlayer : MonoBehaviour
      * @author 
      * 
      */
+    static BasePlayer _instance;
+    public static BasePlayer instance {
+        get {
+            return _instance;
+        }
+    }
+    private void Awake() {
+        _instance = this;
+    }
 
     // Sanity Variables
     private int maxSanity = 100;
@@ -48,11 +57,11 @@ public class BasePlayer : MonoBehaviour
 
     public void addSanityOf(int amount)
     {
-        if((currentSanity += amount) > maxSanity)
+        if(currentSanity + amount > maxSanity)
         {
             currentSanity = 100;
         }
-        else if (currentSanity - amount < 0)
+        else if (currentSanity + amount < 0)
         {
             currentSanity = 0;
         }
@@ -63,23 +72,6 @@ public class BasePlayer : MonoBehaviour
         sanityBar.setSanity(currentSanity);
     }
 
-    /*    public void minusSanity(int amount){
-            if (currentSanity - amount < 0)
-            {
-                currentSanity = 0;
-            }
-            else
-            {
-                currentSanity -= amount;
-            } 
-            sanityBar.setSanity(currentSanity);
-        }*/
-
-
-    public void Awake()
-    {
-        eventManager = GameObject.Find("EventManager").GetComponent<EventManager>();
-}
 
     // Update is called once per frame
     void Update()
