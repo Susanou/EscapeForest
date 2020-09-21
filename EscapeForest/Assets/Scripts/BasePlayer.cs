@@ -37,7 +37,7 @@ public class BasePlayer : MonoBehaviour
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
 
-    private EventManager eventManager;
+    [SerializeField] private EventManager eventManager;
 
     public element getCurrentElement()
     {
