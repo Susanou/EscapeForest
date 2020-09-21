@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
 
-private void Awake()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
@@ -46,18 +46,17 @@ private void Awake()
         {
             if (jumpTimeCounter > 0)
             {
-                
+
                 rigidBody.velocity = Vector2.up * jump;
                 jumpTimeCounter -= Time.deltaTime;
-                
-            }else{
+
+            }
+            else
+            {
                 isJumping = false;
             }
         }
 
-
-    private void playerMovement()
-    {
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)) && !Input.GetKey(KeyCode.S))// && onGround)
         {
             isJumping = false;
@@ -114,14 +113,6 @@ private void Awake()
     }
     */
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
-        {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
-        }
-    }
-    
     /*
     void OnCollisionExit2D(Collision2D collision)
     {
