@@ -15,11 +15,11 @@ public class InteractionObject : MonoBehaviour
 
     }
 
-    /*
+    
     private void OnMouseDown() {
         DoInteraction();
     }
-
+    /*
     public void DoInteraction()
     {
         if (player.getCurrentElement() == BasePlayer.element.Air) {
