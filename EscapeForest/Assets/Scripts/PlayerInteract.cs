@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("Interactable")|| collision.CompareTag("onWater") || collision.CompareTag("onFire") || collision.CompareTag("onEarth") || collision.CompareTag("onAir")|| collision.CompareTag("Door"))
+        if (collision.CompareTag("Interactable") || collision.CompareTag("Door"))
         {
             // Debug.Log(collision.name);
             currentInterObj = collision.gameObject;
