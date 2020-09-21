@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 276063006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,13 +834,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881c9e4b599ee05469acf54bb527e632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feet: {fileID: 832610921}
+  feet: {fileID: 1249098430}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  jumpTime: 0
+    m_Bits: 256
+  jumpTime: 0.5
   speed: 25
-  jump: 1.5
+  jump: 3
 --- !u!114 &832610926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 1794835425}
   - component: {fileID: 1794835424}
   - component: {fileID: 1794835423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground (1)
   m_TagString: Environement
   m_Icon: {fileID: 0}
