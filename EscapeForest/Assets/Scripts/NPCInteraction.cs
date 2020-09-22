@@ -42,7 +42,7 @@ public class NPCInteraction : MonoBehaviour
 	{
 		if (touchingNPC)
 		{
-			if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(interactKey)) // changed it to E because SPACE is used for jumping
+			if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(interactKey)) // changed it to Q because SPACE is used for jumping
 			{
 				Debug.Log(hint);
 				Hint();
