@@ -36,7 +36,7 @@ public class CharacterController : MonoBehaviour
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
         
         //Starts the jump
-        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround && !Input.GetKeyDown(inputKeyCodes[2]))
+        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
         {
             isJumping = true;
             jumpTimeCounter = jumpTime;
@@ -92,7 +92,7 @@ public class CharacterController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
+        if (collision.collider.tag == "FallThrough" && (Input.GetKey(inputKeyCodes[2])))
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
         }
