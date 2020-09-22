@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteraction2 : MonoBehaviour
+public class NPCInteraction : MonoBehaviour
 {
 	/**
 	 * Skeleton: Cameron
@@ -15,8 +15,8 @@ public class NPCInteraction2 : MonoBehaviour
 	 *		prompt changes to be the hint, and the box still goes away/comes back as the players moves in/out of range. Can interact while hint is there to make it go away.
 	 * */
 
-	public string hint;
-	public Text hintText; //Need to choose which one to use.
+	public string hint; // set this in inspector
+	public Text hintText; // Text object that we are modifying
 	public int sanityDecreaseValue;
 
 	[SerializeField] private KeyCode interactKey;
@@ -26,11 +26,15 @@ public class NPCInteraction2 : MonoBehaviour
 
 	private bool touchingNPC = false;
 	private bool hintUsed = false;
+	private bool sanityUsed = false;
+
+	private string original;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		player = GameObject.FindObjectOfType<BasePlayer>();
+		original = hintText.text; //keep track of what the original message was
 	}
 
 	// Update is called once per frame
@@ -38,7 +42,7 @@ public class NPCInteraction2 : MonoBehaviour
 	{
 		if (touchingNPC)
 		{
-			if (Input.GetKey(KeyCode.Space) || Input.GetKey(interactKey))
+			if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(interactKey)) // changed it to E because SPACE is used for jumping
 			{
 				Debug.Log(hint);
 				Hint();
@@ -50,7 +54,7 @@ public class NPCInteraction2 : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		//If the player enters interaction range, make the hint/prompt show up
-		if (collision.gameObject.tag == "NPC")
+		if (collision.gameObject.tag == "Player")
 		{
 			touchingNPC = true;
 			hintPrompt.SetActive(true);
@@ -60,10 +64,12 @@ public class NPCInteraction2 : MonoBehaviour
 	void OnTriggerExit2D(Collider2D collision)
 	{
 		//If the player leaves, make the hint/prompt go away
-		if (collision.gameObject.tag == "NPC")
+		if (collision.gameObject.tag == "Player")
 		{
 			touchingNPC = false;
 			hintPrompt.SetActive(false);
+			hintUsed = false;
+			hintText.text = original;
 		}
 
 
@@ -72,16 +78,21 @@ public class NPCInteraction2 : MonoBehaviour
 	void Hint()
 	{
 		//The hint hasn't been used before
-		if (!hintUsed)
+		if (!hintUsed && !sanityUsed)
 		{
 			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
 			hintUsed = true;
-			player.addSanityOf(-sanityDecreaseValue);//player.minusSanity(sanityDecreaseValue);
-			hintPrompt.SetActive(true);
+			sanityUsed = true;
+			player.addSanityOf(-sanityDecreaseValue);
+		}
+		else if(!hintUsed && sanityUsed)
+		{
+			hintText.text = hint; //Assuming hintText is the text, and hintPrompt is it's parent
+			hintUsed = true;
 		}
 		else
 		{ //Hint has been used before
-			hintPrompt.SetActive(false);
+			hintUsed = false;
 		}
 	}
 }
