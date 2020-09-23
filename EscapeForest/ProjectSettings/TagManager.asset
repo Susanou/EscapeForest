@@ -12,6 +12,7 @@ TagManager:
   - NPC
   - FallThrough
   - Environement
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Player
   - 
   - 
   - 
@@ -52,11 +53,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 3279804563
-    locked: 0
   - name: Player
     uniqueID: 1820408553
+    locked: 0
+  - name: Ground
+    uniqueID: 3279804563
     locked: 0
   - name: Foreground
     uniqueID: 3478511521
