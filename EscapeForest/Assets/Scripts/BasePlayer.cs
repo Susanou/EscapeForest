@@ -35,8 +35,9 @@ public class BasePlayer : MonoBehaviour
     private element currentElement = element.None;
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
-    
 
+
+    [SerializeField] private EventManager eventManager;
 
     public element getCurrentElement()
     {
@@ -56,11 +57,11 @@ public class BasePlayer : MonoBehaviour
 
     public void addSanityOf(int amount)
     {
-        if((currentSanity += amount) > maxSanity)
+        if(currentSanity + amount > maxSanity)
         {
             currentSanity = 100;
         }
-        else if (currentSanity - amount < 0)
+        else if (currentSanity + amount < 0)
         {
             currentSanity = 0;
         }
@@ -70,19 +71,6 @@ public class BasePlayer : MonoBehaviour
         }
         sanityBar.setSanity(currentSanity);
     }
-
-/*    public void minusSanity(int amount){
-        if (currentSanity - amount < 0)
-        {
-            currentSanity = 0;
-        }
-        else
-        {
-            currentSanity -= amount;
-        } 
-        sanityBar.setSanity(currentSanity);
-    }*/
-
 
 
     // Update is called once per frame
@@ -100,21 +88,25 @@ public class BasePlayer : MonoBehaviour
         if (Input.GetKeyDown(inputKeyCodes[0]))
         {
             currentElement = element.Air;
+            eventManager.elementChange();
             Debug.Log(currentElement);
         }
         if (Input.GetKeyDown(inputKeyCodes[1]))
         {
             currentElement = element.Earth;
+            eventManager.elementChange();
             Debug.Log(currentElement);
         }
         if (Input.GetKeyDown(inputKeyCodes[2]))
         {
             currentElement = element.Fire;
+            eventManager.elementChange();
             Debug.Log(currentElement);
         }
         if (Input.GetKeyDown(inputKeyCodes[3]))
         {
             currentElement = element.Water;
+            eventManager.elementChange();
             Debug.Log(currentElement);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -127,10 +119,9 @@ public class BasePlayer : MonoBehaviour
             addSanityOf(-1);
             Debug.Log(currentSanity);
         }
-        
-    
-        
-        
+
+
+
     }
 
 

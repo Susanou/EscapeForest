@@ -15,11 +15,11 @@ public class InteractionObject : MonoBehaviour
 
     }
 
-    /*
+    
     private void OnMouseDown() {
         DoInteraction();
     }
-
+    /*
     public void DoInteraction()
     {
         if (player.getCurrentElement() == BasePlayer.element.Air) {
@@ -41,22 +41,22 @@ public class InteractionObject : MonoBehaviour
 
     public void DoInteraction()
     {
-        if (player.getCurrentElement().ToString() == "Air" && gameObject.CompareTag("onAir"))
+        if (player.getCurrentElement() == BasePlayer.element.Air && gameObject.CompareTag("onAir"))
         {
             Debug.Log("DO AIR INTERACTION");
             gameObject.SetActive(false);
         }
-        if (player.getCurrentElement().ToString() == "Earth" && gameObject.CompareTag("onEarth"))
+        if (player.getCurrentElement() == BasePlayer.element.Earth && gameObject.CompareTag("onEarth"))
         {
             Debug.Log("DO EARTH INTERACTION");
             gameObject.SetActive(false);
         }
-        if (player.getCurrentElement().ToString() == "Fire" && gameObject.CompareTag("onFire"))
+        if (player.getCurrentElement() == BasePlayer.element.Fire && gameObject.CompareTag("onFire"))
         {
             Debug.Log("DO FIRE INTERACTION");
             gameObject.SetActive(false);
         }
-        if (player.getCurrentElement().ToString() == "Water" && gameObject.CompareTag("onWater"))
+        if (player.getCurrentElement() == BasePlayer.element.Water && gameObject.CompareTag("onWater"))
         {
             Debug.Log("DO WATER INTERACTION");
             gameObject.SetActive(false);
