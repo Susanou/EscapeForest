@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    // James
-
     public GameObject currentInterObj = null;
 
     
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && currentInterObj)
+        if (Input.GetKeyDown(KeyCode.R) && currentInterObj)
         {
             currentInterObj.SendMessage("DoInteraction");
             
@@ -27,20 +25,10 @@ public class PlayerInteract : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-        // detects pickupable item
-
-        if (collision.CompareTag("interactable"))
+        if (collision.CompareTag("Interactable") || collision.CompareTag("Door"))
         {
-            Debug.Log(collision.name);
+            // Debug.Log(collision.name);
             currentInterObj = collision.gameObject;
-        }
-
-
-        // detects terrain (?)
-
-        if (collision.CompareTag("onWater") || collision.CompareTag("onFire") || collision.CompareTag("onEarth") || collision.CompareTag("onAir"))
-        {
-            Debug.Log(collision.name);
         }
 
     }
@@ -49,9 +37,7 @@ public class PlayerInteract : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("interactable"))
-        {
+    
             currentInterObj = null;
-        }
     }
 }

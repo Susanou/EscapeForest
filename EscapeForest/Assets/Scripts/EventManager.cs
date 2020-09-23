@@ -39,15 +39,13 @@ public class EventManager : MonoBehaviour
      * Testing method to demonstrate how Event manager can send out event based on element of player
      * 
      */
-    private void elementChange()
+    public  void elementChange()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
             if (elementChanged != null)
             {
-                elementChanged(player.GetComponent<BasePlayer>().getCurrentElement());
+                elementChanged(this.player.GetComponent<BasePlayer>().getCurrentElement());
             }
-        }
+        
     }
 
 
