@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
 {
 
     public Transform feet;
-    public LayerMask groundLayer;
+    public LayerMask groundLayer; // Should allways be "Ground". Select from inspector
     public float jumpTime; // So that player can jump higher the longer he presses SPACE
     [SerializeField] private float speed = 25f;
     [SerializeField] private float jump = 1.5f;
@@ -19,13 +19,13 @@ public class CharacterController : MonoBehaviour
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
 
-private void Awake()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         playerMovement();
        
@@ -34,7 +34,8 @@ private void Awake()
     private void playerMovement()
     {
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
-
+        
+        //Starts the jump
         if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
         {
             isJumping = true;
@@ -42,15 +43,18 @@ private void Awake()
             rigidBody.velocity = Vector2.up * jump;
         }
 
+        //The longer you stay pressed the higher you go
         if ((Input.GetKey(inputKeyCodes[0]) || Input.GetKey(inputKeyCodes[4])) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
-                
+
                 rigidBody.velocity = Vector2.up * jump;
                 jumpTimeCounter -= Time.deltaTime;
-                
-            }else{
+
+            }
+            else
+            {
                 isJumping = false;
             }
         }
@@ -58,10 +62,12 @@ private void Awake()
         if (Input.GetKey(inputKeyCodes[1]))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
+            isJumping = false;
         }
         if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            isJumping = false;
         }
     }
 
@@ -86,7 +92,7 @@ private void Awake()
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.tag == "FallThrough" && (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Space)))
+        if (collision.collider.tag == "FallThrough" && (Input.GetKey(inputKeyCodes[2])))
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
         }
