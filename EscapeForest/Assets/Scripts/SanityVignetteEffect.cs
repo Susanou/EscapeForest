@@ -9,9 +9,12 @@ public class SanityVignetteEffect : MonoBehaviour
 {
     Volume volume;
     Vignette vignette;
-    private void OnEnable()
+
+    BasePlayer player;
+    float reduction = 0.4f;
+  /*  private void OnEnable()
     {
-        //TODO: shorten event manager calls
+        
         EventManager.underQuarter += darkenQuarter;
         EventManager.underHalf += darkenHalf;
         EventManager.underThreeFourths += darkenThreeFourths;
@@ -52,5 +55,23 @@ public class SanityVignetteEffect : MonoBehaviour
     private void darkenNone()
     {
         vignette.intensity.Override(0f); ;
+    }
+*/
+
+
+    //Alternate implementaiton
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<BasePlayer>();
+        volume = this.GetComponent<Volume>();
+        Vignette effect;
+        if (volume.profile.TryGet<Vignette>(out effect))
+        {
+            vignette = effect;
+        }
+    }
+    private void Update()
+    {
+        vignette.intensity.Override((1f - player.getSanity() * 0.01f ) - reduction);
     }
 }
