@@ -5,7 +5,7 @@ using UnityEngine;
 abstract public class Element : MonoBehaviour
 {
     
-    public int[] sanityCosts = new int[8]; // Order should be the same as on `Sanity meter Specifics` document in Drive
+    public int[] sanityCosts; // Order should be the same as on `Sanity meter Specifics` document in Drive
 
     public virtual void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
