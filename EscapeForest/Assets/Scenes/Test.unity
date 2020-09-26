@@ -2873,11 +2873,11 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 11.632707
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2915,7 +2915,7 @@ MonoBehaviour:
     m_Bits: 256
   jumpTime: 0.5
   speed: 25
-  jump: 12
+  jump: 15
 --- !u!114 &832610926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,6 +3135,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 929709914}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856396459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 236.5, y: -16.3, z: 0}
+  m_LocalScale: {x: 1.513706, y: 1.4799552, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &917927545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917927546}
+  - component: {fileID: 917927547}
+  m_Layer: 0
+  m_Name: Air
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917927546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917927545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 832610921}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917927547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917927545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15266d438d091ba4db0a3cd27366db5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sanityCosts: 
+  gust: {fileID: 0}
 --- !u!1 &984912541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,6 +5786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f5452115d51b14fbda8e4e2c29641a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 832610924}
 --- !u!4 &1960675418
 Transform:
   m_ObjectHideFlags: 0
