@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    GameObject player;
+    
 
     public delegate void ChangeElement(BasePlayer.element currentElement);
     public static event ChangeElement elementChanged;
@@ -15,11 +15,13 @@ public class EventManager : MonoBehaviour
     public static event ChangeSanity underHalf;
     public static event ChangeSanity underThreeFourths;
     public static event ChangeSanity fullSanity;
+
+    [SerializeField] private BasePlayer player;
     
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     //TODO: Sanity Event
@@ -43,7 +45,7 @@ public class EventManager : MonoBehaviour
     {
             if (elementChanged != null)
             {
-                elementChanged(this.player.GetComponent<BasePlayer>().getCurrentElement());
+                elementChanged(this.player.getCurrentElement());
             }
         
     }

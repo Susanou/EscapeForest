@@ -59,15 +59,19 @@ public class CharacterController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(inputKeyCodes[4])){
+            isJumping = false;
+        }
+
         if (Input.GetKey(inputKeyCodes[1]))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-            isJumping = false;
+            //isJumping = false;
         }
         if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
-            isJumping = false;
+            //isJumping = false;
         }
     }
 

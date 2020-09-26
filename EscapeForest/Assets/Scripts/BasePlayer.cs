@@ -85,30 +85,33 @@ public class BasePlayer : MonoBehaviour
         }
 
  
-        if (Input.GetKeyDown(inputKeyCodes[0]))
+        if (Input.GetKeyDown(inputKeyCodes[0])) // Air = 1
         {
             currentElement = element.Air;
             eventManager.elementChange();
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(inputKeyCodes[1]))
+        if (Input.GetKeyDown(inputKeyCodes[1])) // Earth = 2
         {
             currentElement = element.Earth;
             eventManager.elementChange();
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(inputKeyCodes[2]))
+        if (Input.GetKeyDown(inputKeyCodes[2])) // Fire = 3
         {
             currentElement = element.Fire;
             eventManager.elementChange();
             Debug.Log(currentElement);
         }
-        if (Input.GetKeyDown(inputKeyCodes[3]))
+        if (Input.GetKeyDown(inputKeyCodes[3])) // Water = 4
         {
             currentElement = element.Water;
             eventManager.elementChange();
             Debug.Log(currentElement);
         }
+
+
+        //TODO: Remember to refer the following two ifs in actual release
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             addSanityOf(1);

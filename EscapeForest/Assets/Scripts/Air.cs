@@ -7,8 +7,10 @@ public class Air : Element
 
     [SerializeField] private GameObject gust;
 
+    private Rigidbody2D player;
     private void Start() {
         sanityCosts = new int[8] { 0, 0, 5, 5, -5, 5, -5, -10};
+        player = this.GetComponent<Rigidbody2D>();
     }
 
     public override void OnLeftClickDrag(){
@@ -19,7 +21,11 @@ public class Air : Element
 
     public override void OnRightClick(){
         if(Input.GetMouseButtonDown(1)){
-            Debug.Log("RightClick pressed");
+            this.player.gravityScale = 1f;
+        }
+
+        if (Input.GetMouseButtonUp(1)){
+            this.player.gravityScale = 5f;
         }
     }
 
