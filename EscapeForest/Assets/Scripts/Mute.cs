@@ -12,8 +12,8 @@ public class Mute : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myToggle = GetComponent<Toggle>();
-        if(AudioListener.volume = 0)
+        muteToggle = GetComponent<Toggle>();
+        if(AudioListener.volume == 0)
         {
             muteToggle.isOn = false;
         }
@@ -27,7 +27,7 @@ public class Mute : MonoBehaviour
     
     public void ToggleAudio(bool audio)
     {
-        if(audioIn)
+        if(audio)
         {
             AudioListener.volume = 1;
         }
