@@ -57,7 +57,7 @@ public class InteractionObject : MonoBehaviour
             //This section to be replaced with "OnAir()";
             Debug.Log("DO AIR INTERACTION");
             Debug.Log("Sanity Changes by:" + sanityCostAir.ToString());
-            animator.SetBool("air", true);
+            //animator.SetBool("air", true);
             gameObject.SetActive(false);
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth && gameObject.CompareTag("onEarth"))
@@ -65,7 +65,7 @@ public class InteractionObject : MonoBehaviour
             //This section to be replaced with "OnEarth()";
             Debug.Log("DO EARTH INTERACTION");
             Debug.Log("Sanity Changes by:" + sanityCostEarth.ToString());
-            animator.SetBool("earth", true);
+            //animator.SetBool("earth", true);
             gameObject.SetActive(false);
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire && gameObject.CompareTag("onFire"))
@@ -73,7 +73,7 @@ public class InteractionObject : MonoBehaviour
             //This section to be replaced with "OnFire()";
             Debug.Log("DO FIRE INTERACTION");
             Debug.Log("Sanity Changes by:" + sanityCostFire.ToString());
-            animator.SetBool("fire", true);
+            //animator.SetBool("fire", true);
             gameObject.SetActive(false);
         }
         if (player.getCurrentElement() == BasePlayer.element.Water && gameObject.CompareTag("onWater"))
@@ -81,7 +81,7 @@ public class InteractionObject : MonoBehaviour
             //This section to be replaced with "OnWater()";
             Debug.Log("DO WATER INTERACTION");
             Debug.Log("Sanity Changes by:" + sanityCostWater.ToString());
-            animator.SetBool("water", true);
+            //animator.SetBool("water", true);
             gameObject.SetActive(false);
         }
 
