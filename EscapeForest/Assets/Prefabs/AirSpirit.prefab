@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 2286470308755808054}
   - component: {fileID: 74726764242353130}
   - component: {fileID: 6627560130424623413}
+  - component: {fileID: 539339171480979804}
   m_Layer: 0
   m_Name: AirSpirit
-  m_TagString: onEarth
+  m_TagString: onAir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1492778334765128951}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -18.13, y: 2.7, z: -0}
-  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5678860097787376702}
   m_Father: {fileID: 0}
@@ -63,8 +64,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sanityCostAir: 0
   sanityCostEarth: 0
-  sanityCostFire: 0
+  sanityCostFire: -10
   sanityCostWater: 0
+  airAnimationLength: 0
+  earthAnimationLength: 0
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 0
+  destroyedByFire: 1
+  destroyedByWater: 0
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 0}
+  afterFire: {fileID: 172781847999906241, guid: 7ea8747b0e7ec78419dc9f765c1bbaf4,
+    type: 3}
+  afterWater: {fileID: 0}
+--- !u!95 &539339171480979804
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492778334765128951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c80b5b637964db44b109c5a272fd9dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5737374434020651988
 GameObject:
   m_ObjectHideFlags: 0

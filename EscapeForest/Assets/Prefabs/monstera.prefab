@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 483288871373382072}
   - component: {fileID: 483288871373382073}
   - component: {fileID: 483288871373382074}
+  - component: {fileID: 1709465348}
   m_Layer: 0
   m_Name: monstera
   m_TagString: onFire
@@ -96,10 +97,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
+  sanityCostAir: 5
+  sanityCostEarth: 10
+  sanityCostFire: -15
+  sanityCostWater: -5
+  airAnimationLength: 0
+  earthAnimationLength: 0
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 0
+  destroyedByFire: 1
+  destroyedByWater: 1
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 0}
+  afterFire: {fileID: 5573258839018607659, guid: 666acd010165347919d516160d9ad4ea,
+    type: 3}
+  afterWater: {fileID: 0}
 --- !u!70 &483288871373382073
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -132,3 +146,22 @@ CircleCollider2D:
   m_Offset: {x: -0.23, y: 0.79}
   serializedVersion: 2
   m_Radius: 1.48
+--- !u!95 &1709465348
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483288871373382075}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d340c3cb57b469b46bce23ad9eb56933, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
