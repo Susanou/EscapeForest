@@ -70,23 +70,55 @@ public class InteractionObject : MonoBehaviour
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
 
+<<<<<<< HEAD
             StartCoroutine(OnAir());
 
+=======
+            //This section to be replaced with "OnAir()";
+            Debug.Log("DO AIR INTERACTION");
+            Debug.Log("Sanity Changes by:" + sanityCostAir.ToString());
+            //animator.SetBool("air", true);
+            gameObject.SetActive(false);
+>>>>>>> Prefabs
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
+<<<<<<< HEAD
 
             StartCoroutine(OnEarth());
+=======
+            //This section to be replaced with "OnEarth()";
+            Debug.Log("DO EARTH INTERACTION");
+            Debug.Log("Sanity Changes by:" + sanityCostEarth.ToString());
+            //animator.SetBool("earth", true);
+            gameObject.SetActive(false);
+>>>>>>> Prefabs
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
+<<<<<<< HEAD
             StartCoroutine(OnFire());
+=======
+            //This section to be replaced with "OnFire()";
+            Debug.Log("DO FIRE INTERACTION");
+            Debug.Log("Sanity Changes by:" + sanityCostFire.ToString());
+            //animator.SetBool("fire", true);
+            gameObject.SetActive(false);
+>>>>>>> Prefabs
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
+<<<<<<< HEAD
             
             StartCoroutine(OnWater());
            
+=======
+            //This section to be replaced with "OnWater()";
+            Debug.Log("DO WATER INTERACTION");
+            Debug.Log("Sanity Changes by:" + sanityCostWater.ToString());
+            //animator.SetBool("water", true);
+            gameObject.SetActive(false);
+>>>>>>> Prefabs
         }
 
         if (gameObject.CompareTag("Door"))
