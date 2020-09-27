@@ -5,17 +5,26 @@ using UnityEngine;
 public class Air : Element
 {
 
-    [SerializeField] private GameObject gust;
-
+    [SerializeField] private ParticleSystem airGust;
     private Rigidbody2D player;
+
+    public Air(ParticleSystem particule){
+        airGust = particule;
+    }
+
     private void Start() {
         sanityCosts = new int[8] { 0, 0, 5, 5, -5, 5, -5, -10};
         player = this.GetComponent<Rigidbody2D>();
+        airGust.Stop(); 
     }
 
     public override void OnLeftClickDrag(){
         if(Input.GetMouseButton(0)){
-            Debug.Log("LeftClick dragging");
+            airGust.Play();
+        }
+
+        if(Input.GetMouseButtonUp(0)){
+            airGust.Play();
         }
     }
 

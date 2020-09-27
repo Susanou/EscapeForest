@@ -9,6 +9,9 @@ public class EventManager : MonoBehaviour
     public delegate void ChangeElement(BasePlayer.element currentElement);
     public static event ChangeElement elementChanged;
 
+    public delegate void CurrentElement();
+    public static event CurrentElement leftClick;
+    public static event CurrentElement leftClickDrag;
     public delegate void ChangeSanity();
     public static event ChangeSanity randomMovement;
     public static event ChangeSanity underQuarter;
