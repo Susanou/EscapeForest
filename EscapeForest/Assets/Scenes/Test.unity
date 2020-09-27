@@ -996,6 +996,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanityCostAir: 0
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: 0
+  airAnimationLength: 0
+  earthAnimationLength: 0
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 0
+  destroyedByFire: 0
+  destroyedByWater: 0
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 0}
+  afterFire: {fileID: 0}
+  afterWater: {fileID: 0}
 --- !u!212 &436753026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1364,6 +1380,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanityCostAir: 0
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: 0
+  airAnimationLength: 0
+  earthAnimationLength: 0
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 0
+  destroyedByFire: 0
+  destroyedByWater: 0
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 0}
+  afterFire: {fileID: 0}
+  afterWater: {fileID: 0}
 --- !u!1 &701500846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1946,7 @@ GameObject:
   - component: {fileID: 856396462}
   - component: {fileID: 856396461}
   - component: {fileID: 856396460}
+  - component: {fileID: 856396464}
   m_Layer: 0
   m_Name: Stone
   m_TagString: onEarth
@@ -1933,6 +1966,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanityCostAir: -5
+  sanityCostEarth: 10
+  sanityCostFire: -15
+  sanityCostWater: -5
+  airAnimationLength: 0
+  earthAnimationLength: 2
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 1
+  destroyedByFire: 0
+  destroyedByWater: 0
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
+  afterFire: {fileID: 0}
+  afterWater: {fileID: 0}
 --- !u!58 &856396461
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2013,6 +2063,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &856396464
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856396459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11384eec8a1a44ae59918479b29ae605, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &984912541
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,6 +2125,7 @@ GameObject:
   - component: {fileID: 1003281084}
   - component: {fileID: 1003281083}
   - component: {fileID: 1003281082}
+  - component: {fileID: 1003281086}
   m_Layer: 0
   m_Name: Leaves
   m_TagString: onAir
@@ -2075,6 +2145,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanityCostAir: 5
+  sanityCostEarth: 0
+  sanityCostFire: -10
+  sanityCostWater: -5
+  airAnimationLength: 2
+  earthAnimationLength: 2
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 1
+  destroyedByEarth: 1
+  destroyedByFire: 0
+  destroyedByWater: 0
+  afterAir: {fileID: 2145472039858297548, guid: 5d74f1c2374544318a805add6d5a574a,
+    type: 3}
+  afterEarth: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
+  afterFire: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
+  afterWater: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
 --- !u!58 &1003281083
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2155,6 +2245,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1003281086
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003281081}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2eabfe5669934c43a03b70a38c7de17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1057519420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,76 +2338,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057519420}
   m_CullTransparentMesh: 0
---- !u!1 &1062691133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1062691134}
-  - component: {fileID: 1062691136}
-  - component: {fileID: 1062691135}
-  m_Layer: 0
-  m_Name: DoorTrigger
-  m_TagString: Door
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1062691134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062691133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.278, y: -0.436, z: 0}
-  m_LocalScale: {x: 0.14048438, y: 0.14343749, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1617055338}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1062691135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062691133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &1062691136
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062691133}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1073180070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,6 +2562,7 @@ GameObject:
   - component: {fileID: 1319791109}
   - component: {fileID: 1319791108}
   - component: {fileID: 1319791111}
+  - component: {fileID: 1319791112}
   m_Layer: 0
   m_Name: Fire
   m_TagString: onWater
@@ -2622,6 +2662,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sanityCostAir: -10
+  sanityCostEarth: -10
+  sanityCostFire: -15
+  sanityCostWater: -5
+  airAnimationLength: 2
+  earthAnimationLength: 0
+  fireAnimationLength: 2
+  waterAnimationLength: 2
+  destroyedByAir: 0
+  destroyedByEarth: 1
+  destroyedByFire: 0
+  destroyedByWater: 1
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 5573258839018607659, guid: 666acd010165347919d516160d9ad4ea,
+    type: 3}
+  afterFire: {fileID: 0}
+  afterWater: {fileID: 0}
+--- !u!95 &1319791112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319791107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 731769319ec4346c49dd201566637245, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1422265705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2959,8 +3035,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -121.930725, y: 15.355128, z: 2.212117}
   m_LocalScale: {x: 10, y: 10, z: 10}
-  m_Children:
-  - {fileID: 1062691134}
+  m_Children: []
   m_Father: {fileID: 82669250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
