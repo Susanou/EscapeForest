@@ -11,7 +11,7 @@ public class SanityVignetteEffect : MonoBehaviour
     Vignette vignette;
 
     BasePlayer player;
-    float reduction = 0.4f;
+    float reduction = 0.3f;
   /*  private void OnEnable()
     {
         
