@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Collections.Specialized;
 
 public class InteractionObject : MonoBehaviour
 
@@ -25,6 +27,8 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private GameObject afterFire;
     [SerializeField] private GameObject afterWater;
 
+    [SerializeField] private Transform sanityPopupPrefab;
+    private TextMeshPro textMesh;
 
     private Animator animator;
 
@@ -33,7 +37,6 @@ public class InteractionObject : MonoBehaviour
     private void Start() {
         player = BasePlayer.instance;
         animator = GetComponent<Animator>();
-
     }
 
     private void Update()
@@ -69,24 +72,29 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
+            CreateSanityPopup(sanityCostAir);
 
             StartCoroutine(OnAir());
+            
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
 
+            CreateSanityPopup(sanityCostEarth);
             StartCoroutine(OnEarth());
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
 
+            CreateSanityPopup(sanityCostFire);
             StartCoroutine(OnFire());
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
-            
+
+            CreateSanityPopup(sanityCostWater);
             StartCoroutine(OnWater());
            
 
@@ -161,4 +169,12 @@ public class InteractionObject : MonoBehaviour
 
     }
 
+
+    public void CreateSanityPopup(int cost) {
+        textMesh = sanityPopupPrefab.GetComponent<TextMeshPro>();
+
+        textMesh.SetText(cost.ToString());
+
+        Transform sanityPopupTransform = Instantiate(sanityPopupPrefab, gameObject.transform.position, Quaternion.identity);
+    }
 }
