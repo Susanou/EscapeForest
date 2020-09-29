@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class SanityVignetteEffect : MonoBehaviour
 {
-    Volume volume;
-    Vignette vignette;
+    /*Volume volume;
+    Vignette vignette;*/
+
+    Image vignette;
+    Color newColor;
 
     BasePlayer player;
     float reduction = 0.3f;
@@ -63,15 +65,18 @@ public class SanityVignetteEffect : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<BasePlayer>();
-        volume = this.GetComponent<Volume>();
+        vignette = GetComponent<Image>();
+        /*volume = this.GetComponent<Volume>();
         Vignette effect;
         if (volume.profile.TryGet<Vignette>(out effect))
         {
             vignette = effect;
-        }
+        }*/
     }
     private void Update()
     {
-        vignette.intensity.Override((1f - player.getSanity() * 0.01f ) - reduction);
+        float alpha = (1f - (player.getSanity()*1f / 100));  //Higher alpha for less sanity
+        newColor = new  Color(vignette.color.r, vignette.color.g, vignette.color.b, alpha);
+        vignette.color = newColor;
     }
 }
