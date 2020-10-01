@@ -101,7 +101,7 @@ public class CharacterController : MonoBehaviour
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
         }
     }
-    
+
     /*
     void OnCollisionExit2D(Collision2D collision)
     {
