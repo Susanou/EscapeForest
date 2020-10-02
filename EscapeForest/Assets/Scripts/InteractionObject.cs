@@ -104,9 +104,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnAir()
     {
+        player.GetComponent<Animator>().SetBool("usingElement", true);
+        player.GetComponent<Animator>().SetBool("air", true);
         player.addSanityOf(sanityCostAir);
         animator.SetBool("air", true);
         yield return new WaitForSeconds(airAnimationLength);
+        player.GetComponent<Animator>().SetBool("air", false);
+        player.GetComponent<Animator>().SetBool("usingElement", false);
 
         if (destroyedByAir) {
             Instantiate(afterAir, this.transform.position, this.transform.rotation);
@@ -118,9 +122,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnEarth()
     {
+        player.GetComponent<Animator>().SetBool("usingElement", true);
+        player.GetComponent<Animator>().SetBool("earth", true);
         player.addSanityOf(sanityCostEarth);
         animator.SetBool("earth", true);
         yield return new WaitForSeconds(earthAnimationLength);
+        player.GetComponent<Animator>().SetBool("earth", false);
+        player.GetComponent<Animator>().SetBool("usingElement", false);
 
         if (destroyedByEarth)
         {
@@ -133,9 +141,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnFire()
     {
+        player.GetComponent<Animator>().SetBool("usingElement", true);
+        player.GetComponent<Animator>().SetBool("fire", true);
         player.addSanityOf(sanityCostFire);
         animator.SetBool("fire", true);
         yield return new WaitForSeconds(fireAnimationLength);
+        player.GetComponent<Animator>().SetBool("fire", false);
+        player.GetComponent<Animator>().SetBool("usingElement", false);
 
         if (destroyedByFire)
         {
@@ -148,9 +160,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnWater()
     {
+        player.GetComponent<Animator>().SetBool("usingElement", true);
+        player.GetComponent<Animator>().SetBool("water", true);
         player.addSanityOf(sanityCostWater);
         animator.SetBool("water", true);
         yield return new WaitForSeconds(waterAnimationLength);
+        player.GetComponent<Animator>().SetBool("water", false);
+        player.GetComponent<Animator>().SetBool("usingElement", false);
 
         if (destroyedByWater)
         {
