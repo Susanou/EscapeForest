@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1709465348, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
@@ -1106,7 +1106,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461578744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 48df02149d8454b1ba49432e0b638378, type: 2}
   m_CullingMode: 0
@@ -1409,7 +1409,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1547,7 +1547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &697589899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,16 +1653,21 @@ PrefabInstance:
         type: 3}
       propertyPath: afterFire
       value: 
-      objectReference: {fileID: 1363214077}
+      objectReference: {fileID: 1201401766}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.1
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -15.9
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -1835,7 +1840,7 @@ PrefabInstance:
     - target: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1709465348, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
@@ -1966,7 +1971,7 @@ PrefabInstance:
     - target: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1709465348, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
@@ -2074,16 +2079,21 @@ PrefabInstance:
         type: 3}
       propertyPath: afterFire
       value: 
-      objectReference: {fileID: 1201401766}
+      objectReference: {fileID: 159057608}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.8
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -2909,7 +2919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1450091779
 Transform:
   m_ObjectHideFlags: 0
@@ -3102,7 +3112,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701485730}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -3232,7 +3242,7 @@ PrefabInstance:
     - target: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1709465348, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
@@ -3642,16 +3652,21 @@ PrefabInstance:
         type: 3}
       propertyPath: afterWater
       value: 
-      objectReference: {fileID: 1201401766}
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -3943,15 +3958,20 @@ PrefabInstance:
       propertyPath: afterFire
       value: 
       objectReference: {fileID: 1363214077}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.9
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13
+      value: -17.6
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
