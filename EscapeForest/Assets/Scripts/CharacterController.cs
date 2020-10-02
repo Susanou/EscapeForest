@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     private float jumpTimeCounter;
     private Rigidbody2D rigidBody;
     private Transform transform;
+    private Animator animator;
     private float groundCheckRadius = 0.3f;
     private bool onGround;
     private bool isJumping;
@@ -23,6 +24,7 @@ public class CharacterController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -39,6 +41,7 @@ public class CharacterController : MonoBehaviour
         if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
         {
             isJumping = true;
+            animator.SetBool("jumping", true);
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jump;
         }
@@ -56,11 +59,13 @@ public class CharacterController : MonoBehaviour
             else
             {
                 isJumping = false;
+                animator.SetBool("jumping", false);
             }
         }
 
         if (Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(inputKeyCodes[4])){
             isJumping = false;
+            animator.SetBool("jumping", false);
         }
 
         if (Input.GetKey(inputKeyCodes[1]))
