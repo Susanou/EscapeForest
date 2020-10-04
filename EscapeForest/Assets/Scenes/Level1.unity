@@ -485,6 +485,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa8a344ba3eb927409446a19a22a1e17, type: 3}
+--- !u!1 &286218142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1858649070748980598, guid: fa8a344ba3eb927409446a19a22a1e17,
+    type: 3}
+  m_PrefabInstance: {fileID: 286218141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &286218143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286218142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eace4500ce34a7f48ba46b944eec2011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: {fileID: 11400000, guid: 0e02f0626886edc4aa59c337540df53f, type: 2}
 --- !u!4 &475950173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
@@ -2372,6 +2391,7 @@ GameObject:
   - component: {fileID: 1502772776}
   - component: {fileID: 1502772778}
   - component: {fileID: 1502772777}
+  - component: {fileID: 1502772779}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -2421,7 +2441,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -2446,6 +2466,33 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1502772779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502772775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afef2762d07c6304d86edbda7635f4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 965b1f98418e19844b61a7d908d29506, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1502772778}
+        m_MethodName: set_intensity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1562281446
 GameObject:
   m_ObjectHideFlags: 0
