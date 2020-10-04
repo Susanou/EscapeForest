@@ -25,11 +25,13 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private GameObject afterFire;
     [SerializeField] private GameObject afterWater;
 
-    //Events
-    [SerializeField] private BooleanValue onFire;
 
     //Signals
+    [SerializeField] private Signal onAirSignal;
+    [SerializeField] private Signal onEarthSignal;
     [SerializeField] private Signal onFireSignal;
+    [SerializeField] private Signal onWaterSignal;
+
 
 
     private Animator animator;
@@ -121,6 +123,11 @@ public class InteractionObject : MonoBehaviour
         animator.SetBool("air", false);
         animator.SetBool("usingElement", false);
 
+        if (onAirSignal != null)
+        {
+            onAirSignal.Raise();
+        }
+
         if (destroyedByAir) {
             Instantiate(afterAir, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
@@ -139,6 +146,10 @@ public class InteractionObject : MonoBehaviour
         animator.SetBool("earth", false);
         animator.SetBool("usingElement", false);
 
+        if (onEarthSignal != null)
+        {
+            onEarthSignal.Raise();
+        }
         if (destroyedByEarth)
         {
             Instantiate(afterEarth, this.transform.position, this.transform.rotation);
@@ -157,9 +168,15 @@ public class InteractionObject : MonoBehaviour
         yield return new WaitForSeconds(fireAnimationLength);
         animator.SetBool("fire", false);
         animator.SetBool("usingElement", false);
-        if (destroyedByFire)
+
+        if (onFireSignal != null)
         {
             onFireSignal.Raise();
+        }
+
+        if (destroyedByFire)
+        {
+
             Instantiate(afterFire, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
 
@@ -176,6 +193,12 @@ public class InteractionObject : MonoBehaviour
         yield return new WaitForSeconds(waterAnimationLength);
         animator.SetBool("water", false);
         animator.SetBool("usingElement", false);
+
+        if (onWaterSignal != null)
+        {
+            onWaterSignal.Raise();
+        }
+        
 
         if (destroyedByWater)
         {
