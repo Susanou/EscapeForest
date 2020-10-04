@@ -22,9 +22,9 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        transform = GetComponent<Transform>();
-        animator = GetComponent<Animator>();
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
+        transform = gameObject.GetComponent<Transform>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()

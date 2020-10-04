@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Animation
+[RequireComponent(typeof(Animator))]
 public class BasePlayer : MonoBehaviour
 {
     /**
@@ -20,6 +22,8 @@ public class BasePlayer : MonoBehaviour
         _instance = this;
     }
 
+
+
     // Sanity Variables
     private int maxSanity = 100;
     private int randomMovementThreshold = 10;
@@ -37,7 +41,12 @@ public class BasePlayer : MonoBehaviour
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
 
-    [SerializeField] private EventManager eventManager;
+    private EventManager eventManager;
+
+    private void Start()
+    {
+        eventManager = GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>();
+    }
 
     public element getCurrentElement()
     {
@@ -48,7 +57,6 @@ public class BasePlayer : MonoBehaviour
     {
         return currentSanity;
     }
-
 
     /**
      * Single method to adjust sanity, pass in a negative value to decrement
@@ -124,7 +132,7 @@ public class BasePlayer : MonoBehaviour
         }
 
 
-
+        Debug.Log(currentElement);
     }
 
 
