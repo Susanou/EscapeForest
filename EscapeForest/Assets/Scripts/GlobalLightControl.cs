@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class ChangeIntesnityBySanity : MonoBehaviour
+public class GlobalLightControl : MonoBehaviour
 {
     Light2D light;
     private void OnEnable()
@@ -43,5 +43,10 @@ public class ChangeIntesnityBySanity : MonoBehaviour
     private void darkenNone()
     {
         light.intensity = 1;
+    }
+
+    private void logOnFire()
+    {
+
     }
 }
