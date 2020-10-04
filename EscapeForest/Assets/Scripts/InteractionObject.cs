@@ -25,6 +25,12 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private GameObject afterFire;
     [SerializeField] private GameObject afterWater;
 
+    //Events
+    [SerializeField] private BooleanValue onFire;
+
+    //Signals
+    [SerializeField] private Signal onFireSignal;
+
 
     private Animator animator;
 
@@ -32,6 +38,8 @@ public class InteractionObject : MonoBehaviour
     private BasePlayer player;
 
     private void Start() {
+    
+
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
         animator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
@@ -151,6 +159,7 @@ public class InteractionObject : MonoBehaviour
         animator.SetBool("usingElement", false);
         if (destroyedByFire)
         {
+            onFireSignal.Raise();
             Instantiate(afterFire, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
 

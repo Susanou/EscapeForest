@@ -55,7 +55,7 @@ public class EventManager : MonoBehaviour
 
 
 
-    public static void underQuarterEventTrigger()
+   /* public static void underQuarterEventTrigger()
     {
 
             if(underQuarter != null)
@@ -89,5 +89,5 @@ public class EventManager : MonoBehaviour
         {
             fullSanity();
         }
-    }
+    }*/
 }
