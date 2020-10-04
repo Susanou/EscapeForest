@@ -177,7 +177,7 @@ public class BasePlayer : MonoBehaviour
 
 
 
-        //Scene changes at sanity thresholds 
+      /*  //Scene changes at sanity thresholds 
         if (currentSanity <= 25)
         {
             EventManager.underQuarterEventTrigger();
@@ -193,7 +193,7 @@ public class BasePlayer : MonoBehaviour
         else
         {
             EventManager.fullSanityEventTrigger();
-        }
+        }*/
 
     }
 
