@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8327780574322420645}
   - component: {fileID: 8327780574322420644}
   - component: {fileID: 8327780574322420643}
-  - component: {fileID: 2612855074944542265}
   m_Layer: 0
   m_Name: Vine
   m_TagString: Untagged
@@ -111,29 +110,3 @@ MonoBehaviour:
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
   afterWater: {fileID: 0}
---- !u!61 &2612855074944542265
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8327780574322420642}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13022411, y: -3.5972998}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.6, y: 11.04}
-    newSize: {x: 8.6, y: 11.04}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.9119742, y: 3.8453994}
-  m_EdgeRadius: 0
