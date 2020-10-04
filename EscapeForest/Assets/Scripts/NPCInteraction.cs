@@ -16,13 +16,14 @@ public class NPCInteraction : MonoBehaviour
 	 * */
 
 	public string hint; // set this in inspector
-	public Text hintText; // Text object that we are modifying
 	public int sanityDecreaseValue;
-
+	public Text hintText; // Text object that we are modifying
 	[SerializeField] private KeyCode interactKey;
 	[SerializeField] private GameObject hintPrompt; //A Text object on the Canvas saying "Would you like to use a hint?" 
 
 	private BasePlayer player;
+	
+	
 
 	private bool touchingNPC = false;
 	private bool hintUsed = false;
@@ -35,6 +36,7 @@ public class NPCInteraction : MonoBehaviour
 	{
 		player = GameObject.FindObjectOfType<BasePlayer>();
 		original = hintText.text; //keep track of what the original message was
+		hintText = hintPrompt.GetComponent<Text>();
 	}
 
 	// Update is called once per frame
