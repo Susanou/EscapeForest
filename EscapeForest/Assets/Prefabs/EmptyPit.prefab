@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3788324435658832231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0682344, y: -1.7515169, z: 0}
-  m_LocalScale: {x: 0.21176353, y: 0.21887133, z: 0.10514624}
+  m_LocalScale: {x: 0.2201346, y: 0.19154318, z: 0.10514624}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,12 +55,16 @@ MonoBehaviour:
   destroyedByAir: 0
   destroyedByEarth: 0
   destroyedByFire: 0
-  destroyedByWater: 0
+  destroyedByWater: 1
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
+  afterWater: {fileID: 8118723782395698402, guid: f06e28a7a0e0b4f389b042facff77764,
+    type: 3}
+  onAirSignal: {fileID: 0}
+  onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
+  onWaterSignal: {fileID: 0}
 --- !u!61 &2309126143631148691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -74,7 +78,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0719471, y: -2.0428634}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -85,5 +89,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20.810486, y: 11.957204}
   m_EdgeRadius: 0

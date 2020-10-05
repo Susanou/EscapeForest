@@ -136,7 +136,12 @@ public class InteractionObject : MonoBehaviour
         }
 
         if (destroyedByAir) {
-            Instantiate(afterAir, this.transform.position, this.transform.rotation);
+            GameObject airObj = Instantiate(afterAir, this.transform.position, this.transform.rotation);
+
+            if (airObj.GetComponent<Collider2D>() != null)
+            {
+                airObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
+            }
             Destroy(this.gameObject);
             
         }
@@ -159,7 +164,12 @@ public class InteractionObject : MonoBehaviour
         }
         if (destroyedByEarth)
         {
-            Instantiate(afterEarth, this.transform.position, this.transform.rotation);
+            GameObject earthObj = Instantiate(afterEarth, this.transform.position, this.transform.rotation);
+
+            if (earthObj.GetComponent<Collider2D>() != null)
+            {
+                earthObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
+            }
             Destroy(this.gameObject);
 
         }
@@ -184,7 +194,13 @@ public class InteractionObject : MonoBehaviour
         if (destroyedByFire)
         {
 
-            Instantiate(afterFire, this.transform.position, this.transform.rotation);
+            GameObject fireObj = Instantiate(afterFire, this.transform.position, this.transform.rotation);
+
+            if(fireObj.GetComponent<Collider2D>() != null)
+            {
+                fireObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
+            }
+
             Destroy(this.gameObject);
 
         }
@@ -209,7 +225,12 @@ public class InteractionObject : MonoBehaviour
 
         if (destroyedByWater)
         {
-            Instantiate(afterWater, this.transform.position, this.transform.rotation);
+            GameObject waterObj = Instantiate(afterWater, this.transform.position, this.transform.rotation);
+
+            if (waterObj.GetComponent<Collider2D>() != null)
+            {
+                waterObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
+            }
             Destroy(this.gameObject);
 
         }
