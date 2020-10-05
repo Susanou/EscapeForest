@@ -44,4 +44,10 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void LevelSelect()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LevelSelect");
+    }
 }

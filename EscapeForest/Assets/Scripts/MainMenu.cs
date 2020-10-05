@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Test");
     }
 
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
     public void ShowInstructions()
     {
         SceneManager.LoadScene("Instructions");  
