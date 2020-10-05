@@ -82,7 +82,7 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
-            CreateSanityPopup(sanityCostAir);
+            player.addSanityOf(sanityCostAir);
 
             StartCoroutine(OnAir());
             
@@ -91,20 +91,20 @@ public class InteractionObject : MonoBehaviour
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
 
-            CreateSanityPopup(sanityCostEarth);
+            player.addSanityOf(sanityCostEarth);
             StartCoroutine(OnEarth());
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
 
-            CreateSanityPopup(sanityCostFire);
+            player.addSanityOf(sanityCostFire);
             StartCoroutine(OnFire());
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
 
-            CreateSanityPopup(sanityCostWater);
+            player.addSanityOf(sanityCostWater);
             StartCoroutine(OnWater());
            
 
