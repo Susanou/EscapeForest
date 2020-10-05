@@ -238,14 +238,6 @@ public class InteractionObject : MonoBehaviour
     }
 
 
-    public void CreateSanityPopup(int cost) {
-        textMesh = sanityPopupPrefab.GetComponent<TextMeshPro>();
-
-        textMesh.SetText(cost.ToString());
-
-        Transform sanityPopupTransform = Instantiate(sanityPopupPrefab, gameObject.transform.position, Quaternion.identity);
-    }
-
 
     public bool getDestroyedByAir()
     {
