@@ -3848,12 +3848,12 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 276.68845
+      value: 276.37
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.0121
+      value: 6.82
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -3903,17 +3903,32 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.8733354
+      value: 2.8588734
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.345
+      value: 1.9504584
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4886253
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483288871373382071, guid: e6dfa0e4713a249d1a3921a2044a4d89,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483288871373382073, guid: e6dfa0e4713a249d1a3921a2044a4d89,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 483288871373382074, guid: e6dfa0e4713a249d1a3921a2044a4d89,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -3925,7 +3940,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 483288871373382073, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
+    - {fileID: 483288871373382074, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
 --- !u!4 &1562594880 stripped
 Transform:
@@ -4377,6 +4394,70 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1495397704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861254643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861254642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afef2762d07c6304d86edbda7635f4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 9e3f2e551bb3e44fab007be3c4f04631, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1861254650}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1861254645}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!61 &1861254645
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861254642}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.63, y: 5.39}
+    newSize: {x: 4.63, y: 5.39}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.63, y: 5.39}
+  m_EdgeRadius: 0
 --- !u!4 &1861254648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
@@ -4399,6 +4480,12 @@ MonoBehaviour:
   up: 0
   right: 1
   distance: 10
+--- !u!212 &1861254650 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 483288871373382071, guid: e6dfa0e4713a249d1a3921a2044a4d89,
+    type: 3}
+  m_PrefabInstance: {fileID: 1495397704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877558758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,11 +4996,12 @@ MonoBehaviour:
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
-  afterWater: {fileID: 1861254642}
+  afterWater: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
   onAirSignal: {fileID: 0}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
+  onWaterSignal: {fileID: 11400000, guid: 9e3f2e551bb3e44fab007be3c4f04631, type: 2}
 --- !u!58 &2143348818
 CircleCollider2D:
   m_ObjectHideFlags: 0
