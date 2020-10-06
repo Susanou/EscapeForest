@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 7369857758206177773, guid: eda96c703f23a7e46b6f37d14c8e49b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7369857758206177773, guid: eda96c703f23a7e46b6f37d14c8e49b3,
         type: 3}
@@ -1288,37 +1288,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &461578744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 840204020716301641, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 840204020000046515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &461578748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
     type: 3}
   m_PrefabInstance: {fileID: 840204020000046515}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &461578749
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461578744}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48df02149d8454b1ba49432e0b638378, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &468612681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,7 +2291,7 @@ PrefabInstance:
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
@@ -2414,7 +2389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &769601680
 PrefabInstance:
@@ -2442,6 +2417,21 @@ PrefabInstance:
         type: 3}
       propertyPath: destroyedByFire
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostAir
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostFire
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostWater
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -2919,6 +2909,21 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1062631193049285304, guid: 866ca2624f8bb4412b670a1958bed588,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -40243984
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062631193049285304, guid: 866ca2624f8bb4412b670a1958bed588,
+        type: 3}
+      propertyPath: m_Radius
+      value: 29.06169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062631193049285304, guid: 866ca2624f8bb4412b670a1958bed588,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 7.069941
+      objectReference: {fileID: 0}
     - target: {fileID: 1062631193049285305, guid: 866ca2624f8bb4412b670a1958bed588,
         type: 3}
       propertyPath: m_Name
@@ -3223,6 +3228,21 @@ PrefabInstance:
         type: 3}
       propertyPath: destroyedByFire
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostAir
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostFire
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostWater
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -3690,7 +3710,7 @@ PrefabInstance:
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -4218,7 +4238,7 @@ PrefabInstance:
     - target: {fileID: 8327780574322420645, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8327780574322420645, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
@@ -4326,37 +4346,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6dfa0e4713a249d1a3921a2044a4d89, type: 3}
---- !u!1 &1562594876 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 840204020716301641, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 769601680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1562594880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
     type: 3}
   m_PrefabInstance: {fileID: 769601680}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1562594881
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562594876}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1586768815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4442,7 +4437,7 @@ PrefabInstance:
     - target: {fileID: 8327780574322420645, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8327780574322420645, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
@@ -4584,37 +4579,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689754123}
   m_CullTransparentMesh: 0
---- !u!1 &1701485730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 840204020716301641, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1026209684}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1701485734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
     type: 3}
   m_PrefabInstance: {fileID: 1026209684}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1701485735
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701485730}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1797566560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4828,37 +4798,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811064264}
   m_CullTransparentMesh: 0
---- !u!1 &1811957954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 840204020716301641, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1971099405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1811957958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
     type: 3}
   m_PrefabInstance: {fileID: 1971099405}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1811957959
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811957954}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1861254642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
@@ -5022,6 +4967,21 @@ PrefabInstance:
         type: 3}
       propertyPath: destroyedByFire
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostWater
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostFire
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostAir
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -5441,6 +5401,21 @@ PrefabInstance:
         type: 3}
       propertyPath: destroyedByFire
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostFire
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostWater
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostAir
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
