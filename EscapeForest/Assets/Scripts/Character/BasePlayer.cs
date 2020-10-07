@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Animation
 [RequireComponent(typeof(Animator))]
@@ -79,6 +80,7 @@ public class BasePlayer : MonoBehaviour
         else if (currentSanity.RuntimeValue + amount < 0)
         {
             currentSanity.RuntimeValue = 0;
+            SceneManager.LoadScene("GameOver");
         }
         else
         {
