@@ -259,4 +259,10 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
+    private void OnParticleCollision(GameObject other) {
+        if(other.tag == "Magic"){
+            DoInteraction();
+        }
+    }
+
 }

@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Air : Element
+public class Earth : Element
 {
 
     private void Start() {
@@ -16,19 +16,6 @@ public class Air : Element
 
         if(Input.GetMouseButtonUp(0)){
             if(particle.isPlaying) particle.Stop();
-        }
-    }
-
-    public override void OnRightClick(){
-
-        Rigidbody2D player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-
-        if(Input.GetMouseButtonDown(1)){
-            player.gravityScale = 1f;
-        }
-
-        if (Input.GetMouseButtonUp(1)){
-            player.gravityScale = 5f;
         }
     }
 }
