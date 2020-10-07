@@ -40,5 +40,6 @@ public class ElementIndicator : MonoBehaviour
         BasePlayer player = GameObject.Find("Player").GetComponent<BasePlayer>();
         //image.color = colors[currentElement];
         image.sprite = sprites[player.getCurrentElement()];
+        player.particle.startColor = colors[player.getCurrentElement()];
     }
 }

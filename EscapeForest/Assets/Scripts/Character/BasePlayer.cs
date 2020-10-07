@@ -23,6 +23,7 @@ public class BasePlayer : MonoBehaviour
     }
 
     public enum element { None,Air,Earth,Fire,Water};
+    public ParticleSystem particle;
 
     public FloatValue currentSanity;
     public ElementValue currentElement;
@@ -51,8 +52,7 @@ public class BasePlayer : MonoBehaviour
 
     private void Start()
     {
-
-        
+        if(particle.isPlaying) particle.Stop();        
     }
 
     public element getCurrentElement()
@@ -125,7 +125,6 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Water;
             usingElement = elementsArray[3];
             elementChanged.Raise();
-
         }
 
 
@@ -141,6 +140,9 @@ public class BasePlayer : MonoBehaviour
             addSanityOf(-1);
             sanitySignal.Raise();
         }
+
+        usingElement.OnRightClick();
+        usingElement.OnLeftClickDrag(particle);
     }
 
 
