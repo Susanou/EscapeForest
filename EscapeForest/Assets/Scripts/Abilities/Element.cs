@@ -13,7 +13,7 @@ abstract public class Element : MonoBehaviour
         }
     }
 
-    public virtual void OnLeftClickDrag(){
+    public virtual void OnLeftClickDrag(ParticleSystem particule){
         if(Input.GetMouseButton(0)){
             Debug.Log("LeftClick dragging");
         }

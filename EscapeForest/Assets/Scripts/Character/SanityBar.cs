@@ -8,7 +8,7 @@ public class SanityBar : MonoBehaviour
     private BasePlayer playerScript;
     public Slider slider;
 
-    public void setSanity(int sanity)
+    public void setSanity(float sanity)
     {
         slider.value = sanity;
     }

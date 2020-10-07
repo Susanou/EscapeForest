@@ -33,18 +33,12 @@ public class ElementIndicator : MonoBehaviour
 
         image = this.GetComponent<Image>();
         image.sprite = sprites[0];
-
-        EventManager.elementChanged += changeColor;
     }
 
-    private void OnDisable()
+    public void changeColor()
     {
-        EventManager.elementChanged -= changeColor;
-    }
-
-    private void changeColor(BasePlayer.element currentElement)
-    {
+        BasePlayer player = GameObject.Find("Player").GetComponent<BasePlayer>();
         //image.color = colors[currentElement];
-        image.sprite = sprites[currentElement];
+        image.sprite = sprites[player.getCurrentElement()];
     }
 }

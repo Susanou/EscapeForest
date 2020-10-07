@@ -75,7 +75,7 @@ public class SanityVignetteEffect : MonoBehaviour
     }
     private void Update()
     {
-        float alpha = (1f - (player.getSanity()*1f / 100));  //Higher alpha for less sanity
+        float alpha = (1f - (player.getSanity() / 100));  //Higher alpha for less sanity
         newColor = new  Color(vignette.color.r, vignette.color.g, vignette.color.b, alpha);
         vignette.color = newColor;
     }

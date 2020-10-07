@@ -22,40 +22,47 @@ public class BasePlayer : MonoBehaviour
         _instance = this;
     }
 
+    public enum element { None,Air,Earth,Fire,Water};
 
+    public FloatValue currentSanity;
+    public ElementValue currentElement;
+
+    public Signal sanitySignal;
+    public Signal elementChanged;
 
     // Sanity Variables
     private int maxSanity = 100;
     private int randomMovementThreshold = 10;
     private int randomElementThreshold = 15;
-    private int currentSanity = 100;
+    //private int currentSanity = 100;
     [SerializeField] private SanityBar sanityBar;
 
     private bool randomMovementEnabled = false;
     private bool randomElementEnabled = false;
 
     //Element variables
-    public enum element { None,Air,Earth,Fire,Water};
-    private element currentElement = element.None;
+
+    //private element currentElement = element.None;
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
-
-    private EventManager eventManager;
+    [SerializeField] private Element[] elementsArray = new Element[4];
+    private Element usingElement;
 
     private void Start()
     {
-        eventManager = GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>();
+
+        
     }
 
     public element getCurrentElement()
     {
-        return currentElement;
+        return currentElement.RuntimeValue;
     }
 
-    public int getSanity()
+    public float getSanity()
     {
-        return currentSanity;
+        return currentSanity.RuntimeValue;
     }
 
     /**
@@ -65,57 +72,60 @@ public class BasePlayer : MonoBehaviour
 
     public void addSanityOf(int amount)
     {
-        if(currentSanity + amount > maxSanity)
+        if(currentSanity.RuntimeValue + amount > maxSanity)
         {
-            currentSanity = 100;
+            currentSanity.RuntimeValue = 100;
         }
-        else if (currentSanity + amount < 0)
+        else if (currentSanity.RuntimeValue + amount < 0)
         {
-            currentSanity = 0;
+            currentSanity.RuntimeValue = 0;
         }
         else
         {
-            currentSanity += amount;
+            currentSanity.RuntimeValue += amount;
         }
-        sanityBar.setSanity(currentSanity);
+        sanityBar.setSanity(currentSanity.RuntimeValue);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        sanityCheck();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentElement = (element)Random.Range(0, 5);
-            Debug.Log(currentElement);
-
+            currentElement.RuntimeValue = (element)Random.Range(0, 5);
+            usingElement = elementsArray[(int)currentElement.RuntimeValue];
+            elementChanged.Raise();
         }
 
  
         if (Input.GetKeyDown(inputKeyCodes[0])) // Air = 1
         {
-            currentElement = element.Air;
-            eventManager.elementChange();
-            Debug.Log(currentElement);
+            currentElement.RuntimeValue = element.Air;
+            usingElement = elementsArray[0];
+            elementChanged.Raise();
+
         }
-        if (Input.GetKeyDown(inputKeyCodes[1])) // Earth = 2
+        else if (Input.GetKeyDown(inputKeyCodes[1])) // Earth = 2
         {
-            currentElement = element.Earth;
-            eventManager.elementChange();
-            Debug.Log(currentElement);
+            currentElement.RuntimeValue = element.Earth;
+            usingElement = elementsArray[1];
+            elementChanged.Raise();
+
         }
-        if (Input.GetKeyDown(inputKeyCodes[2])) // Fire = 3
+        else if (Input.GetKeyDown(inputKeyCodes[2])) // Fire = 3
         {
-            currentElement = element.Fire;
-            eventManager.elementChange();
-            Debug.Log(currentElement);
+            currentElement.RuntimeValue = element.Fire;
+            usingElement = elementsArray[2];
+            elementChanged.Raise();
+
         }
-        if (Input.GetKeyDown(inputKeyCodes[3])) // Water = 4
+        else if (Input.GetKeyDown(inputKeyCodes[3])) // Water = 4
         {
-            currentElement = element.Water;
-            eventManager.elementChange();
-            Debug.Log(currentElement);
+            currentElement.RuntimeValue = element.Water;
+            usingElement = elementsArray[3];
+            elementChanged.Raise();
+
         }
 
 
@@ -123,16 +133,14 @@ public class BasePlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             addSanityOf(1);
-            Debug.Log(currentSanity);
+            sanitySignal.Raise();
+
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             addSanityOf(-1);
-            Debug.Log(currentSanity);
+            sanitySignal.Raise();
         }
-
-
-        Debug.Log(currentElement);
     }
 
 
@@ -143,18 +151,18 @@ public class BasePlayer : MonoBehaviour
      * Triggers methods in Event Manager to send out sanity events to other objects
      * 
      */
-    private void sanityCheck()
+    public void sanityCheck()
     {
         //Random Movement Effect
         CharacterController characterController = this.GetComponentInParent<CharacterController>();
 
-        if ((currentSanity < randomMovementThreshold)  && !randomMovementEnabled)
+        if ((currentSanity.RuntimeValue < randomMovementThreshold)  && !randomMovementEnabled)
         {
             characterController.resetInputKeyCodes(true);
             randomMovementEnabled = true;
             Debug.Log("Random movement");
         }
-        else if ((currentSanity >= randomMovementThreshold) && randomMovementEnabled)
+        else if ((currentSanity.RuntimeValue >= randomMovementThreshold) && randomMovementEnabled)
         {
             characterController.resetInputKeyCodes(false);
             randomMovementEnabled = false;
@@ -162,13 +170,13 @@ public class BasePlayer : MonoBehaviour
         }
 
         //Random Element Effect
-        if ((currentSanity < randomElementThreshold) && !randomElementEnabled)
+        if ((currentSanity.RuntimeValue < randomElementThreshold) && !randomElementEnabled)
         {
             resetInputKeyCodes(true);
             randomElementEnabled = true;
             Debug.Log("Random elements");
         }
-        else if ((currentSanity >= randomElementThreshold) && randomElementEnabled)
+        else if ((currentSanity.RuntimeValue >= randomElementThreshold) && randomElementEnabled)
         {
             resetInputKeyCodes(false);
             randomElementEnabled = false;

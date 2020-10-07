@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Water : Element
+public class Fire : Element
 {
 
-    [SerializeField] private ParticleSystem waterGun;
-    [SerializeField] private ParticleSystem waterBall;
+    [SerializeField] private ParticleSystem flamethrower;
+    [SerializeField] private ParticleSystem fireball;
     [SerializeField] private GameObject light;
     private Rigidbody2D player;
 
@@ -17,35 +17,34 @@ public class Water : Element
 
 
 
-    //change state of object
+    //light
     public override void OnRightClick() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100)) {
-            Debug.Log(hit.transform.gameObject.name);
-            hit.transform.gameObject.tag = "Ice";
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonUp(1)) {
+            if (light.activeInHierarchy == true)
+                light.SetActive(false);
+            else
+                light.SetActive(true);
         }
     }
-    //water gun
-    public override void OnLeftClickDrag() {
+    //flamethrower
+    public override void OnLeftClickDrag(ParticleSystem particle) {
         if (Input.GetMouseButton(0)) {
-            waterGun.Play();
+            flamethrower.Play();
         }
 
         if (Input.GetMouseButtonUp(0)) {
-            waterGun.Play();
+            flamethrower.Play();
         }
     }
     //fireball
     public override void OnLeftClick() {
         if (Input.GetMouseButton(1) || Input.GetMouseButtonUp(1)) {
-            launchWaterBall();
+            launchFireBall();
         }
     }
 
     //send fireball from player
-    public void launchWaterBall() {
+    public void launchFireBall() {
 
     }
 
