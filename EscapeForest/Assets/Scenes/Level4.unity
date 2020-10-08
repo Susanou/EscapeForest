@@ -1960,27 +1960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 20
-  sanityCostEarth: 20
-  sanityCostFire: 15
-  sanityCostWater: -10
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 1
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
-    type: 3}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!1001 &733725683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2083,7 +2062,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8327780574322420643, guid: 8c891840944774ada9429cbfe24d2acc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c891840944774ada9429cbfe24d2acc, type: 3}
 --- !u!1 &733725684 stripped
 GameObject:
@@ -2392,6 +2372,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByEarth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByWater
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: onFireSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 10d6c14fb881645a49914de43b949f5e,
+        type: 2}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: afterFire
+      value: 
+      objectReference: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1 &814854453
@@ -2591,26 +2598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: -10
-  sanityCostEarth: 20
-  sanityCostFire: 20
-  sanityCostWater: -10
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 0
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!212 &878286071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2952,7 +2939,7 @@ PrefabInstance:
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.5
+      value: -9.6
       objectReference: {fileID: 0}
     - target: {fileID: 840204020716301646, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
         type: 3}
@@ -3004,6 +2991,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: onFireSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: abd1ceb3006984aac94679217ea9a43a,
+        type: 2}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByWater
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: afterFire
+      value: 
+      objectReference: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1 &1053263599 stripped
@@ -4736,6 +4745,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: onFireSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: acdf81a41472c411e87017967076334b,
+        type: 2}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByWater
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: afterFire
+      value: 
+      objectReference: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1 &2070193696 stripped
@@ -5096,27 +5127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 0
-  destroyedByWater: 1
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
-    type: 3}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 11400000, guid: 9e3f2e551bb3e44fab007be3c4f04631, type: 2}
 --- !u!58 &2143348818
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5280,7 +5290,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: destroyedByWater
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: onFireSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 990596d86f21b3744be98046d0e1e9c2,
+        type: 2}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: afterFire
+      value: 
+      objectReference: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 840204020716301645, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1001 &3982646603545639214
 PrefabInstance:
