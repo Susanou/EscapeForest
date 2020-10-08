@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Boolean", menuName = "Values/Boolean", order = 1)]
 public class BooleanValue : ScriptableObject, ISerializationCallbackReceiver
 {
 

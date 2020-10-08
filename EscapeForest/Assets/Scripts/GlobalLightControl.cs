@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GlobalLightControl : MonoBehaviour
 {
@@ -10,7 +11,15 @@ public class GlobalLightControl : MonoBehaviour
     private void Start()
     {
         light = this.GetComponentInParent<Light2D>();
-        light.intensity = 0;
+        if(SceneManager.GetActiveScene().name.Equals("Level1"))
+        {
+            light.intensity = 0;
+        }
+        else
+        {
+            light.intensity = 1;
+        }
+        
     }
     /* private void OnEnable()
      {
