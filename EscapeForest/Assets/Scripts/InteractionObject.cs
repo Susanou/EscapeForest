@@ -259,4 +259,10 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
+
+    public void CreateSanityPopup(int cost)
+    {
+        //put whatever Orion's code was here
+    }
+
 }
