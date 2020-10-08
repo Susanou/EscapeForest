@@ -427,11 +427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2ffcd944efe014a926f73223417f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 0}
-  currentSanity: {fileID: 0}
-  currentElement: {fileID: 0}
-  sanitySignal: {fileID: 0}
-  elementChanged: {fileID: 0}
+  particle: {fileID: 1497999328120559097, guid: 726e598225986214b8d49a76d1c71e6f,
+    type: 3}
+  currentSanity: {fileID: 11400000, guid: e107dcf13154d434eab019151a54d7a5, type: 2}
+  currentElement: {fileID: 11400000, guid: 249e9bc5d62948049857f686b442b0dd, type: 2}
+  sanitySignal: {fileID: 11400000, guid: a4f4e6682a15d9c4982846ee46d2d1b2, type: 2}
+  elementChanged: {fileID: 11400000, guid: 4a857b8574f80f24483f894f80417cad, type: 2}
   sanityBar: {fileID: 234565511}
   elementsArray:
   - {fileID: 0}
@@ -1636,7 +1637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f5452115d51b14fbda8e4e2c29641a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 73162143}
 --- !u!4 &564704388
 Transform:
   m_ObjectHideFlags: 0
@@ -2461,6 +2461,7 @@ GameObject:
   - component: {fileID: 905711107}
   - component: {fileID: 905711106}
   - component: {fileID: 905711105}
+  - component: {fileID: 905711108}
   m_Layer: 5
   m_Name: ElementIndicator
   m_TagString: Untagged
@@ -2542,6 +2543,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905711103}
   m_CullTransparentMesh: 0
+--- !u!114 &905711108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905711103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afef2762d07c6304d86edbda7635f4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 4a857b8574f80f24483f894f80417cad, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 905711105}
+        m_MethodName: changeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &907392732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
