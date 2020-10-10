@@ -37,6 +37,7 @@ public class InteractionObject : MonoBehaviour
 
 
     private Animator animator;
+    private Animator playerAnimator;
 
     private GameObject playerObject;
     private BasePlayer player;
@@ -46,7 +47,8 @@ public class InteractionObject : MonoBehaviour
 
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
-        animator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
+        playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -122,13 +124,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnAir()
     {
-        animator.SetBool("usingElement", true);
-        animator.SetBool("air", true);
+        playerAnimator.SetBool("usingElement", true);
+        playerAnimator.SetBool("air", true);
         player.addSanityOf(sanityCostAir);
         animator.SetBool("air", true);
         yield return new WaitForSeconds(airAnimationLength);
-        animator.SetBool("air", false);
-        animator.SetBool("usingElement", false);
+        playerAnimator.SetBool("air", false);
+        playerAnimator.SetBool("usingElement", false);
 
         if (onAirSignal != null)
         {
@@ -150,13 +152,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnEarth()
     {
-        animator.SetBool("usingElement", true);
-        animator.SetBool("earth", true);
+        playerAnimator.SetBool("usingElement", true);
+        playerAnimator.SetBool("earth", true);
         player.addSanityOf(sanityCostEarth);
         animator.SetBool("earth", true);
         yield return new WaitForSeconds(earthAnimationLength);
-        animator.SetBool("earth", false);
-        animator.SetBool("usingElement", false);
+        playerAnimator.SetBool("earth", false);
+        playerAnimator.SetBool("usingElement", false);
 
         if (onEarthSignal != null)
         {
@@ -178,13 +180,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnFire()
     {
-        animator.SetBool("usingElement", true);
-        animator.SetBool("fire", true);
+        playerAnimator.SetBool("usingElement", true);
+        playerAnimator.SetBool("fire", true);
         player.addSanityOf(sanityCostFire);
         animator.SetBool("fire", true);
         yield return new WaitForSeconds(fireAnimationLength);
-        animator.SetBool("fire", false);
-        animator.SetBool("usingElement", false);
+        playerAnimator.SetBool("fire", false);
+        playerAnimator.SetBool("usingElement", false);
 
         if (onFireSignal != null)
         {
@@ -209,13 +211,13 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnWater()
     {
-        animator.SetBool("usingElement", true);
-        animator.SetBool("water", true);
+        playerAnimator.SetBool("usingElement", true);
+        playerAnimator.SetBool("water", true);
         player.addSanityOf(sanityCostWater);
         animator.SetBool("water", true);
         yield return new WaitForSeconds(waterAnimationLength);
-        animator.SetBool("water", false);
-        animator.SetBool("usingElement", false);
+        playerAnimator.SetBool("water", false);
+        playerAnimator.SetBool("usingElement", false);
 
         if (onWaterSignal != null)
         {

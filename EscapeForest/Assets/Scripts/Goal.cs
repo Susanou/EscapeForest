@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
+    public string sceneToLoad;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
