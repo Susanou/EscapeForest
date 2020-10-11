@@ -80,7 +80,7 @@ public class BasePlayer : MonoBehaviour
         }
         else if (currentSanity.RuntimeValue + amount < 0)
         {
-            currentSanity.RuntimeValue = 0;
+            currentSanity.RuntimeValue = currentSanity.initialValue;
             SceneManager.LoadScene("GameOver");
         }
         else
@@ -187,26 +187,6 @@ public class BasePlayer : MonoBehaviour
             randomElementEnabled = false;
             Debug.Log("Normal elements");
         }
-
-
-
-      /*  //Scene changes at sanity thresholds 
-        if (currentSanity <= 25)
-        {
-            EventManager.underQuarterEventTrigger();
-        }
-        else if (currentSanity <= 50)
-        {
-            EventManager.underHalfEventTrigger();
-        }
-        else if(currentSanity <= 75)
-        {
-            EventManager.underThreeFourthsEventTrigger();
-        }
-        else
-        {
-            EventManager.fullSanityEventTrigger();
-        }*/
 
     }
 
