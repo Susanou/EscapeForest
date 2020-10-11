@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -589,6 +589,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: onFireSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: cdb8dacfae8ad0042ac82ddb7bad09ed,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1 &330258453
@@ -996,11 +1002,11 @@ MonoBehaviour:
   sanitySignal: {fileID: 11400000, guid: a4f4e6682a15d9c4982846ee46d2d1b2, type: 2}
   elementChanged: {fileID: 11400000, guid: 4a857b8574f80f24483f894f80417cad, type: 2}
   sanityBar: {fileID: 1312515885}
-  elementsArray:
-  - {fileID: 4451441262985525032, guid: 9c17b44c84362c14d944e8ce30ef9b81, type: 3}
-  - {fileID: 2551009182915868195, guid: b6fee129000f1dc45841345342b15a28, type: 3}
-  - {fileID: -8971593182062295618, guid: 95b6f2609ca4ef3459d3edde13a78a90, type: 3}
-  - {fileID: 3202561669004524229, guid: 6218f1e61a190ea428adcb3b0a7d3ecb, type: 3}
+  elementArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &376650496
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1921,26 +1927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 0
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
-  onAirSignal: {fileID: 11400000, guid: 01dd60bad9982f54f89ab95e30c58541, type: 2}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!212 &668301045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2232,27 +2218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 20
-  sanityCostEarth: 20
-  sanityCostFire: 15
-  sanityCostWater: -10
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 1
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 483288871373382075, guid: e6dfa0e4713a249d1a3921a2044a4d89,
-    type: 3}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!1001 &712771764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3420,26 +3385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 1
-  destroyedByFire: 0
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!61 &1678338601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3672,26 +3617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 0
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
 --- !u!61 &1725339722
 BoxCollider2D:
   m_ObjectHideFlags: 0
