@@ -55,6 +55,7 @@ public class BasePlayer : MonoBehaviour
     {
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
+        elementChanged.Raise();
     }
 
     public element getCurrentElement()
