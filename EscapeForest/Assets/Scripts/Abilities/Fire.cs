@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Fire : Element
 {
-
-    [SerializeField] private ParticleSystem flamethrower;
-    [SerializeField] private ParticleSystem fireball;
     [SerializeField] private GameObject light;
-    private Rigidbody2D player;
 
     private void Start() {
         sanityCosts = new int[8] { 0, 0, 5, 5, -5, 5, -5, -10 };
-        player = this.GetComponent<Rigidbody2D>();
     }
 
 
@@ -29,11 +24,11 @@ public class Fire : Element
     //flamethrower
     public override void OnLeftClickDrag(ParticleSystem particle) {
         if (Input.GetMouseButton(0)) {
-            flamethrower.Play();
+            particle.Play();
         }
 
         if (Input.GetMouseButtonUp(0)) {
-            flamethrower.Play();
+            particle.Play();
         }
     }
     //fireball
