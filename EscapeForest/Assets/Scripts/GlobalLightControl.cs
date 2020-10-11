@@ -13,7 +13,7 @@ public class GlobalLightControl : MonoBehaviour
         light = this.GetComponentInParent<Light2D>();
         if(SceneManager.GetActiveScene().name.Equals("Level1"))
         {
-            light.intensity = 0;
+            light.intensity = 1;
         }
         else
         {

@@ -227,8 +227,8 @@ public class InteractionObject : MonoBehaviour
 
         if (destroyedByWater)
         {
-            GameObject waterObj = Instantiate(afterWater, this.transform.position, this.transform.rotation);
-
+            GameObject waterObj = Instantiate(afterWater, transform.position, transform.rotation);
+            waterObj.transform.localScale = gameObject.transform.localScale;
             if (waterObj.GetComponent<Collider2D>() != null)
             {
                 waterObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
