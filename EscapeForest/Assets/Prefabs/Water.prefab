@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3075097376068878366}
   - component: {fileID: 3036955874284737162}
   - component: {fileID: 4851366011334332585}
+  - component: {fileID: 6490177030519431456}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -163,3 +164,18 @@ MonoBehaviour:
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+--- !u!114 &6490177030519431456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118723782395698402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8ab6b833f3ee6448602154649dc0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetX: 0
+  resetY: 0
+  resetZ: 0
