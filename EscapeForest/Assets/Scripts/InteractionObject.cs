@@ -181,8 +181,9 @@ public class InteractionObject : MonoBehaviour
         {
 
             GameObject fireObj = Instantiate(afterFire, this.transform.position, this.transform.rotation);
+
             //fireObj.transform.localScale = gameObject.transform.localScale;
-            /*    if(fireObj.GetComponent<Collider2D>() != null)
+            /*    if(fireObj.<Collider2D>() != null)
                 {
                     fireObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
                 }
