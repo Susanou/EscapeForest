@@ -16,6 +16,7 @@ public class Earth : Element
 
         if(Input.GetMouseButtonUp(0)){
             if(particle.isPlaying) particle.Stop();
+            particle.Clear();
         }
     }
 }

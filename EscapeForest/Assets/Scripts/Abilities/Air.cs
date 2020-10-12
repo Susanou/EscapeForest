@@ -10,12 +10,13 @@ public class Air : Element
     }
 
     public override void OnLeftClickDrag(ParticleSystem particle){
-        if(Input.GetMouseButton(0)){
+        if(Input.GetMouseButtonDown(0)){
             if(!particle.isPlaying) particle.Play();
         }
 
         if(Input.GetMouseButtonUp(0)){
             if(particle.isPlaying) particle.Stop();
+            particle.Clear();
         }
     }
 
