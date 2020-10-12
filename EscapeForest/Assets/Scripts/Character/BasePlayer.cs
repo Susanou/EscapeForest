@@ -23,7 +23,7 @@ public class BasePlayer : MonoBehaviour
         _instance = this;
     }
 
-    public enum element { None,Air,Earth,Fire,Water};
+    public enum element {Air, Earth, Fire, Water, None};
     public ParticleSystem particle;
 
     public FloatValue currentSanity;
@@ -42,13 +42,9 @@ public class BasePlayer : MonoBehaviour
     private bool randomMovementEnabled = false;
     private bool randomElementEnabled = false;
 
-    //Element variables
-
-    //private element currentElement = element.None;
-
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
-    [SerializeField] private Element[] elementsArray = new Element[4];
+    [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
 
     private void Start()
@@ -56,6 +52,7 @@ public class BasePlayer : MonoBehaviour
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
         elementChanged.Raise();
+        usingElement = elementsArray[(int)currentElement.RuntimeValue];
     }
 
     public element getCurrentElement()

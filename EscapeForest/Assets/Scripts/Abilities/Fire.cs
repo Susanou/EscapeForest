@@ -15,32 +15,24 @@ public class Fire : Element
     //light
     public override void OnRightClick() {
         if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonUp(1)) {
-            if (light.activeInHierarchy == true)
+            if (light.activeSelf){
                 light.SetActive(false);
-            else
+            }
+            else{
                 light.SetActive(true);
+            }
         }
     }
     //flamethrower
     public override void OnLeftClickDrag(ParticleSystem particle) {
-        if (Input.GetMouseButton(0)) {
-            particle.Play();
+        if (Input.GetMouseButtonDown(0)) {
+            if(!particle.isPlaying) particle.Play();
         }
 
         if (Input.GetMouseButtonUp(0)) {
-            particle.Play();
+            if(particle.isPlaying) particle.Stop();
+            particle.Clear();
         }
-    }
-    //fireball
-    public override void OnLeftClick() {
-        if (Input.GetMouseButton(1) || Input.GetMouseButtonUp(1)) {
-            launchFireBall();
-        }
-    }
-
-    //send fireball from player
-    public void launchFireBall() {
-
     }
 
     public override void OnRightClickDrag() {
