@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Specialized;
 
+//Animation
+[RequireComponent(typeof(Animator))]
 public class InteractionObject : MonoBehaviour
 
 {
