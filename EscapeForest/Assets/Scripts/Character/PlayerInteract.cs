@@ -31,6 +31,10 @@ public class PlayerInteract : MonoBehaviour
             currentInterObj = collision.gameObject;
         }
 
+        if (collision.gameObject.CompareTag("Key")) {
+            Destroy(collision.gameObject);
+        }
+
     }
 
     // if the player gets out of the range of the object's collider, the current interactable object sets to null.
