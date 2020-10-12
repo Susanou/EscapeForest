@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2920193906765259898}
   - component: {fileID: 7937160893590616456}
   - component: {fileID: 4605705312172163111}
+  - component: {fileID: 6470861027064665610}
   m_Layer: 8
   m_Name: FrozenWater
   m_TagString: Untagged
@@ -131,13 +132,33 @@ MonoBehaviour:
   waterAnimationLength: 0
   destroyedByAir: 0
   destroyedByEarth: 0
-  destroyedByFire: 0
+  destroyedByFire: 1
   destroyedByWater: 0
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
+  afterFire: {fileID: 8118723782395698402, guid: f06e28a7a0e0b4f389b042facff77764,
+    type: 3}
   afterWater: {fileID: 0}
   onAirSignal: {fileID: 0}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+--- !u!95 &6470861027064665610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827740888653079475}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

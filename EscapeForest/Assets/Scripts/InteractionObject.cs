@@ -48,7 +48,7 @@ public class InteractionObject : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -123,13 +123,11 @@ public class InteractionObject : MonoBehaviour
 
         if (destroyedByAir) {
             GameObject airObj = Instantiate(afterAir, this.transform.position, this.transform.rotation);
-
-            /*
-            if (airObj.GetComponent<Collider2D>() != null)
+            //airObj.transform.localScale = gameObject.transform.localScale;
+            /*if (airObj.GetComponent<Collider2D>() != null)
             {
                 airObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
-            }
-            */
+            }*/
             Destroy(this.gameObject);
             
         }
@@ -153,13 +151,11 @@ public class InteractionObject : MonoBehaviour
         if (destroyedByEarth)
         {
             GameObject earthObj = Instantiate(afterEarth, this.transform.position, this.transform.rotation);
-
-            /*
-            if (earthObj.GetComponent<Collider2D>() != null)
+          //  earthObj.transform.localScale = gameObject.transform.localScale;
+            /*if (earthObj.GetComponent<Collider2D>() != null)
             {
                 earthObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
-            }
-            */
+            }*/
             Destroy(this.gameObject);
 
         }
@@ -185,14 +181,12 @@ public class InteractionObject : MonoBehaviour
         {
 
             GameObject fireObj = Instantiate(afterFire, this.transform.position, this.transform.rotation);
-
-            /*
-            if(fireObj.GetComponent<Collider2D>() != null)
-            {
-                fireObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
-            }
-            */
-
+            //fireObj.transform.localScale = gameObject.transform.localScale;
+            /*    if(fireObj.GetComponent<Collider2D>() != null)
+                {
+                    fireObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
+                }
+    */
             Destroy(this.gameObject);
 
         }
@@ -218,13 +212,11 @@ public class InteractionObject : MonoBehaviour
         if (destroyedByWater)
         {
             GameObject waterObj = Instantiate(afterWater, transform.position, transform.rotation);
-            waterObj.transform.localScale = gameObject.transform.localScale;
-            /*
-            if (waterObj.GetComponent<Collider2D>() != null)
+           // waterObj.transform.localScale = gameObject.transform.localScale;
+          /*  if (waterObj.GetComponent<Collider2D>() != null)
             {
                 waterObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
-            }
-            */
+            }*/
             Destroy(this.gameObject);
 
         }
