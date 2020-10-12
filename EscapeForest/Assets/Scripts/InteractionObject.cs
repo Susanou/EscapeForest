@@ -36,6 +36,13 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private Signal onFireSignal;
     [SerializeField] private Signal onWaterSignal;
 
+    //Varient effect
+    [SerializeField] private bool isWaterToPit;
+    [SerializeField] private float yOffset;
+
+    //[SerializeField] private BooleanValue changePitColliderSize;
+
+
     private Animator animator;
     private Animator playerAnimator;
 
@@ -43,7 +50,8 @@ public class InteractionObject : MonoBehaviour
     private BasePlayer player;
 
     private void Start() {
-    
+
+
 
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
@@ -179,9 +187,27 @@ public class InteractionObject : MonoBehaviour
 
         if (destroyedByFire)
         {
+            Vector3 pos;
+            if (isWaterToPit)
+            {
+                pos = gameObject.transform.position + Vector3.up * yOffset;
+                Debug.Log(yOffset);
+            }
+            else
+            {
+                pos = this.transform.position;
+            }
 
-            GameObject fireObj = Instantiate(afterFire, this.transform.position, this.transform.rotation);
+            GameObject fireObj = Instantiate(afterFire, pos, this.transform.rotation);
 
+            if (isWaterToPit)
+            {
+                //TODO make this happen every time
+                Vector2 waterColliderSize = gameObject.GetComponent<BoxCollider2D>().size;
+                fireObj.GetComponent<BoxCollider2D>().size = waterColliderSize;
+                
+            }
+         
             //fireObj.transform.localScale = gameObject.transform.localScale;
             /*    if(fireObj.<Collider2D>() != null)
                 {
@@ -212,7 +238,18 @@ public class InteractionObject : MonoBehaviour
 
         if (destroyedByWater)
         {
-            GameObject waterObj = Instantiate(afterWater, transform.position, transform.rotation);
+            Vector3 pos;
+            if (isWaterToPit)
+            {
+                pos = gameObject.transform.position + Vector3.up * yOffset;
+                Debug.Log(yOffset);
+            }
+            else
+            {
+                pos = this.transform.position;
+            }
+
+            GameObject waterObj = Instantiate(afterWater, pos, transform.rotation);
            // waterObj.transform.localScale = gameObject.transform.localScale;
           /*  if (waterObj.GetComponent<Collider2D>() != null)
             {
