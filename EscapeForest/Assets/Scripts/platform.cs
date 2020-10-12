@@ -9,6 +9,7 @@ public class platform : MonoBehaviour
     public Transform startPos;
 
     Vector3 nextPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,6 @@ public class platform : MonoBehaviour
         if(transform.position == pos1.position)
         {
             nextPos = pos2.position;
-
-
         }
 
         if(transform.position == pos2.position)

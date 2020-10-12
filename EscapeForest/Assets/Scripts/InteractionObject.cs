@@ -34,8 +34,6 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private Signal onFireSignal;
     [SerializeField] private Signal onWaterSignal;
 
-
-
     private Animator animator;
     private Animator playerAnimator;
 
@@ -60,25 +58,6 @@ public class InteractionObject : MonoBehaviour
     private void OnMouseDown() {
         DoInteraction();
     }
-    /*
-    public void DoInteraction()
-    {
-        if (player.getCurrentElement() == BasePlayer.element.Air) {
-            Debug.Log("Air interaction");
-        }
-        else if (player.getCurrentElement() == BasePlayer.element.Water) {
-            Debug.Log("Water interaction");
-        }
-        else if (player.getCurrentElement() == BasePlayer.element.Fire) {
-            Debug.Log("Fire interaction");
-            gameObject.SetActive(false);
-        }
-        else if (player.getCurrentElement() == BasePlayer.element.Earth) {
-            Debug.Log("Earth interaction");
-        }
-
-    }
-    */
 
     public void DoInteraction()
     {
@@ -114,8 +93,11 @@ public class InteractionObject : MonoBehaviour
 
         if (gameObject.CompareTag("Door"))
         {
-            gameObject.transform.parent.gameObject.SetActive(false);
-            
+            if (KeyManager.km.HasKey())
+            {
+                KeyManager.km.UseKey();
+                gameObject.transform.parent.gameObject.SetActive(false);
+            }
         }
 
     }
