@@ -47,9 +47,12 @@ public class BasePlayer : MonoBehaviour
     [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
 
+    private bool airEnabled = false;
+    private bool earthEnabled = false;
+    private bool fireEnabled = false;
+    private bool waterEnabled = false;
     private void Start()
     {
-        elementsArray = elementArray;
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
         elementChanged.Raise();
@@ -143,8 +146,10 @@ public class BasePlayer : MonoBehaviour
             sanitySignal.Raise();
         }
 
-        usingElement.OnRightClick();
-        usingElement.OnLeftClickDrag(particle);
+        if(currentElement.RuntimeValue != element.None){
+            usingElement.OnRightClick();
+            usingElement.OnLeftClickDrag(particle);
+        }
     }
 
 
