@@ -92,13 +92,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1858649070748980598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: -10
-  sanityCostEarth: -5
-  sanityCostFire: 5
-  sanityCostWater: -20
+  sanityCostAir: 0
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: 0
   airAnimationLength: 0
   earthAnimationLength: 0
   fireAnimationLength: 0
@@ -109,9 +109,12 @@ MonoBehaviour:
   destroyedByWater: 0
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
-  afterFire: {fileID: 1062631193049285305, guid: 866ca2624f8bb4412b670a1958bed588,
-    type: 3}
+  afterFire: {fileID: 0}
   afterWater: {fileID: 0}
+  onAirSignal: {fileID: 0}
+  onEarthSignal: {fileID: 0}
+  onFireSignal: {fileID: 11400000, guid: f9b5002fadb300c47a263924694643e0, type: 2}
+  onWaterSignal: {fileID: 0}
 --- !u!70 &1858649070748980594
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
