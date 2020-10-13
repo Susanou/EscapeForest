@@ -44,7 +44,7 @@ public class InteractionObject : MonoBehaviour
     //[SerializeField] private BooleanValue changePitColliderSize;
     //private Transform sanityPopupPrefab = Resources.Load("SanityPopUpPrefab") as Transform;
 
-    [SerializeField] private Transform sanityPopupPrefab;
+    private GameObject sanityPopupPrefab;
 
 
     private TextMeshPro textMesh;
@@ -57,7 +57,7 @@ public class InteractionObject : MonoBehaviour
 
     private void Start() {
         //CreateSanityPopup(39);
-
+        sanityPopupPrefab = GameObject.FindGameObjectWithTag("SanityPopupPF");
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
@@ -297,7 +297,7 @@ public class InteractionObject : MonoBehaviour
 
             textMesh.SetText(cost.ToString());
 
-            Transform sanityPopupTransform = Instantiate(sanityPopupPrefab, gameObject.transform.position, Quaternion.identity);
+            Transform sanityPopupTransform = Instantiate(sanityPopupPrefab.transform, gameObject.transform.position, Quaternion.identity);
 
         }
     }
