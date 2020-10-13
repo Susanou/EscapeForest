@@ -47,10 +47,10 @@ public class BasePlayer : MonoBehaviour
     [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
 
-    private bool airEnabled = false;
-    private bool earthEnabled = false;
-    private bool fireEnabled = false;
-    private bool waterEnabled = false;
+    private bool airEnabled = true;
+    private bool earthEnabled = true;
+    private bool fireEnabled = true;
+    private bool waterEnabled = true;
     private void Start()
     {
         if(particle.isPlaying) particle.Stop();
