@@ -109,6 +109,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
+            Debug.Log(currentElement.RuntimeValue);
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2

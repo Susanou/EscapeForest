@@ -22,6 +22,8 @@ public class MoveObject : MonoBehaviour
         if (!moved)
         {
             transform.position = transform.position + Vector3.up * distance;
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = gameObject.transform.position + Vector3.up * 1.5f;
             moved = true;
         }
     }
@@ -30,4 +32,9 @@ public class MoveObject : MonoBehaviour
     {
         yield return null;
     }
+
+
+
+
+
 }
