@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Collections.Specialized;
+using System.Reflection;
 
 //Animation
 [RequireComponent(typeof(Animator))]
@@ -41,7 +42,12 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private float yOffset;
 
     //[SerializeField] private BooleanValue changePitColliderSize;
+    //private Transform sanityPopupPrefab = Resources.Load("SanityPopUpPrefab") as Transform;
 
+    [SerializeField] private Transform sanityPopupPrefab;
+
+
+    private TextMeshPro textMesh;
 
     private Animator animator;
     private Animator playerAnimator;
@@ -50,8 +56,7 @@ public class InteractionObject : MonoBehaviour
     private BasePlayer player;
 
     private void Start() {
-
-
+        //CreateSanityPopup(39);
 
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
@@ -66,6 +71,7 @@ public class InteractionObject : MonoBehaviour
 
     
     private void OnMouseDown() {
+        
         DoInteraction();
     }
 
@@ -283,10 +289,12 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
-    public void CreateSanityPopup(int sanityCost)
+    public void CreateSanityPopup(int cost)
     {
-        //This was omitted by accident somehow when Orion pushed so I'm leaving it blank for now cause I don't know
-        //what was in it
-    }
+        textMesh = sanityPopupPrefab.GetComponent<TextMeshPro>();
 
+        textMesh.SetText(cost.ToString());
+
+        Transform sanityPopupTransform = Instantiate(sanityPopupPrefab, gameObject.transform.position, Quaternion.identity);
+    }
 }
