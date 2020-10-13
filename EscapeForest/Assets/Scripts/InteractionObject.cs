@@ -269,7 +269,23 @@ public class InteractionObject : MonoBehaviour
 
     }
 
+    private void OnParticleCollision(GameObject other) {
+        
+        if(other.tag == "Magic"){
+            Debug.Log("Magic happened");
+            DoInteraction();
+        }
+    }
 
+    private void OnParticleTrigger(GameObject other) {
+
+        Debug.Log("trigger " + other.tag);
+
+        if(other.tag == "Magic"){
+            Debug.Log("Magic happened");
+            DoInteraction();
+        }
+    }
 
     public bool getDestroyedByAir()
     {
