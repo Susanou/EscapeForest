@@ -42,6 +42,15 @@ public class BasePlayer : MonoBehaviour
     private bool randomMovementEnabled = false;
     private bool randomElementEnabled = false;
 
+    private bool airEnabled = true;
+    private bool earthEnabled = true;
+    private bool fireEnabled = true;
+    private bool waterEnabled = true;
+
+    //Element variables
+
+    //private element currentElement = element.None;
+
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
     [SerializeField] private Element[] elementsArray = new Element[5];
@@ -53,6 +62,7 @@ public class BasePlayer : MonoBehaviour
     private bool waterEnabled = true;
     private void Start()
     {
+        elementsArray = elementArray;
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
         elementChanged.Raise();
