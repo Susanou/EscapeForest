@@ -10,7 +10,11 @@ public class Vine : MonoBehaviour
     void Start()
     {
         player = BasePlayer.instance;
-        lily.SetActive(false);
+        if(lily != null)
+        {
+            lily.SetActive(false);
+        }
+        
     }
     void OnMouseUp() // mouse click
 {
