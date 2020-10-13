@@ -56,13 +56,9 @@ public class BasePlayer : MonoBehaviour
     [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
 
-    private bool airEnabled = true;
-    private bool earthEnabled = true;
-    private bool fireEnabled = true;
-    private bool waterEnabled = true;
+
     private void Start()
     {
-        elementsArray = elementArray;
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
         elementChanged.Raise();
