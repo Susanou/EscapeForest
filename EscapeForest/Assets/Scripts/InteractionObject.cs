@@ -10,10 +10,10 @@ using System.Reflection;
 public class InteractionObject : MonoBehaviour
 
 {
-    [SerializeField] private int sanityCostAir;
-    [SerializeField] private int sanityCostEarth;
-    [SerializeField] private int sanityCostFire;
-    [SerializeField] private int sanityCostWater;
+    [SerializeField] private float sanityCostAir;
+    [SerializeField] private float sanityCostEarth;
+    [SerializeField] private float sanityCostFire;
+    [SerializeField] private float sanityCostWater;
 
     [SerializeField] private float airAnimationLength;
     [SerializeField] private float earthAnimationLength;
@@ -69,12 +69,6 @@ public class InteractionObject : MonoBehaviour
     private void Update()
     {
 
-    }
-
-    
-    private void OnMouseDown() {
-        
-        DoInteraction();
     }
 
     public void DoInteraction()
@@ -277,16 +271,6 @@ public class InteractionObject : MonoBehaviour
         }
     }
 
-    private void OnParticleTrigger(GameObject other) {
-
-        Debug.Log("trigger " + other.tag);
-
-        if(other.tag == "Magic"){
-            Debug.Log("Magic happened");
-            DoInteraction();
-        }
-    }
-
     public bool getDestroyedByAir()
     {
         return destroyedByAir;
@@ -307,7 +291,7 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
-    public void CreateSanityPopup(int cost)
+    public void CreateSanityPopup(float cost)
     {
 
         if (sanityPopupPrefab != null) {

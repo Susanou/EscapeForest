@@ -80,7 +80,7 @@ public class BasePlayer : MonoBehaviour
      * 
      */
 
-    public void addSanityOf(int amount)
+    public void addSanityOf(float amount)
     {
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
@@ -143,13 +143,13 @@ public class BasePlayer : MonoBehaviour
         //TODO: Remember to refer the following two ifs in actual release
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            addSanityOf(1);
+            addSanityOf(10);
             sanitySignal.Raise();
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            addSanityOf(-1);
+            addSanityOf(-10);
             sanitySignal.Raise();
         }
 
@@ -226,30 +226,33 @@ public class BasePlayer : MonoBehaviour
     {
         if(step == 0)
         {
-            //elementsArray = new Element[] {element.None, element.None, element.None, element.None};
+            currentElement.RuntimeValue = currentElement.initialValue;
             airEnabled = false;
             earthEnabled = false;
             fireEnabled = false;
             waterEnabled = false;
+            if(particle.isPlaying) particle.Stop();
+            elementChanged.Raise();
+            usingElement = elementsArray[(int)currentElement.RuntimeValue];
         }
         else if(step == 1)
         {
-            // elementsArray = new Element[] {elementArray[0], element.None, element.None, element.None};
+
             airEnabled = true;
         }
         else if(step == 2)
         {
-            // elementsArray = new Element[] {elementArray[0], elementArray[1], element.None, element.None};
+
             earthEnabled = true;
         }
         else if(step == 3)
         {
-            //elementsArray = new Element[] {elementArray[0], elementArray[1], elementArray[2], element.None};
+
             fireEnabled = true;
         }
         else if(step == 4)
         {
-            // elementsArray = elementArray;
+
             waterEnabled = true;
         }
 
