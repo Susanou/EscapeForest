@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4175183249530384035}
   - component: {fileID: 4175183249530384032}
   - component: {fileID: 4175183249530384033}
-  - component: {fileID: 4175183249530384094}
+  - component: {fileID: 1414869394344374627}
+  - component: {fileID: 1120361548}
   m_Layer: 0
   m_Name: Fan
   m_TagString: onAir
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4175183249530384095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 67.12, y: -0.67, z: 1.4375}
-  m_LocalScale: {x: 0.25518876, y: 0.3302064, z: 1}
+  m_LocalScale: {x: 0.14177552, y: 0.12606248, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,10 +94,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007997751, y: 0.011909485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,9 +108,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 8.917721, y: 10.023819}
   m_EdgeRadius: 0
---- !u!114 &4175183249530384094
+--- !u!114 &1414869394344374627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,14 +119,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4175183249530384095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sanityCostAir: 0
   sanityCostEarth: 0
   sanityCostFire: 0
   sanityCostWater: 0
-  airAnimationLength: 0
+  airAnimationLength: 1
   earthAnimationLength: 0
   fireAnimationLength: 0
   waterAnimationLength: 0
@@ -141,3 +142,25 @@ MonoBehaviour:
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+  isWaterToPit: 0
+  yOffset: 0
+  sanityPopupPrefab: {fileID: 0}
+--- !u!95 &1120361548
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175183249530384095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 7292065896283262468}
   - component: {fileID: 3075097376068878366}
   - component: {fileID: 3036955874284737162}
-  - component: {fileID: 6311938391702322094}
+  - component: {fileID: 4851366011334332585}
+  - component: {fileID: 6490177030519431456}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -113,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -13.166355}
@@ -129,7 +130,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 23.6795}
   m_EdgeRadius: 0
---- !u!114 &6311938391702322094
+--- !u!114 &4851366011334332585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,29 +139,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 8118723782395698402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sanityCostAir: 0
-  sanityCostEarth: -5
-  sanityCostFire: -10
-  sanityCostWater: 5
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: -10
   airAnimationLength: 0
   earthAnimationLength: 0
   fireAnimationLength: 0
   waterAnimationLength: 0
-  destroyedByAir: 0
+  destroyedByAir: 1
   destroyedByEarth: 0
   destroyedByFire: 1
-  destroyedByWater: 1
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 172781847999906241, guid: 7ea8747b0e7ec78419dc9f765c1bbaf4,
+  destroyedByWater: 0
+  afterAir: {fileID: 8827740888653079475, guid: 2872edcf5eaa93b4ba9541f0ea94b1b1,
     type: 3}
+  afterEarth: {fileID: 0}
   afterFire: {fileID: 3788324435658832231, guid: 5524a0956a6406545a9cca067a084b2b,
     type: 3}
-  afterWater: {fileID: 2868405883865298895, guid: 2872edcf5eaa93b4ba9541f0ea94b1b1,
-    type: 3}
+  afterWater: {fileID: 0}
   onAirSignal: {fileID: 0}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+--- !u!114 &6490177030519431456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118723782395698402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c8ab6b833f3ee6448602154649dc0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetX: 0
+  resetY: 0
+  resetZ: 0

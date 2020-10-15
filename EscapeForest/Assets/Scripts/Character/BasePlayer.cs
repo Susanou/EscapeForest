@@ -23,7 +23,7 @@ public class BasePlayer : MonoBehaviour
         _instance = this;
     }
 
-    public enum element { None,Air,Earth,Fire,Water};
+    public enum element {Air, Earth, Fire, Water, None};
     public ParticleSystem particle;
 
     public FloatValue currentSanity;
@@ -42,19 +42,27 @@ public class BasePlayer : MonoBehaviour
     private bool randomMovementEnabled = false;
     private bool randomElementEnabled = false;
 
+    private bool airEnabled = true;
+    private bool earthEnabled = true;
+    private bool fireEnabled = true;
+    private bool waterEnabled = true;
+
     //Element variables
 
     //private element currentElement = element.None;
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
-    [SerializeField] private Element[] elementsArray = new Element[4];
+    [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
+
 
     private void Start()
     {
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
+        elementChanged.Raise();
+        usingElement = elementsArray[(int)currentElement.RuntimeValue];
     }
 
     public element getCurrentElement()
@@ -72,7 +80,7 @@ public class BasePlayer : MonoBehaviour
      * 
      */
 
-    public void addSanityOf(int amount)
+    public void addSanityOf(float amount)
     {
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
@@ -80,7 +88,7 @@ public class BasePlayer : MonoBehaviour
         }
         else if (currentSanity.RuntimeValue + amount < 0)
         {
-            currentSanity.RuntimeValue = 0;
+            currentSanity.RuntimeValue = currentSanity.initialValue;
             SceneManager.LoadScene("GameOver");
         }
         else
@@ -94,7 +102,7 @@ public class BasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && waterEnabled)
         {
             currentElement.RuntimeValue = (element)Random.Range(0, 5);
             usingElement = elementsArray[(int)currentElement.RuntimeValue];
@@ -102,28 +110,29 @@ public class BasePlayer : MonoBehaviour
         }
 
  
-        if (Input.GetKeyDown(inputKeyCodes[0])) // Air = 1
+        if (Input.GetKeyDown(inputKeyCodes[0]) && airEnabled) // Air = 1
         {
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
+            Debug.Log(currentElement.RuntimeValue);
 
         }
-        else if (Input.GetKeyDown(inputKeyCodes[1])) // Earth = 2
+        else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2
         {
             currentElement.RuntimeValue = element.Earth;
             usingElement = elementsArray[1];
             elementChanged.Raise();
 
         }
-        else if (Input.GetKeyDown(inputKeyCodes[2])) // Fire = 3
+        else if (Input.GetKeyDown(inputKeyCodes[2]) && fireEnabled) // Fire = 3
         {
             currentElement.RuntimeValue = element.Fire;
             usingElement = elementsArray[2];
             elementChanged.Raise();
 
         }
-        else if (Input.GetKeyDown(inputKeyCodes[3])) // Water = 4
+        else if (Input.GetKeyDown(inputKeyCodes[3]) && waterEnabled) // Water = 4
         {
             currentElement.RuntimeValue = element.Water;
             usingElement = elementsArray[3];
@@ -134,18 +143,20 @@ public class BasePlayer : MonoBehaviour
         //TODO: Remember to refer the following two ifs in actual release
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            addSanityOf(1);
+            addSanityOf(10);
             sanitySignal.Raise();
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            addSanityOf(-1);
+            addSanityOf(-10);
             sanitySignal.Raise();
         }
 
-        usingElement.OnRightClick();
-        usingElement.OnLeftClickDrag(particle);
+        if(currentElement.RuntimeValue != element.None){
+            usingElement.OnRightClick();
+            usingElement.OnLeftClickDrag(particle);
+        }
     }
 
 
@@ -188,26 +199,6 @@ public class BasePlayer : MonoBehaviour
             Debug.Log("Normal elements");
         }
 
-
-
-      /*  //Scene changes at sanity thresholds 
-        if (currentSanity <= 25)
-        {
-            EventManager.underQuarterEventTrigger();
-        }
-        else if (currentSanity <= 50)
-        {
-            EventManager.underHalfEventTrigger();
-        }
-        else if(currentSanity <= 75)
-        {
-            EventManager.underThreeFourthsEventTrigger();
-        }
-        else
-        {
-            EventManager.fullSanityEventTrigger();
-        }*/
-
     }
 
     private void resetInputKeyCodes(bool random)
@@ -227,5 +218,43 @@ public class BasePlayer : MonoBehaviour
                 inputKeyCodes[i] = temp;
             }
         }
+    }
+
+
+
+    public void TutorialMode(int step)
+    {
+        if(step == 0)
+        {
+            currentElement.RuntimeValue = currentElement.initialValue;
+            airEnabled = false;
+            earthEnabled = false;
+            fireEnabled = false;
+            waterEnabled = false;
+            if(particle.isPlaying) particle.Stop();
+            elementChanged.Raise();
+            usingElement = elementsArray[(int)currentElement.RuntimeValue];
+        }
+        else if(step == 1)
+        {
+
+            airEnabled = true;
+        }
+        else if(step == 2)
+        {
+
+            earthEnabled = true;
+        }
+        else if(step == 3)
+        {
+
+            fireEnabled = true;
+        }
+        else if(step == 4)
+        {
+
+            waterEnabled = true;
+        }
+
     }
 }

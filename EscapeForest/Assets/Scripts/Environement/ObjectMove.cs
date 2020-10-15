@@ -33,6 +33,11 @@ public class ObjectMove : MonoBehaviour
            {
             toMove.transform.position += Vector3.up*distance;
            }
+           if(player.getCurrentElement() == BasePlayer.element.Water)
+           {
+               distance = distance/2;
+               toMove.transform.position += Vector3.up*distance;
+           }
         }
         
         if(right == true)

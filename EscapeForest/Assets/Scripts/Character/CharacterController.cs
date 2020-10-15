@@ -72,12 +72,24 @@ public class CharacterController : MonoBehaviour
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
             //isJumping = false;
+            animator.SetBool("walking", true);
+            animator.SetBool("left", true);
+            animator.SetBool("right", false);
         }
+
         if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+            animator.SetBool("walking", true);
+            animator.SetBool("right", true);
+            animator.SetBool("left", false);
             //isJumping = false;
         }
+        else
+        {
+            animator.SetBool("walking", false);
+        }
+
     }
 
     public void resetInputKeyCodes(bool random)

@@ -10,7 +10,7 @@ public class SanityBar : MonoBehaviour
 
     public void Start()
     {
-        slider.value = playerScript.getSanity();
+        slider.value = GameObject.FindGameObjectWithTag("Player").GetComponent<BasePlayer>().getSanity();
     }
 
     public void setSanity(float sanity)

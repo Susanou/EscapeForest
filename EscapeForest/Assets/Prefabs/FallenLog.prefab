@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1858649070748980599}
   - component: {fileID: 1858649070748980593}
   - component: {fileID: 1858649070748980594}
+  - component: {fileID: 9061664579494277296}
   m_Layer: 0
   m_Name: FallenLog
   m_TagString: onFire
@@ -92,13 +93,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1858649070748980598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68aa93847f62034e8208683e146dc2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: -10
-  sanityCostEarth: -5
-  sanityCostFire: 5
-  sanityCostWater: -20
+  sanityCostAir: 0
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: 0
   airAnimationLength: 0
   earthAnimationLength: 0
   fireAnimationLength: 0
@@ -109,9 +110,12 @@ MonoBehaviour:
   destroyedByWater: 0
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
-  afterFire: {fileID: 1062631193049285305, guid: 866ca2624f8bb4412b670a1958bed588,
-    type: 3}
+  afterFire: {fileID: 0}
   afterWater: {fileID: 0}
+  onAirSignal: {fileID: 0}
+  onEarthSignal: {fileID: 0}
+  onFireSignal: {fileID: 11400000, guid: f9b5002fadb300c47a263924694643e0, type: 2}
+  onWaterSignal: {fileID: 0}
 --- !u!70 &1858649070748980594
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -128,3 +132,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.060526192, y: -0.24213795}
   m_Size: {x: 7.5296392, y: 6.186926}
   m_Direction: 1
+--- !u!95 &9061664579494277296
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858649070748980598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
