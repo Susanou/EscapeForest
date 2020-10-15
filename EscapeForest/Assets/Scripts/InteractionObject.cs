@@ -10,10 +10,10 @@ using System.Reflection;
 public class InteractionObject : MonoBehaviour
 
 {
-    [SerializeField] private int sanityCostAir;
-    [SerializeField] private int sanityCostEarth;
-    [SerializeField] private int sanityCostFire;
-    [SerializeField] private int sanityCostWater;
+    [SerializeField] private float sanityCostAir;
+    [SerializeField] private float sanityCostEarth;
+    [SerializeField] private float sanityCostFire;
+    [SerializeField] private float sanityCostWater;
 
     [SerializeField] private float airAnimationLength;
     [SerializeField] private float earthAnimationLength;
@@ -58,6 +58,8 @@ public class InteractionObject : MonoBehaviour
     private void Start() {
         //CreateSanityPopup(39);
 
+
+
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
@@ -67,12 +69,6 @@ public class InteractionObject : MonoBehaviour
     private void Update()
     {
 
-    }
-
-    
-    private void OnMouseDown() {
-        
-        DoInteraction();
     }
 
     public void DoInteraction()
@@ -267,7 +263,13 @@ public class InteractionObject : MonoBehaviour
 
     }
 
-
+    private void OnParticleCollision(GameObject other) {
+        
+        if(other.tag == "Magic"){
+            Debug.Log("Magic happened");
+            DoInteraction();
+        }
+    }
 
     public bool getDestroyedByAir()
     {
@@ -289,7 +291,7 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
-    public void CreateSanityPopup(int cost)
+    public void CreateSanityPopup(float cost)
     {
 
         if (sanityPopupPrefab != null) {

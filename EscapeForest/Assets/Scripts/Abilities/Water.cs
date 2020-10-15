@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Water : Element
 {
-
-    [SerializeField] private ParticleSystem waterGun;
-    [SerializeField] private ParticleSystem waterBall;
-    [SerializeField] private GameObject light;
     private Rigidbody2D player;
 
     private void Start() {
@@ -16,7 +12,7 @@ public class Water : Element
     }
 
 
-
+    //TODO check 2nd ability
     //change state of object
     public override void OnRightClick() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,12 +25,13 @@ public class Water : Element
     }
     //water gun
     public override void OnLeftClickDrag(ParticleSystem particle) {
-        if (Input.GetMouseButton(0)) {
-            waterGun.Play();
+        if (Input.GetMouseButtonDown(0)) {
+            if(!particle.isPlaying) particle.Play();
         }
 
         if (Input.GetMouseButtonUp(0)) {
-            waterGun.Play();
+            if(particle.isPlaying) particle.Stop();
+            particle.Clear();
         }
     }
     //fireball
