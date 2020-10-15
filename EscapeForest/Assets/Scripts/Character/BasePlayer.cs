@@ -42,14 +42,23 @@ public class BasePlayer : MonoBehaviour
     private bool randomMovementEnabled = false;
     private bool randomElementEnabled = false;
 
+    private bool airEnabled = true;
+    private bool earthEnabled = true;
+    private bool fireEnabled = true;
+    private bool waterEnabled = true;
+
+    //Element variables
+
+    //private element currentElement = element.None;
+
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
     [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
 
+
     private void Start()
     {
-        elementsArray = elementArray;
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
         elementChanged.Raise();
@@ -71,7 +80,7 @@ public class BasePlayer : MonoBehaviour
      * 
      */
 
-    public void addSanityOf(int amount)
+    public void addSanityOf(float amount)
     {
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
@@ -106,6 +115,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
+            Debug.Log(currentElement.RuntimeValue);
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2
@@ -133,18 +143,20 @@ public class BasePlayer : MonoBehaviour
         //TODO: Remember to refer the following two ifs in actual release
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            addSanityOf(1);
+            addSanityOf(10);
             sanitySignal.Raise();
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            addSanityOf(-1);
+            addSanityOf(-10);
             sanitySignal.Raise();
         }
 
-        usingElement.OnRightClick();
-        usingElement.OnLeftClickDrag(particle);
+        if(currentElement.RuntimeValue != element.None){
+            usingElement.OnRightClick();
+            usingElement.OnLeftClickDrag(particle);
+        }
     }
 
 
@@ -214,30 +226,33 @@ public class BasePlayer : MonoBehaviour
     {
         if(step == 0)
         {
-            //elementsArray = new Element[] {element.None, element.None, element.None, element.None};
+            currentElement.RuntimeValue = currentElement.initialValue;
             airEnabled = false;
             earthEnabled = false;
             fireEnabled = false;
             waterEnabled = false;
+            if(particle.isPlaying) particle.Stop();
+            elementChanged.Raise();
+            usingElement = elementsArray[(int)currentElement.RuntimeValue];
         }
         else if(step == 1)
         {
-            // elementsArray = new Element[] {elementArray[0], element.None, element.None, element.None};
+
             airEnabled = true;
         }
         else if(step == 2)
         {
-            // elementsArray = new Element[] {elementArray[0], elementArray[1], element.None, element.None};
+
             earthEnabled = true;
         }
         else if(step == 3)
         {
-            //elementsArray = new Element[] {elementArray[0], elementArray[1], elementArray[2], element.None};
+
             fireEnabled = true;
         }
         else if(step == 4)
         {
-            // elementsArray = elementArray;
+
             waterEnabled = true;
         }
 

@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Collections.Specialized;
+using System.Reflection;
 
 //Animation
 [RequireComponent(typeof(Animator))]
 public class InteractionObject : MonoBehaviour
 
 {
-    [SerializeField] private int sanityCostAir;
-    [SerializeField] private int sanityCostEarth;
-    [SerializeField] private int sanityCostFire;
-    [SerializeField] private int sanityCostWater;
+    [SerializeField] private float sanityCostAir;
+    [SerializeField] private float sanityCostEarth;
+    [SerializeField] private float sanityCostFire;
+    [SerializeField] private float sanityCostWater;
 
     [SerializeField] private float airAnimationLength;
     [SerializeField] private float earthAnimationLength;
@@ -41,7 +42,12 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private float yOffset;
 
     //[SerializeField] private BooleanValue changePitColliderSize;
+    //private Transform sanityPopupPrefab = Resources.Load("SanityPopUpPrefab") as Transform;
 
+    [SerializeField] private Transform sanityPopupPrefab;
+
+
+    private TextMeshPro textMesh;
 
     private Animator animator;
     private Animator playerAnimator;
@@ -50,6 +56,7 @@ public class InteractionObject : MonoBehaviour
     private BasePlayer player;
 
     private void Start() {
+        //CreateSanityPopup(39);
 
 
 
@@ -62,11 +69,6 @@ public class InteractionObject : MonoBehaviour
     private void Update()
     {
 
-    }
-
-    
-    private void OnMouseDown() {
-        DoInteraction();
     }
 
     public void DoInteraction()
@@ -261,7 +263,13 @@ public class InteractionObject : MonoBehaviour
 
     }
 
-
+    private void OnParticleCollision(GameObject other) {
+        
+        if(other.tag == "Magic"){
+            Debug.Log("Magic happened");
+            DoInteraction();
+        }
+    }
 
     public bool getDestroyedByAir()
     {
@@ -283,10 +291,16 @@ public class InteractionObject : MonoBehaviour
         return destroyedByWater;
     }
 
-    public void CreateSanityPopup(int sanityCost)
+    public void CreateSanityPopup(float cost)
     {
-        //This was omitted by accident somehow when Orion pushed so I'm leaving it blank for now cause I don't know
-        //what was in it
-    }
 
+        if (sanityPopupPrefab != null) {
+            textMesh = sanityPopupPrefab.GetComponent<TextMeshPro>();
+
+            textMesh.SetText(cost.ToString());
+
+            Transform sanityPopupTransform = Instantiate(sanityPopupPrefab, gameObject.transform.position, Quaternion.identity);
+
+        }
+    }
 }
