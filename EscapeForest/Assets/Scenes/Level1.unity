@@ -2919,6 +2919,21 @@ PrefabInstance:
       propertyPath: destroyedByAir
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7292065896283262468, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2933,6 +2948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118723782395698402, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764, type: 3}
@@ -3387,7 +3407,6 @@ MonoBehaviour:
   onWaterSignal: {fileID: 0}
   isWaterToPit: 0
   yOffset: 0
-  sanityPopupPrefab: {fileID: 0}
 --- !u!4 &1042509405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
@@ -3906,15 +3925,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5854637553817919401, guid: ab9236deeb2b44643a6c21081ca76b3b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103754507822573009, guid: ab9236deeb2b44643a6c21081ca76b3b,
+        type: 3}
+      propertyPath: m_Mass
+      value: 7.789584
+      objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.67
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.37
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
@@ -3981,7 +4010,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9103754507843819865, guid: ab9236deeb2b44643a6c21081ca76b3b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab9236deeb2b44643a6c21081ca76b3b, type: 3}
 --- !u!1001 &1174865128
 PrefabInstance:
@@ -5312,7 +5342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1510758275
 Transform:
   m_ObjectHideFlags: 0
@@ -5776,6 +5806,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.19154318
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -6526,8 +6581,6 @@ MonoBehaviour:
   onWaterSignal: {fileID: 0}
   isWaterToPit: 0
   yOffset: 0
-  sanityPopupPrefab: {fileID: 6385026809278437989, guid: d6ade49bec951a64c978a9d41b98e27c,
-    type: 3}
 --- !u!95 &1971394537
 Animator:
   serializedVersion: 3
@@ -6912,6 +6965,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175723311020655966, guid: f4f557e16d4381d49916d112df0dd9b4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175723311020655966, guid: f4f557e16d4381d49916d112df0dd9b4,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7658007835880514218, guid: f4f557e16d4381d49916d112df0dd9b4,
         type: 3}

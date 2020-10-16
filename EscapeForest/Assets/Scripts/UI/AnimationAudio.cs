@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationAudio : StateMachineBehaviour
 {
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     public AudioClip audioClip;
 
     public void playClip()
@@ -16,6 +16,9 @@ public class AnimationAudio : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
+        audioSource = audioSource.GetComponentInParent(typeof(AudioSource)) as AudioSource;
+
         playClip();        
     }
 
