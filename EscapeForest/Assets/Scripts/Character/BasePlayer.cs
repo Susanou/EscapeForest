@@ -23,7 +23,7 @@ public class BasePlayer : MonoBehaviour
         _instance = this;
     }
 
-    public enum element { None,Air,Earth,Fire,Water};
+    public enum element {Air, Earth, Fire, Water, None};
     public ParticleSystem particle;
 
     public FloatValue currentSanity;
@@ -53,15 +53,16 @@ public class BasePlayer : MonoBehaviour
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
 
-    [SerializeField] private Element[] elementArray = new Element[4];
-    private Element[] elementsArray = new Element[4];
+    [SerializeField] private Element[] elementsArray = new Element[5];
     private Element usingElement;
+
 
     private void Start()
     {
-        elementsArray = elementArray;
         if(particle.isPlaying) particle.Stop();
         sanityBar.setSanity(this.getSanity());
+        elementChanged.Raise();
+        usingElement = elementsArray[(int)currentElement.RuntimeValue];
     }
 
     public element getCurrentElement()
@@ -79,7 +80,7 @@ public class BasePlayer : MonoBehaviour
      * 
      */
 
-    public void addSanityOf(int amount)
+    public void addSanityOf(float amount)
     {
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
@@ -87,7 +88,7 @@ public class BasePlayer : MonoBehaviour
         }
         else if (currentSanity.RuntimeValue + amount < 0)
         {
-            currentSanity.RuntimeValue = 0;
+            currentSanity.RuntimeValue = currentSanity.initialValue;
             SceneManager.LoadScene("GameOver");
         }
         else
@@ -114,6 +115,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
+            Debug.Log(currentElement.RuntimeValue);
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2
@@ -141,18 +143,20 @@ public class BasePlayer : MonoBehaviour
         //TODO: Remember to refer the following two ifs in actual release
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            addSanityOf(1);
+            addSanityOf(10);
             sanitySignal.Raise();
 
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            addSanityOf(-1);
+            addSanityOf(-10);
             sanitySignal.Raise();
         }
 
-        usingElement.OnRightClick();
-        usingElement.OnLeftClickDrag(particle);
+        if(currentElement.RuntimeValue != element.None){
+            usingElement.OnRightClick();
+            usingElement.OnLeftClickDrag(particle);
+        }
     }
 
 
@@ -195,26 +199,6 @@ public class BasePlayer : MonoBehaviour
             Debug.Log("Normal elements");
         }
 
-
-
-      /*  //Scene changes at sanity thresholds 
-        if (currentSanity <= 25)
-        {
-            EventManager.underQuarterEventTrigger();
-        }
-        else if (currentSanity <= 50)
-        {
-            EventManager.underHalfEventTrigger();
-        }
-        else if(currentSanity <= 75)
-        {
-            EventManager.underThreeFourthsEventTrigger();
-        }
-        else
-        {
-            EventManager.fullSanityEventTrigger();
-        }*/
-
     }
 
     private void resetInputKeyCodes(bool random)
@@ -242,30 +226,33 @@ public class BasePlayer : MonoBehaviour
     {
         if(step == 0)
         {
-            //elementsArray = new Element[] {element.None, element.None, element.None, element.None};
+            currentElement.RuntimeValue = currentElement.initialValue;
             airEnabled = false;
             earthEnabled = false;
             fireEnabled = false;
             waterEnabled = false;
+            if(particle.isPlaying) particle.Stop();
+            elementChanged.Raise();
+            usingElement = elementsArray[(int)currentElement.RuntimeValue];
         }
         else if(step == 1)
         {
-            // elementsArray = new Element[] {elementArray[0], element.None, element.None, element.None};
+
             airEnabled = true;
         }
         else if(step == 2)
         {
-            // elementsArray = new Element[] {elementArray[0], elementArray[1], element.None, element.None};
+
             earthEnabled = true;
         }
         else if(step == 3)
         {
-            //elementsArray = new Element[] {elementArray[0], elementArray[1], elementArray[2], element.None};
+
             fireEnabled = true;
         }
         else if(step == 4)
         {
-            // elementsArray = elementArray;
+
             waterEnabled = true;
         }
 
