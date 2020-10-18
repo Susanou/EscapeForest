@@ -79,4 +79,6 @@ public class platform : MonoBehaviour
             collision.collider.transform.SetParent(null);
         }
     }
+
+
 }
