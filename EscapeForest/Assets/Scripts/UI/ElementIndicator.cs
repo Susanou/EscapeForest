@@ -7,9 +7,11 @@ public class ElementIndicator : MonoBehaviour
 {
     private Image image;
     [SerializeField]  private  Sprite[] spritesImages = new Sprite[5];
+    [SerializeField] private Material[] elementMaterials = new Material[5];
 
     private Dictionary<BasePlayer.element, Color> colors = new Dictionary<BasePlayer.element, Color>();
     private Dictionary<BasePlayer.element, Sprite> sprites = new Dictionary<BasePlayer.element, Sprite>();
+    private Dictionary<BasePlayer.element, Material> materials = new Dictionary<BasePlayer.element, Material>();
 
     //Events must be subscribed += and unsubscribed to -= on enable and disable to prevent memory errors
     private void OnEnable()
@@ -30,6 +32,12 @@ public class ElementIndicator : MonoBehaviour
         sprites.Add(BasePlayer.element.Fire, spritesImages[3]);
         sprites.Add(BasePlayer.element.Water, spritesImages[4]);
 
+        materials.Add(BasePlayer.element.None, elementMaterials[0]);
+        materials.Add(BasePlayer.element.Air, elementMaterials[1]);
+        materials.Add(BasePlayer.element.Earth, elementMaterials[2]);
+        materials.Add(BasePlayer.element.Fire, elementMaterials[3]);
+        materials.Add(BasePlayer.element.Water, elementMaterials[4]);
+
 
         image = this.GetComponent<Image>();
         image.sprite = sprites[0];
@@ -43,5 +51,7 @@ public class ElementIndicator : MonoBehaviour
         image.sprite = sprites[player.currentElement.RuntimeValue];
         //player.particle.startColor = colors[player.getCurrentElement()];
         player.particle.startColor = colors[player.currentElement.RuntimeValue];
+
+        player.particle.GetComponent<ParticleSystemRenderer>().material = materials[player.currentElement.RuntimeValue];
     }
 }
