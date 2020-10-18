@@ -47,9 +47,8 @@ public class BasePlayer : MonoBehaviour
     private bool fireEnabled = true;
     private bool waterEnabled = true;
 
-    //Character scaling and camera positioning
-    private Vector3 characterScale = new Vector3(0.3f, 0.3f, 0.3f);
-    private Vector3 cameraPos = new Vector3(-2.257f, 0.2021798f, -50f);
+    //Character scaling 
+    private Vector3 characterScale = new Vector3(0.3f,0.3f,0.3f);
 
     //private element currentElement = element.None;
 
@@ -62,9 +61,8 @@ public class BasePlayer : MonoBehaviour
     private void Start()
     {
         //Constant size
-        //gameObject.transform.localScale = characterScale;
-        //Camera position
-       // Camera.main.transform.position = cameraPos;
+        gameObject.transform.localScale = characterScale;
+
 
 
         usingElement = elementsArray[(int)currentElement.RuntimeValue];
