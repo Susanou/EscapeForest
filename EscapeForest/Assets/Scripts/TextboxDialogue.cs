@@ -42,7 +42,7 @@ public class TextboxDialogue : MonoBehaviour
 			nameText.text = names[convoComponent];
 			dialogueText.text = dialogue[convoComponent];
 
-			if (Input.GetButtonDown("Fire2")) //by default the left alt key
+			if (Input.GetKeyDown(KeyCode.F))
 			{
 				convoComponent++;
 			}
