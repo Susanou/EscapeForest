@@ -74,7 +74,6 @@ public class InteractionObject : MonoBehaviour
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
             CreateSanityPopup(sanityCostAir);
-
             StartCoroutine(OnAir());
             
 
@@ -94,11 +93,8 @@ public class InteractionObject : MonoBehaviour
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
-
             CreateSanityPopup(sanityCostWater);
             StartCoroutine(OnWater());
-           
-
         }
 
         if (gameObject.CompareTag("Door"))
