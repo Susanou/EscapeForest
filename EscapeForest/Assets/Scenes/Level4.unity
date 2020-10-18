@@ -3709,6 +3709,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.767588
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
+        type: 3}
+      propertyPath: m_Radius
+      value: 6.9828806
+      objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334765, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: destroyedByEarth
@@ -4664,9 +4674,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toMove: {fileID: 360947531}
+  fan: {fileID: 878286069}
   up: 1
   right: 0
-  distance: 5
+  distance: 1
 --- !u!58 &878286074
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4714,7 +4725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
+  sanityCostAir: 30
   sanityCostEarth: 10
   sanityCostFire: 10
   sanityCostWater: 0
@@ -4730,7 +4741,7 @@ MonoBehaviour:
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
   afterWater: {fileID: 0}
-  onAirSignal: {fileID: 0}
+  onAirSignal: {fileID: 11400000, guid: aea8d2e96a76d5447ac35beb399b53ef, type: 2}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
@@ -7556,17 +7567,17 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 276.37
+      value: 285.1
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.82
+      value: 9.9
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 164.02057
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -7611,12 +7622,12 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.8588734
+      value: 4.175465
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9504584
+      value: 2.9597974
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -9168,6 +9179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toMove: {fileID: 1861254642}
+  fan: {fileID: 0}
   up: 0
   right: 1
   distance: 10
@@ -10561,7 +10573,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -10613,7 +10625,8 @@ MonoBehaviour:
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
+  afterWater: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
   onAirSignal: {fileID: 0}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}

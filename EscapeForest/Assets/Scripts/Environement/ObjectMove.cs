@@ -7,9 +7,10 @@ public class ObjectMove : MonoBehaviour
 {
     
     [SerializeField] private GameObject toMove;
+    [SerializeField] private GameObject fan;
     [SerializeField] private bool up;
     [SerializeField] private bool right;
-    [SerializeField] private int distance;
+    [SerializeField] private float distance;
     
     private BasePlayer player;
     
@@ -18,13 +19,15 @@ public class ObjectMove : MonoBehaviour
     {
         player = BasePlayer.instance;
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
     }
-    
+   
+   /*
     private void OnMouseDown()
     {
         if(up == true)
@@ -52,5 +55,36 @@ public class ObjectMove : MonoBehaviour
             
         }
    
+    }
+    
+    */
+    
+    private void OnParticleCollision()
+    {
+        if(up == true)
+        {
+            if (player.getCurrentElement() == BasePlayer.element.Air)
+            {
+                toMove.transform.position += Vector3.up*distance;
+            }
+            if(player.getCurrentElement() == BasePlayer.element.Water)
+            {
+                float newDistance = distance/2;
+                toMove.transform.position += Vector3.up*distance;
+            }
+        }
+        
+        if(right == true)
+        {
+            if (player.getCurrentElement() == BasePlayer.element.Air)
+            {
+                toMove.transform.position += Vector3.right*distance;
+                player.transform.position += Vector3.right*distance;
+                SceneManager.LoadScene("Victory");
+                
+            }
+            
+        }
+        
     }
 }
