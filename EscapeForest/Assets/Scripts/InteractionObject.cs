@@ -198,9 +198,10 @@ public class InteractionObject : MonoBehaviour
 
             if (isWaterToPit)
             {
-                //TODO make this happen every time
-                Vector2 waterColliderSize = gameObject.GetComponent<BoxCollider2D>().size;
-                fireObj.GetComponent<BoxCollider2D>().size = waterColliderSize;
+                Vector3 waterColliderSize = gameObject.GetComponent<BoxCollider2D>().size;
+                Debug.Log(waterColliderSize);
+                fireObj.GetComponent<BoxCollider2D>().size = new Vector3(36, 12, 0);//waterColliderSize ; //36,12,0
+                Debug.Log(fireObj.GetComponent<BoxCollider2D>().size);
                 
             }
          
@@ -238,6 +239,7 @@ public class InteractionObject : MonoBehaviour
             if (isWaterToPit)
             {
                 pos = gameObject.transform.position + Vector3.up * yOffset;
+
                 Debug.Log(yOffset);
             }
             else
@@ -246,11 +248,11 @@ public class InteractionObject : MonoBehaviour
             }
 
             GameObject waterObj = Instantiate(afterWater, pos, transform.rotation);
-           // waterObj.transform.localScale = gameObject.transform.localScale;
-          /*  if (waterObj.GetComponent<Collider2D>() != null)
+
+            if (isWaterToPit)
             {
-                waterObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
-            }*/
+                waterObj.transform.localScale = new Vector3(0.7124388f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+            }
             Destroy(this.gameObject);
 
         }
