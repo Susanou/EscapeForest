@@ -4663,6 +4663,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 8203816027139758341, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8203816027704915020, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4673,6 +4678,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.24
       objectReference: {fileID: 0}
+    - target: {fileID: 8203816027704915023, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8203816027903029400, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -4682,6 +4692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203816027903029403, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8203816028732953224, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
@@ -5522,7 +5537,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003569007, y: -0.08181593}
+  m_Offset: {x: 0.00036022067, y: -0.08181593}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5533,7 +5548,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9932747, y: 0.5563682}
+  m_Size: {x: 1.5633783, y: 0.5563682}
   m_EdgeRadius: 0
 --- !u!4 &834929518 stripped
 Transform:
@@ -10251,6 +10266,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682379849}
   m_CullTransparentMesh: 0
+--- !u!1 &1685505922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8203816028732953228, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+    type: 3}
+  m_PrefabInstance: {fileID: 1376472754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1685505927
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685505922}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0046463013, y: -0.111769855}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8, y: 0.72}
+    newSize: {x: 1.8, y: 0.72}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.567688, y: 0.506575}
+  m_EdgeRadius: 0
 --- !u!4 &1696324539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
@@ -10971,6 +11018,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingPlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8203816027139758341, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8203816027704915020, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10981,6 +11033,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.24
       objectReference: {fileID: 0}
+    - target: {fileID: 8203816027704915023, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8203816027903029400, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -10990,6 +11047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203816027903029403, guid: 7a22ec46bec087944bf6fa38e7d50b26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8203816028732953224, guid: 7a22ec46bec087944bf6fa38e7d50b26,
         type: 3}
