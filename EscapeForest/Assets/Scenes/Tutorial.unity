@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 138683697}
   - component: {fileID: 138683696}
   - component: {fileID: 138683698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AirGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,17 +1193,17 @@ PrefabInstance:
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: sanityCostEarth
-      value: -5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: sanityCostFire
-      value: -10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: sanityCostWater
-      value: 5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -2362,6 +2362,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4175183249530384095, guid: a88a0c3e47934ac47a52c714096ec49a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88a0c3e47934ac47a52c714096ec49a, type: 3}
 --- !u!1001 &546618976
@@ -2522,7 +2527,7 @@ GameObject:
   - component: {fileID: 559842732}
   - component: {fileID: 559842731}
   - component: {fileID: 559842734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3350,6 +3355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan
       objectReference: {fileID: 0}
+    - target: {fileID: 4175183249530384095, guid: a88a0c3e47934ac47a52c714096ec49a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88a0c3e47934ac47a52c714096ec49a, type: 3}
 --- !u!1 &708864412
@@ -3914,7 +3924,7 @@ GameObject:
   - component: {fileID: 795663140}
   - component: {fileID: 795663139}
   - component: {fileID: 795663141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EarthGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5160,10 +5170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 5
+  sanityCostAir: 0.5
   sanityCostEarth: 0
-  sanityCostFire: -15
-  sanityCostWater: -5
+  sanityCostFire: -1.5
+  sanityCostWater: -0.5
   airAnimationLength: 2
   earthAnimationLength: 2
   fireAnimationLength: 2
@@ -6951,7 +6961,7 @@ GameObject:
   - component: {fileID: 1252714120}
   - component: {fileID: 1252714119}
   - component: {fileID: 1252714118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaterGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7634,12 +7644,12 @@ PrefabInstance:
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: sanityCostAir
-      value: -5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: sanityCostEarth
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
@@ -7891,7 +7901,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.60389817
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5257909549622623738, guid: 8c891840944774ada9429cbfe24d2acc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c891840944774ada9429cbfe24d2acc, type: 3}
 --- !u!1 &1493148775 stripped
 GameObject:
@@ -8543,6 +8554,21 @@ PrefabInstance:
       propertyPath: sanityPopupPrefab
       value: 
       objectReference: {fileID: 1430980459}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostAir
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostFire
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843823873854322727, guid: 77ecbc2ba28dd49acbad97b54cefa10a,
+        type: 3}
+      propertyPath: sanityCostWater
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ecbc2ba28dd49acbad97b54cefa10a, type: 3}
 --- !u!1001 &1741050074
@@ -8709,12 +8735,12 @@ PrefabInstance:
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: sanityCostAir
-      value: -5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: sanityCostEarth
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7687856841584694683, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
