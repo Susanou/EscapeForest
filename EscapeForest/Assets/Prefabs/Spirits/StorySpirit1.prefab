@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9116217828487542835}
   - component: {fileID: 9116217828487542834}
-  - component: {fileID: 2375950332636502961}
   - component: {fileID: 1813317772}
+  - component: {fileID: 1880960863332507811}
   m_Layer: 0
-  m_Name: Spirit 1
+  m_Name: StorySpirit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,21 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2375950332636502961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9116217828487542837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01c817ad3a940f48a464f4854e1ec1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hint: 
-  sanityDecreaseValue: 0
-  hintPrompt: {fileID: 0}
 --- !u!61 &1813317772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,3 +109,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.56, y: 5.12}
   m_EdgeRadius: 0
+--- !u!114 &1880960863332507811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9116217828487542837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26492b3f256018c4f9d736a8f51786e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: []
+  textbox: {fileID: 0}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}

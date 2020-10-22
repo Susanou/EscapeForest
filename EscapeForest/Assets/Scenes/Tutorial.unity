@@ -1893,45 +1893,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573014, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
       propertyPath: sanityBar
       value: 
       objectReference: {fileID: 234565511}
-    - target: {fileID: 9103754507822573015, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: speed
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103754507822573015, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: jump
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573021, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9103754507843819871, guid: ab9236deeb2b44643a6c21081ca76b3b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab9236deeb2b44643a6c21081ca76b3b, type: 3}
@@ -2121,7 +2091,7 @@ Transform:
   - {fileID: 559842730}
   - {fileID: 1252714117}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415769212
 GameObject:
@@ -2656,7 +2626,7 @@ MonoBehaviour:
   textbox: {fileID: 1805500457}
   nameText: {fileID: 766544745}
   dialogueText: {fileID: 891170306}
-  controls: {fileID: 974140236}
+  controls: {fileID: 0}
   reocurring: 0
 --- !u!114 &559842732
 MonoBehaviour:
@@ -4153,7 +4123,7 @@ MonoBehaviour:
   textbox: {fileID: 1805500457}
   nameText: {fileID: 766544745}
   dialogueText: {fileID: 891170306}
-  controls: {fileID: 974140236}
+  controls: {fileID: 0}
   reocurring: 0
 --- !u!4 &811989340 stripped
 Transform:
@@ -4923,7 +4893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &956658766
 Transform:
   m_ObjectHideFlags: 0
@@ -4994,18 +4964,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 627518019}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &974140236 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9103754507822573015, guid: ab9236deeb2b44643a6c21081ca76b3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 326234273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881c9e4b599ee05469acf54bb527e632, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &974140237 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9103754507822573014, guid: ab9236deeb2b44643a6c21081ca76b3b,
@@ -6742,7 +6700,7 @@ Transform:
   - {fileID: 976189350}
   - {fileID: 98732541}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1215581280 stripped
 Transform:
@@ -7114,7 +7072,7 @@ MonoBehaviour:
   textbox: {fileID: 1805500457}
   nameText: {fileID: 766544745}
   dialogueText: {fileID: 891170306}
-  controls: {fileID: 974140236}
+  controls: {fileID: 0}
   reocurring: 0
 --- !u!114 &1252714120
 MonoBehaviour:
@@ -8952,54 +8910,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1807638078}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1813317771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
-    type: 3}
-  m_PrefabInstance: {fileID: 9116217829224362174}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1813317772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1813317771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26492b3f256018c4f9d736a8f51786e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  names: []
-  dialogue:
-  - Should I repeat myself?
-  - Good morning, sleepyhead! (press "F" to continue)
-  - "Careful! Don\u2019t move around too much. You  hit your head pretty hard on
-    the way down."
-  - "Looks like your wings are pretty banged up, too\u2026"
-  - Huh? Your name?
-  - "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
-  - "You\u2019re probably wondering where you are. Well, look around you. You\u2019re
-    certainly not that dim-witted. "
-  - "Wow, you must have hit your head a lot harder than I thought. Here\u2019s a
-    hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
-  - "Oh Good Heavens, you\u2019re in the forest!"
-  - "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not of any
-    importance to you just yet."
-  - "I know how you\u2019re feeling. You can\u2019t quite put your feather on it,
-    can you? But something about this place feels oppressive. Like it\u2019s calling
-    out to you, yes? But the words it\u2019s using aren\u2019t too kind. Somehow
-    this forest feels\u2026"
-  - Alive.
-  - "Here\u2019s a piece of advice from me to you: You probably want to get a move
-    on out of this forest. It doesn\u2019t take too kindly to strangers."
-  - 'GOAL: Escape the forest before you succumb to its power.                                                             
-    INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
-  - Along your journey, you will meet other spirits who can give you hints if you
-    ask!
-  textbox: {fileID: 1805500457}
-  nameText: {fileID: 766544745}
-  dialogueText: {fileID: 891170306}
 --- !u!1001 &1818820264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10179,6 +10089,111 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: textbox
+      value: 
+      objectReference: {fileID: 1805500457}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 766544745}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 891170306}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Should I repeat myself?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: Good morning, sleepyhead! (press "F" to continue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: "Careful! Don\u2019t move around too much. You  hit your head pretty
+        hard on the way down."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: "Looks like your wings are pretty banged up, too\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: Huh? Your name?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[6]
+      value: "You\u2019re probably wondering where you are. Well, look around you.
+        You\u2019re certainly not that dim-witted. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[7]
+      value: "Wow, you must have hit your head a lot harder than I thought. Here\u2019s
+        a hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[8]
+      value: "Oh Good Heavens, you\u2019re in the forest!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[9]
+      value: "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not
+        of any importance to you just yet."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[10]
+      value: "I know how you\u2019re feeling. You can\u2019t quite put your feather
+        on it, can you? But something about this place feels oppressive. Like it\u2019s
+        calling out to you, yes? But the words it\u2019s using aren\u2019t too kind.
+        Somehow this forest feels\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[11]
+      value: Alive.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[12]
+      value: "Here\u2019s a piece of advice from me to you: You probably want to
+        get a move on out of this forest. It doesn\u2019t take too kindly to strangers."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[13]
+      value: 'GOAL: Escape the forest before you succumb to its power.                                                             
+        INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[14]
+      value: Along your journey, you will meet other spirits who can give you hints
+        if you ask!
+      objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10217,7 +10232,7 @@ PrefabInstance:
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -10239,6 +10254,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spirit 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2375950332636502961, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
