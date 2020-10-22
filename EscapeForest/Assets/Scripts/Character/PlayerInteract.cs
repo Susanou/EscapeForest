@@ -10,7 +10,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && currentInterObj)
+        if (Input.GetKeyDown(KeyCode.F) && currentInterObj)
         {
             currentInterObj.SendMessage("DoInteraction");
             

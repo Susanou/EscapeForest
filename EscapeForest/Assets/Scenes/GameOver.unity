@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0.873291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17140413
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 438388668}
   - component: {fileID: 438388667}
   - component: {fileID: 438388666}
+  - component: {fileID: 438388670}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -296,6 +297,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &438388670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438388665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a098f42725e6480692729d8e95ef37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448854575
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,12 +586,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1207330149}
-        m_MethodName: set_overrideSprite
-        m_Mode: 2
+      - m_Target: {fileID: 438388670}
+        m_MethodName: Menu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -703,7 +716,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901642895}
+      - m_Target: {fileID: 438388670}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
