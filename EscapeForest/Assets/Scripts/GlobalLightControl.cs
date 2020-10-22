@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class GlobalLightControl : MonoBehaviour
 {
     Light2D light;
+    [SerializeField] private float startIntensity;
 
     private void Start()
     {
         light = this.GetComponentInParent<Light2D>();
         if(SceneManager.GetActiveScene().name.Equals("Level1"))
         {
-            light.intensity = 0;
+            light.intensity = startIntensity;
         }
         else
         {

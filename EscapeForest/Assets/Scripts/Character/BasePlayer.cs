@@ -47,7 +47,8 @@ public class BasePlayer : MonoBehaviour
     private bool fireEnabled = true;
     private bool waterEnabled = true;
 
-    //Element variables
+    //Character scaling 
+    private Vector3 characterScale = new Vector3(0.3f,0.3f,0.3f);
 
     //private element currentElement = element.None;
 
@@ -59,10 +60,18 @@ public class BasePlayer : MonoBehaviour
 
     private void Start()
     {
-        if(particle.isPlaying) particle.Stop();
-        sanityBar.setSanity(this.getSanity());
-        elementChanged.Raise();
+        //Constant size
+        gameObject.transform.localScale = characterScale;
+
+
+
         usingElement = elementsArray[(int)currentElement.RuntimeValue];
+        elementChanged.Raise();
+        if (particle.isPlaying)
+        { particle.Stop(); }
+
+        sanityBar.setSanity(this.getSanity());
+        
     }
 
     public element getCurrentElement()

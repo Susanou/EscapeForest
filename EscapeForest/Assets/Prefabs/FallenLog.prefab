@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1e57c6d7f140de04d8d2468ad5cc86c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c26583eb60b1e26438f12c4312d0590c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,6 +116,8 @@ MonoBehaviour:
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 11400000, guid: f9b5002fadb300c47a263924694643e0, type: 2}
   onWaterSignal: {fileID: 0}
+  isWaterToPit: 0
+  yOffset: 0
 --- !u!70 &1858649070748980594
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

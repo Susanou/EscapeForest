@@ -7,6 +7,8 @@ public class platform : MonoBehaviour
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
+    [SerializeField] private bool endless;
+    private bool moveOnce = false;
 
     Vector3 nextPos;
 
@@ -19,12 +21,37 @@ public class platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position == pos1.position)
+
+        if (endless)
+        {
+            endlessMove();
+        }
+        else if (moveOnce )
+        {
+            Vector3 destination = pos2.transform.position;
+            if(transform.position == destination)
+            {
+                moveOnce = false;
+            }
+            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime); 
+
+        }
+
+        
+    }
+
+    public void triggerMoveOnce()
+    {
+        moveOnce = true;
+    }
+    private void endlessMove()
+    {
+        if (transform.position == pos1.position)
         {
             nextPos = pos2.position;
         }
 
-        if(transform.position == pos2.position)
+        if (transform.position == pos2.position)
         {
             nextPos = pos1.position;
         }
@@ -52,4 +79,6 @@ public class platform : MonoBehaviour
             collision.collider.transform.SetParent(null);
         }
     }
+
+
 }
