@@ -903,12 +903,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138683693}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.15, y: -6.34, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.53685, y: -6.135234, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 400423544}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &138683696
 Animator:
@@ -2089,6 +2089,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385734968}
   m_CullTransparentMesh: 0
+--- !u!1 &400423543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400423544}
+  m_Layer: 0
+  m_Name: Gems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400423544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400423543}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3868494, y: -0.2047661, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 138683695}
+  - {fileID: 795663135}
+  - {fileID: 559842730}
+  - {fileID: 1252714117}
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415769212
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &546409526
 PrefabInstance:
@@ -2592,12 +2626,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559842728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.44, y: 3.43, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 93.82685, y: 3.634766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 400423544}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &559842731
 MonoBehaviour:
@@ -3184,7 +3218,7 @@ Transform:
   m_LocalScale: {x: 30, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &634528714
 MonoBehaviour:
@@ -3988,12 +4022,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795663133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.09, y: 9.08, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.47685, y: 9.284766, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 400423544}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &795663136
 Animator:
@@ -4623,7 +4657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.035003662, y: -2.600006}
+  m_AnchoredPosition: {x: -0.03503418, y: -2.5999756}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &905711105
@@ -5275,7 +5309,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &984434328
 CapsuleCollider2D:
@@ -6708,7 +6742,7 @@ Transform:
   - {fileID: 976189350}
   - {fileID: 98732541}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1215581280 stripped
 Transform:
@@ -7025,12 +7059,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252714115}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 129.43011, y: 3.3560839, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 129.81697, y: 3.56085, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 400423544}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1252714118
 BoxCollider2D:
@@ -7221,7 +7255,7 @@ Transform:
   m_LocalScale: {x: 30, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1259568832
 GameObject:
@@ -8918,6 +8952,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1807638078}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813317771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+    type: 3}
+  m_PrefabInstance: {fileID: 9116217829224362174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1813317772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813317771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26492b3f256018c4f9d736a8f51786e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names: []
+  dialogue:
+  - Should I repeat myself?
+  - Good morning, sleepyhead! (press "F" to continue)
+  - "Careful! Don\u2019t move around too much. You  hit your head pretty hard on
+    the way down."
+  - "Looks like your wings are pretty banged up, too\u2026"
+  - Huh? Your name?
+  - "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
+  - "You\u2019re probably wondering where you are. Well, look around you. You\u2019re
+    certainly not that dim-witted. "
+  - "Wow, you must have hit your head a lot harder than I thought. Here\u2019s a
+    hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
+  - "Oh Good Heavens, you\u2019re in the forest!"
+  - "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not of any
+    importance to you just yet."
+  - "I know how you\u2019re feeling. You can\u2019t quite put your feather on it,
+    can you? But something about this place feels oppressive. Like it\u2019s calling
+    out to you, yes? But the words it\u2019s using aren\u2019t too kind. Somehow
+    this forest feels\u2026"
+  - Alive.
+  - "Here\u2019s a piece of advice from me to you: You probably want to get a move
+    on out of this forest. It doesn\u2019t take too kindly to strangers."
+  - 'GOAL: Escape the forest before you succumb to its power.                                                             
+    INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
+  - Along your journey, you will meet other spirits who can give you hints if you
+    ask!
+  textbox: {fileID: 1805500457}
+  nameText: {fileID: 766544745}
+  dialogueText: {fileID: 891170306}
 --- !u!1001 &1818820264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10090,3 +10172,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66490acd59556f740a382c6e0cbeb04a, type: 3}
+--- !u!1001 &9116217829224362174
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3868494
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2047661
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_Name
+      value: Spirit 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2375950332636502961, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}

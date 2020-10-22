@@ -17,8 +17,7 @@ public class NPCInteraction : MonoBehaviour
 
 	public string hint; // set this in inspector
 	public int sanityDecreaseValue;
-	public Text hintText; // Text object that we are modifying
-	[SerializeField] private KeyCode interactKey;
+	private Text hintText; // Text object that we are modifying
 	[SerializeField] private GameObject hintPrompt; //A Text object on the Canvas saying "Would you like to use a hint?" 
 
 	private BasePlayer player;
@@ -44,7 +43,7 @@ public class NPCInteraction : MonoBehaviour
 	{
 		if (touchingNPC)
 		{
-			if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(interactKey)) // changed it to Q because SPACE is used for jumping
+			if (Input.GetKeyDown(KeyCode.F)) // Sanitized to F for all interactions
 			{
 				Debug.Log(hint);
 				Hint();
