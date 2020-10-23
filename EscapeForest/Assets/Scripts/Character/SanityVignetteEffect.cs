@@ -13,7 +13,7 @@ public class SanityVignetteEffect : MonoBehaviour
     Color newColor;
 
     BasePlayer player;
-    float reduction = 0.3f;
+    float reduction = 0.4f;
   /*  private void OnEnable()
     {
         

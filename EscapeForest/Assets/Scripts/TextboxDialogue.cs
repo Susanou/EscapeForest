@@ -22,7 +22,7 @@ public class TextboxDialogue : MonoBehaviour
 
 	void Start()
 	{
-		controls = GameObject.FindObjectOfType<CharacterController>();
+		controls = GameObject.Find("Player").GetComponent<CharacterController>();
 		convoLength = dialogue.Length;
 		convoStarted = false;
 		convoEnded = false;

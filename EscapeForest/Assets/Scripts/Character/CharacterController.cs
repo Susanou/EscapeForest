@@ -30,7 +30,6 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         playerMovement();
-       
     }
 
     private void playerMovement()
