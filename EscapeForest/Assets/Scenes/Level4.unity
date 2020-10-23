@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1321,11 +1321,11 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1000
+  m_UseAutoMass: 1
+  m_Mass: 109.049706
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2827,6 +2827,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7022066388509334762, guid: a8ea8683b0713464892b659d413d9551,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2840,12 +2845,17 @@ PrefabInstance:
     - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.093217395
+      value: 0.6398082
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_Radius
-      value: 5.6583877
+      value: 5.891655
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022066388509334764, guid: a8ea8683b0713464892b659d413d9551,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.4026041
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334765, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
@@ -2866,12 +2876,12 @@ PrefabInstance:
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.3
+      value: 70.68
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
@@ -3672,8 +3682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hint: You must light the lanterns to proceed...
   sanityDecreaseValue: 5
-  hintText: {fileID: 522533135}
-  interactKey: 102
   hintPrompt: {fileID: 522533133}
 --- !u!212 &851464604
 SpriteRenderer:
@@ -3951,7 +3959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878286069}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.5, y: 9, z: 0}
+  m_LocalPosition: {x: 56.79, y: 9, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3973,7 +3981,7 @@ MonoBehaviour:
   fan: {fileID: 878286069}
   up: 1
   right: 0
-  distance: 1
+  distance: 0.3
 --- !u!58 &878286074
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4877,7 +4885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.03503418, y: -2.600006}
+  m_AnchoredPosition: {x: -0.03515625, y: -2.6000977}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1105071946
@@ -6569,12 +6577,12 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 285
+      value: 166.09
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.6
+      value: -7.94
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -6624,17 +6632,17 @@ PrefabInstance:
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2777016
+      value: 1.5348938
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.614559
+      value: 1.0880163
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382070, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.54549646
+      value: 0.36759824
       objectReference: {fileID: 0}
     - target: {fileID: 483288871373382071, guid: e6dfa0e4713a249d1a3921a2044a4d89,
         type: 3}
@@ -6908,8 +6916,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hint: Maybe you can swing across those vines if you use air to interact!
   sanityDecreaseValue: 5
-  hintText: {fileID: 522533135}
-  interactKey: 102
   hintPrompt: {fileID: 522533133}
 --- !u!212 &1552284524
 SpriteRenderer:
@@ -9052,8 +9058,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143348814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 97.47, y: 10.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.25743824}
+  m_LocalPosition: {x: 110.72, y: 7.43, z: 0}
+  m_LocalScale: {x: 0.5877381, y: 0.5877381, z: 0.15130626}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
