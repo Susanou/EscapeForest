@@ -30,7 +30,7 @@ public class StorySpirits : MonoBehaviour
 	void Update()
 	{
 
-		if (convoStarted & !convoEnded)
+		if (convoStarted)
 		{
             Debug.Log("Spirit story enabled");
 			textbox.enabled = true;
@@ -48,18 +48,10 @@ public class StorySpirits : MonoBehaviour
 
 			if (convoComponent >= convoLength)
 			{
-				convoEnded = true;
+				controls.enabled = true;
+				convoComponent = 0;
 			}
 		}
-
-		if (convoEnded)
-		{
-			controls.enabled = true;
-            convoComponent = 0;
-            //nameText.text = names[convoComponent];
-			dialogueText.text = dialogue[convoComponent];
-		}
-
 
 	}
 
@@ -68,7 +60,6 @@ public class StorySpirits : MonoBehaviour
 		if (collision.gameObject.tag == "Player")
 		{
 			convoStarted = true;
-			convoEnded = false;
 			convoComponent = 0;
 		}
 	}
@@ -77,7 +68,6 @@ public class StorySpirits : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Player")
 		{
-			convoEnded = true;
 			convoStarted = false;
             textbox.enabled = false;
 			nameText.enabled = false;
