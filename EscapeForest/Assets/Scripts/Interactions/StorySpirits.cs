@@ -50,6 +50,10 @@ public class StorySpirits : MonoBehaviour
 			{
 				controls.enabled = true;
 				convoComponent = 0;
+				convoStarted = false;
+				textbox.enabled = false;
+				nameText.enabled = false;
+				dialogueText.enabled = false;
 			}
 		}
 
