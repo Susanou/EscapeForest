@@ -21,8 +21,8 @@ public class ElementIndicator : MonoBehaviour
 
         //Fill Dictionary with Enum values and colors
         colors.Add(BasePlayer.element.None, Color.white);
-        colors.Add(BasePlayer.element.Air, Color.green);
-        colors.Add(BasePlayer.element.Earth, Color.grey);
+        colors.Add(BasePlayer.element.Air, Color.yellow);
+        colors.Add(BasePlayer.element.Earth, Color.green);
         colors.Add(BasePlayer.element.Fire, Color.red);
         colors.Add(BasePlayer.element.Water, Color.blue);
 
