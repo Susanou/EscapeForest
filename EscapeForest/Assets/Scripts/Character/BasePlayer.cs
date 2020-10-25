@@ -148,12 +148,24 @@ public class BasePlayer : MonoBehaviour
             elementChanged.Raise();
         }
 
+
+        //TODO: Remember to refer the following two ifs in actual release
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            addSanityOf(10);
+            sanitySignal.Raise();
+
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            addSanityOf(-10);
+            sanitySignal.Raise();
+        }
+
         if(currentElement.RuntimeValue != element.None){
             usingElement.OnRightClick();
             usingElement.OnLeftClickDrag(particle);
         }
-
-        sanityCheck();
     }
 
 
@@ -173,13 +185,13 @@ public class BasePlayer : MonoBehaviour
         {
             characterController.resetInputKeyCodes(true);
             randomMovementEnabled = true;
-            //Debug.Log("Random movement");
+            Debug.Log("Random movement");
         }
         else if ((currentSanity.RuntimeValue >= randomMovementThreshold) && randomMovementEnabled)
         {
             characterController.resetInputKeyCodes(false);
             randomMovementEnabled = false;
-            //Debug.Log("Normal movement");
+            Debug.Log("Normal movement");
         }
 
         //Random Element Effect
@@ -187,13 +199,13 @@ public class BasePlayer : MonoBehaviour
         {
             resetInputKeyCodes(true);
             randomElementEnabled = true;
-            //Debug.Log("Random elements");
+            Debug.Log("Random elements");
         }
         else if ((currentSanity.RuntimeValue >= randomElementThreshold) && randomElementEnabled)
         {
             resetInputKeyCodes(false);
             randomElementEnabled = false;
-            //Debug.Log("Normal elements");
+            Debug.Log("Normal elements");
         }
 
     }
