@@ -55,7 +55,8 @@ public class InteractionObject : MonoBehaviour
     private GameObject playerObject;
     private BasePlayer player;
 
-    public AudioSource onFireAudio;
+    private GameObject gameObjectAudio = null;
+    private AudioSource onFireAudio = null;
 
 
 
@@ -65,6 +66,20 @@ public class InteractionObject : MonoBehaviour
         player = playerObject.GetComponent<BasePlayer>();
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
         animator = gameObject.GetComponent<Animator>();
+
+
+        
+        if (GameObject.FindGameObjectWithTag("FireAudioSourcePF") != null)
+        {
+            gameObjectAudio = Instantiate(GameObject.FindGameObjectWithTag("FireAudioSourcePF"), this.transform.position, this.transform.rotation);
+            onFireAudio = gameObjectAudio.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.Log("audio null");
+        }
+
+
     }
 
     /*
@@ -173,14 +188,23 @@ public class InteractionObject : MonoBehaviour
 
     public IEnumerator OnFire()
     {
+        CreateSanityPopup(sanityCostFire);
+
+
+      
+        
+        
+
+
         playerAnimator.SetBool("usingElement", true);
         playerAnimator.SetBool("fire", true);
         player.addSanityOf(sanityCostFire);
         animator.SetBool("fire", true);
 
         //sounds during animation
-        if (onFireAudio != null) {
+        if (gameObjectAudio != null && onFireAudio != null) {
             onFireAudio.Play();
+            Debug.Log("audio being played");
         }
 
 
@@ -188,7 +212,11 @@ public class InteractionObject : MonoBehaviour
         playerAnimator.SetBool("fire", false);
         playerAnimator.SetBool("usingElement", false);
 
-        CreateSanityPopup(sanityCostFire);
+        if (gameObjectAudio != null && onFireAudio != null)
+        {
+            onFireAudio.Pause();
+        }
+
         
         if (onFireSignal != null)
         {
