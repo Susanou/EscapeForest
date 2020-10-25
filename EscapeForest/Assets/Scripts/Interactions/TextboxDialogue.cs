@@ -90,4 +90,8 @@ public class TextboxDialogue : MonoBehaviour
 			convoStarted = false;
 		}
 	}
+
+	public string[] getDialogues(){
+		return this.dialogue;
+	}
 }

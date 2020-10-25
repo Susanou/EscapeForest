@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StorySpirits : MonoBehaviour
 {
 	//[SerializeField] private string[] names;
+	[SerializeField] private TextboxDialogue texts;
 	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
@@ -24,6 +25,10 @@ public class StorySpirits : MonoBehaviour
 		convoStarted = false;
 		convoEnded = false;
         convoComponent = 0;
+
+		if (texts){
+			dialogue = texts.getDialogues();
+		}
 	}
 
 
