@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
     private bool isJumping;
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
-    private KeyCode[] arrowInputCode = new[] {KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.Space}
+    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.Space };
 
     private void Awake()
     {
