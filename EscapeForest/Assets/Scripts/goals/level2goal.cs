@@ -9,5 +9,6 @@ public class level2goal : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         SceneManager.LoadScene("Level3");
+        MainMenu.IncreaseLevel();
     }
 }
