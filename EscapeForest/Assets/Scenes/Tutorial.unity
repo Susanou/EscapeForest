@@ -268,6 +268,8 @@ MonoBehaviour:
   - " Hah, well\u2026"
   - The answer to that question is up to you, Wren. I could be an enemy, or an ally.
     It all depends on what decisions you make.
+  - There's a flower behind me that will restore all your sanity. Be carefull, they
+    are rare.
   - "Now you\u2019d better get a move on. Your life depends on it, after all."
   - Just keep moving forward, and you might just find yourself exactly where you're
     supposed to be.
@@ -283,7 +285,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98732540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2578,10 +2580,14 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 9.756904
       objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -2603,6 +2609,11 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 891170306}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542834, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_FlipY
@@ -5680,7 +5691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &976189350
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,7 +5713,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976189349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 048d97277548d3a448d51c56434a51c0, type: 3}
   m_Name: 
@@ -6471,7 +6482,7 @@ PrefabInstance:
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -6493,6 +6504,16 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 891170306}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: "Uh oh! Seems like you\u2019ve fallen into a pit."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: "Maybe there\u2019s something around here that can help you get out\u2026"
+      objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542834, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_FlipY
@@ -6506,12 +6527,12 @@ PrefabInstance:
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.75
+      value: -10.07
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.73
+      value: -8.97
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -9505,13 +9526,13 @@ PrefabInstance:
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: texts
       value: 
-      objectReference: {fileID: 956658767}
+      objectReference: {fileID: 976189351}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: textbox
@@ -9527,6 +9548,22 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 891170306}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: "Oi, what\u2019s this? A big boulder blocking your path?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: "It\u2019s too heavy to push with a gust of air, and you can\u2019t
+        use air magic here to fly over it. Hm...what will you do\u2026?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: "Hey...is there something wrapped up in that vine over there\u2026?"
+      objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542834, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_FlipY
@@ -9535,17 +9572,17 @@ PrefabInstance:
     - target: {fileID: 9116217828487542834, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_FlipX
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.62
+      value: 63.66
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.55
+      value: 10.61
       objectReference: {fileID: 0}
     - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -10684,7 +10721,7 @@ PrefabInstance:
     - target: {fileID: 4493609854908678682, guid: 88c02c55f4a0cc0459aacb3f54f5d9f0,
         type: 3}
       propertyPath: yThrust
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4493609854908678682, guid: 88c02c55f4a0cc0459aacb3f54f5d9f0,
         type: 3}
@@ -10949,7 +10986,7 @@ PrefabInstance:
     - target: {fileID: 208740590679941603, guid: 8e517773d5efbd04ea1f6d667c565ef4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 208740590679941603, guid: 8e517773d5efbd04ea1f6d667c565ef4,
         type: 3}

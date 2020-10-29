@@ -20,15 +20,17 @@ public class StorySpirits : MonoBehaviour
 
 	void Start()
 	{
+		if (texts){
+			dialogue = texts.getDialogues();
+		}
+
 		controls = GameObject.FindObjectOfType<CharacterController>();
 		convoLength = dialogue.Length;
 		convoStarted = false;
 		convoEnded = false;
         convoComponent = 0;
 
-		if (texts){
-			dialogue = texts.getDialogues();
-		}
+
 	}
 
 

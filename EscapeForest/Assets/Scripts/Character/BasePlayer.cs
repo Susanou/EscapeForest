@@ -149,21 +149,10 @@ public class BasePlayer : MonoBehaviour
         }
 
 
-        //TODO: Remember to refer the following two ifs in actual release
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            addSanityOf(10);
-            sanitySignal.Raise();
-
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            addSanityOf(-10);
-            sanitySignal.Raise();
-        }
+        sanityCheck();
 
         if(currentElement.RuntimeValue != element.None){
-            usingElement.OnRightClick();
+            //usingElement.OnRightClick();
             usingElement.OnLeftClickDrag(particle);
         }
     }
