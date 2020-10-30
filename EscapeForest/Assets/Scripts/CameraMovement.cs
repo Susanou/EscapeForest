@@ -1,22 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private float camX;
-    [SerializeField] private float camY;
-    [SerializeField] private float camZ;
+
+    private float yPos;
+    private string currentScene;
 
     private void Start()
     {
-        
+        currentScene = SceneManager.GetActiveScene().name;
+
+        switch (currentScene)
+        {
+            case "Tutorial":
+            case "Level1":
+                yPos = -1f;
+                break;
+            case "Level1Upper":
+
+                break;
+            case "Level2":
+
+                break;
+            case "Level3":
+
+                break;
+            case "Level4":
+
+                break;
+            default:
+                yPos = 0;
+                break;
+        }
+        Debug.Log(yPos);
     }
 
-    private void Update()
+
+
+    private void LateUpdate()
     {
-        Vector3 cameraOffset = new Vector3(camX, camY, camZ);
-        gameObject.transform.position = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position + cameraOffset;
+        Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 
 }
