@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 7
   m_Sprite: {fileID: 8878469107027882867, guid: 46f53d4bc0303400aa239d405c1acc2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 2.8042502
+  m_Mass: 7.789584
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 5
@@ -183,7 +183,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   jumpTime: 0.5
-  speed: 10
+  speed: 15
   jump: 7
 --- !u!114 &9103754507822573012
 MonoBehaviour:
@@ -553,7 +553,7 @@ PrefabInstance:
     - target: {fileID: 1139739609, guid: 10a980c09f0081c4a90390e34c9f6d40, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 782fec570bc329c4990b65cc982ee8b0,
+      objectReference: {fileID: 21300000, guid: 682c39f741e5f66428fe09ffb705c997,
         type: 3}
     - target: {fileID: 1139739609, guid: 10a980c09f0081c4a90390e34c9f6d40, type: 3}
       propertyPath: m_Size.x
@@ -565,17 +565,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1139739609, guid: 10a980c09f0081c4a90390e34c9f6d40, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139739609, guid: 10a980c09f0081c4a90390e34c9f6d40, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2640297212885918494, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.18
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 2640297212885918494, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 2640297212885918494, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
@@ -682,11 +686,67 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.frameOverTime.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 8051051345057227684, guid: 242201a182a277549912fa6b0d592ba6,
+        type: 3}
     - target: {fileID: 2640297214442078075, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 2640297214442078075, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a980c09f0081c4a90390e34c9f6d40, type: 3}
 --- !u!4 &9103754507107488813 stripped
