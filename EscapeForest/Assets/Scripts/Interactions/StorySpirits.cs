@@ -21,7 +21,11 @@ public class StorySpirits : MonoBehaviour
 	void Start()
 	{
 		if (texts){
-			dialogue = texts.getDialogues();
+			dialogue = new string[texts.getDialogues().Length + 1];
+			dialogue[0] = "Should I repeat myself?";
+			for(int i = 1; i < dialogue.Length; i++){
+				dialogue[i] = texts.getDialogues()[i-1];
+			}
 		}
 
 		controls = GameObject.FindObjectOfType<CharacterController>();
