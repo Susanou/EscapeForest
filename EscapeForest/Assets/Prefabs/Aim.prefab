@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139739607}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.97, y: 0.44, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7603503, w: -0.6495132}
+  m_LocalPosition: {x: -0.70290637, y: 0.36170506, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2640297212885918494}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 261.01}
 --- !u!212 &1139739609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 98d11075ed34c47b585cfdd14510539a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b14eac8b197402147a84237fd3462e4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &2640297212885918495
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2640297212885918494}
   m_Layer: 0
-  m_Name: Vine
+  m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,15 +104,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640297212885918495}
-  m_LocalRotation: {x: 0, y: 0, z: -0.20180455, w: 0.97942585}
-  m_LocalPosition: {x: 0.4390345, y: 0.19157381, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.22466667, w: 0.9744357}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1139739608}
   - {fileID: 2640297214442078072}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23.285002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.967001}
 --- !u!1 &2640297214442078073
 GameObject:
   m_ObjectHideFlags: 0
