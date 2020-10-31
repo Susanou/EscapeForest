@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CameraMovement : MonoBehaviour
 {
 
-    private float yPos;
+    [SerializeField] private FloatValue yPos;
     private string currentScene;
 
     private void Start()
@@ -16,10 +16,10 @@ public class CameraMovement : MonoBehaviour
         switch (currentScene)
         {
             case "Tutorial":
-                yPos = 10f;
+                yPos.initialValue = 10f;
                 break;
             case "Level1":
-                yPos = -1f;
+                yPos.initialValue = -1f;
                 break;
             case "Level1Upper":
 
@@ -31,20 +31,22 @@ public class CameraMovement : MonoBehaviour
 
                 break;
             case "Level4":
-
+                yPos.initialValue = 2f;
                 break;
             default:
-                yPos = 0;
+                yPos.initialValue = 0;
                 break;
         }
-        Debug.Log(yPos);
+        Debug.Log(yPos.RuntimeValue);
     }
+
 
 
 
     private void LateUpdate()
     {
-        Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+        Debug.Log(yPos.RuntimeValue);
+        Camera.main.transform.position = new Vector3(transform.position.x, yPos.RuntimeValue, transform.position.z);
     }
 
 }
