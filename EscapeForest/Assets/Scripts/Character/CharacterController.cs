@@ -19,6 +19,7 @@ public class CharacterController : MonoBehaviour
     private bool isJumping;
 
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
+    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.Space };
 
     private void Awake()
     {
@@ -104,8 +105,13 @@ public class CharacterController : MonoBehaviour
             {
                 int rnd = Random.Range(i, len);
                 KeyCode temp = inputKeyCodes[rnd];
+                KeyCode arrowTmp = arrowInputCode[rnd];
+
                 inputKeyCodes[rnd] = inputKeyCodes[i];
                 inputKeyCodes[i] = temp;
+
+                arrowInputCode[rnd] = arrowInputCode[i];
+                arrowInputCode[i] = arrowTmp;
             }
         }
     }

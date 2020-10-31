@@ -43,7 +43,7 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4899201176347119507}
-    m_Position: {x: 290, y: 30, z: 0}
+    m_Position: {x: 310, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4378701740002591161}
     m_Position: {x: 540, y: 90, z: 0}
@@ -69,7 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad7c3d3a1b9dcf43926615621e4b5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 4555ce244ad772945b2ce892058af4ea, type: 3}
 --- !u!91 &9100000
 AnimatorController:
@@ -190,7 +189,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: e707909de5e424844879a5d12d1d5a67, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

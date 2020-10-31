@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class StorySpirits : MonoBehaviour
 {
 	//[SerializeField] private string[] names;
+	[SerializeField] private TextboxDialogue texts;
 	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
 	[SerializeField] private Text dialogueText;
+
+	[SerializeField] private bool recured;
     private CharacterController controls; 
 	private int convoLength;
 	private bool convoStarted;
@@ -19,11 +22,21 @@ public class StorySpirits : MonoBehaviour
 
 	void Start()
 	{
+		if (texts){
+			dialogue = new string[texts.getDialogues().Length + 1];
+			dialogue[0] = "Should I repeat myself?";
+			for(int i = 1; i < dialogue.Length; i++){
+				dialogue[i] = texts.getDialogues()[i-1];
+			}
+		}
+
 		controls = GameObject.FindObjectOfType<CharacterController>();
 		convoLength = dialogue.Length;
 		convoStarted = false;
 		convoEnded = false;
         convoComponent = 0;
+
+
 	}
 
 
@@ -54,6 +67,7 @@ public class StorySpirits : MonoBehaviour
 				textbox.enabled = false;
 				nameText.enabled = false;
 				dialogueText.enabled = false;
+				recured = true;
 			}
 		}
 
@@ -64,7 +78,10 @@ public class StorySpirits : MonoBehaviour
 		if (collision.gameObject.tag == "Player")
 		{
 			convoStarted = true;
-			convoComponent = 0;
+			if (recured)
+				convoComponent = 0;
+			else
+				convoComponent = 1;
 		}
 	}
 
