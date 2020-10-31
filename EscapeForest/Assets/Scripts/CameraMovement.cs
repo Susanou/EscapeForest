@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
                 yPos.initialValue = 10f;
                 break;
             case "Level1":
-                yPos.initialValue = -1f;
+                yPos.initialValue = -2f;
                 break;
             case "Level1Upper":
 

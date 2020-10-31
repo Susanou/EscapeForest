@@ -7,6 +7,7 @@ public class CameraShift : MonoBehaviour
 {
     [SerializeField] private FloatValue shift;
     private string currentScene;
+    private bool L1up = false;
 
     private void Start()
     {
@@ -24,7 +25,17 @@ public class CameraShift : MonoBehaviour
                     shift.RuntimeValue = 10f;
                     break;
                 case "Level1":
-                    shift.RuntimeValue = -1f;
+                    if(!L1up)
+                    {
+                        shift.RuntimeValue = 18f;
+                        L1up = true;
+                    }
+                    else
+                    {
+                        shift.RuntimeValue = -2f;
+                        L1up = false;
+                    }
+                    
                     break;
                 case "Level1Upper":
 
@@ -42,6 +53,7 @@ public class CameraShift : MonoBehaviour
                     shift.RuntimeValue = 0;
                     break;
             }
+            Debug.Log(L1up);
         }
     }
 }
