@@ -6,8 +6,24 @@ using UnityEngine.SceneManagement;
 public class CameraMovement : MonoBehaviour
 {
 
-    [SerializeField] private FloatValue yPos;
+    private float yPos;
     private string currentScene;
+    private bool upper = false;
+
+    public void setYPos(float newPos)
+    {
+        yPos = newPos;
+    }
+
+    public bool getUpper()
+    {
+        return upper;
+    }
+
+    public void setUpper(bool newValue)
+    {
+        upper = newValue;
+    }
 
     private void Start()
     {
@@ -16,10 +32,10 @@ public class CameraMovement : MonoBehaviour
         switch (currentScene)
         {
             case "Tutorial":
-                yPos.initialValue = 10f;
+                yPos = 10f;
                 break;
             case "Level1":
-                yPos.initialValue = -2f;
+                yPos = -1f;
                 break;
             case "Level1Upper":
 
@@ -31,13 +47,12 @@ public class CameraMovement : MonoBehaviour
 
                 break;
             case "Level4":
-                yPos.initialValue = 2f;
+                yPos = 2f;
                 break;
             default:
-                yPos.initialValue = 0;
+                yPos = 0;
                 break;
         }
-        Debug.Log(yPos.RuntimeValue);
     }
 
 
@@ -45,8 +60,8 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.Log(yPos.RuntimeValue);
-        Camera.main.transform.position = new Vector3(transform.position.x, yPos.RuntimeValue, transform.position.z);
+        Debug.Log(yPos);
+        Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 
 }

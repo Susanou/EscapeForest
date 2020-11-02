@@ -1,59 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CameraShift : MonoBehaviour
 {
-    [SerializeField] private FloatValue shift;
-    private string currentScene;
-    private bool L1up = false;
+    [SerializeField] private float upperY;
+    [SerializeField] private float lowerY;
+    [SerializeField] private CameraMovement cameraMovementScript;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        currentScene = SceneManager.GetActiveScene().name;
-    }
-
-        private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Collide");
-        if (other.gameObject.tag == "Player")
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "FallThrough")
         {
-            switch (currentScene)
+            if (cameraMovementScript.getUpper())
             {
-                case "Tutorial":
-                    shift.RuntimeValue = 10f;
-                    break;
-                case "Level1":
-                    if(!L1up)
-                    {
-                        shift.RuntimeValue = 18f;
-                        L1up = true;
-                    }
-                    else
-                    {
-                        shift.RuntimeValue = -2f;
-                        L1up = false;
-                    }
-                    
-                    break;
-                case "Level1Upper":
-
-                    break;
-                case "Level2":
-
-                    break;
-                case "Level3":
-
-                    break;
-                case "Level4":
-                    shift.RuntimeValue = 9f;
-                    break;
-                default:
-                    shift.RuntimeValue = 0;
-                    break;
+                cameraMovementScript.setYPos(lowerY);
+                cameraMovementScript.setUpper(false);
             }
-            Debug.Log(L1up);
+            else
+            //switch to upper camera pos
+            {
+                cameraMovementScript.setYPos(upperY);
+                cameraMovementScript.setUpper(true);
+            }
+
         }
     }
 }
