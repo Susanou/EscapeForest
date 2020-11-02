@@ -11,12 +11,24 @@ public class Parallax : MonoBehaviour
 
     private Vector3 startCameraPos;
     private Vector3 startPos;
+    private float initialY;
 
     void Start()
     {
         cameraTransform = Camera.main.transform;
         startCameraPos = cameraTransform.position;
         startPos = transform.position;
+        initialY = startPos.y;
+    }
+
+    public void changeY(float newY)
+    {
+        startPos.y = startPos.y + newY;
+    }
+
+    public void resetY()
+    {
+        startPos.y = initialY;
     }
 
 
@@ -24,10 +36,15 @@ public class Parallax : MonoBehaviour
     {
         var position = startPos;
         if (horizontalOnly)
+        {
             position.x += multiplier * (cameraTransform.position.x - startCameraPos.x);
-        else
+        }
+        else 
+        {
             position += multiplier * (cameraTransform.position - startCameraPos);
-
+        }
+            
         transform.position = position;
     }
+
 }

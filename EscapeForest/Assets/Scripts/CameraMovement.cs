@@ -60,7 +60,6 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.Log(yPos);
         Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 

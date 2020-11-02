@@ -7,6 +7,7 @@ public class CameraShift : MonoBehaviour
     [SerializeField] private float upperY;
     [SerializeField] private float lowerY;
     [SerializeField] private CameraMovement cameraMovementScript;
+    [SerializeField] private GameObject background;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,14 +18,36 @@ public class CameraShift : MonoBehaviour
             {
                 cameraMovementScript.setYPos(lowerY);
                 cameraMovementScript.setUpper(false);
+                resetBackground();
             }
             else
             //switch to upper camera pos
             {
                 cameraMovementScript.setYPos(upperY);
                 cameraMovementScript.setUpper(true);
+                moveBackground(upperY-lowerY);
             }
 
+        }
+    }
+
+    private void moveBackground(float yPos)
+    {
+        Component[] scripts = background.GetComponentsInChildren<Parallax>();
+
+        foreach (Parallax script in scripts)
+        {
+            script.changeY(yPos);
+        }
+    }
+
+    private void resetBackground()
+    {
+        Component[] scripts = background.GetComponentsInChildren<Parallax>();
+
+        foreach (Parallax script in scripts)
+        {
+            script.resetY();
         }
     }
 }
