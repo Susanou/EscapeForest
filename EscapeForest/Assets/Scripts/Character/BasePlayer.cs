@@ -119,7 +119,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
-            Debug.Log(currentElement.RuntimeValue);
+            particle.Clear();
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2
@@ -127,6 +127,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Earth;
             usingElement = elementsArray[1];
             elementChanged.Raise();
+            particle.Clear();
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[2]) && fireEnabled) // Fire = 3
@@ -134,13 +135,14 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Fire;
             usingElement = elementsArray[2];
             elementChanged.Raise();
-
+            particle.Clear();
         }
         else if (Input.GetKeyDown(inputKeyCodes[3]) && waterEnabled) // Water = 4
         {
             currentElement.RuntimeValue = element.Water;
             usingElement = elementsArray[3];
             elementChanged.Raise();
+            particle.Clear();
         }
 
 
