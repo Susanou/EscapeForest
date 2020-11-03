@@ -5,14 +5,13 @@ using UnityEngine;
 public class Earth : Element
 {
 
-    private void Start() {
-        sanityCosts = new int[8] { 0, 0, 5, 5, -5, 5, -5, -10};
-    }
-
-    public override void OnLeftClickDrag(ParticleSystem particle){
+    public override void OnLeftClickDrag(ParticleSystem particle, BasePlayer player){
         if(Input.GetMouseButton(0)){
             if(!particle.isPlaying) particle.Play();
+            player.addSanityOf(-this.universalCost);
         }
+
+        if(Input.GetMouseButtonDown(0)) player.addSanityOf(-this.universalCost);
 
         if(Input.GetMouseButtonUp(0)){
             if(particle.isPlaying) particle.Stop();

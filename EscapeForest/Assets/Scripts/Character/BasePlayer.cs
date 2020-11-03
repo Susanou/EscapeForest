@@ -90,7 +90,9 @@ public class BasePlayer : MonoBehaviour
      */
 
     public void addSanityOf(float amount)
-    {
+    { 
+        Debug.Log("SAnity drop   " + (currentSanity.RuntimeValue + amount));
+        
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
             currentSanity.RuntimeValue = 100;
@@ -111,13 +113,6 @@ public class BasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && waterEnabled)
-        {
-            currentElement.RuntimeValue = (element)Random.Range(0, 5);
-            usingElement = elementsArray[(int)currentElement.RuntimeValue];
-            elementChanged.Raise();
-        }
-
  
         if (Input.GetKeyDown(inputKeyCodes[0]) && airEnabled) // Air = 1
         {
@@ -153,7 +148,7 @@ public class BasePlayer : MonoBehaviour
 
         if(currentElement.RuntimeValue != element.None){
             //usingElement.OnRightClick();
-            usingElement.OnLeftClickDrag(particle);
+            usingElement.OnLeftClickDrag(particle, this.GetComponent<BasePlayer>());
         }
     }
 

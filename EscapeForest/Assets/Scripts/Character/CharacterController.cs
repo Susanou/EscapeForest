@@ -18,8 +18,8 @@ public class CharacterController : MonoBehaviour
     private bool onGround;
     private bool isJumping;
 
-    private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
-    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.Space };
+    private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D};
+    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class CharacterController : MonoBehaviour
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
         
         //Starts the jump
-        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
+        if ((Input.GetKeyDown(inputKeyCodes[0])) && onGround)
         {
             isJumping = true;
             animator.SetBool("jumping", true);
@@ -47,7 +47,7 @@ public class CharacterController : MonoBehaviour
         }
 
         //The longer you stay pressed the higher you go
-        if ((Input.GetKey(inputKeyCodes[0]) || Input.GetKey(inputKeyCodes[4])) && isJumping)
+        if ((Input.GetKey(inputKeyCodes[0])) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -63,7 +63,7 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(inputKeyCodes[4])){
+        if (Input.GetKeyUp(inputKeyCodes[0])){
             isJumping = false;
             animator.SetBool("jumping", false);
         }
@@ -96,7 +96,8 @@ public class CharacterController : MonoBehaviour
     {
         if (!random)
         {
-            inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
+            inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D};
+            arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
         }
         else
         {
