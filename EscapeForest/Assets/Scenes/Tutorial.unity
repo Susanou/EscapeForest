@@ -225,14 +225,15 @@ MonoBehaviour:
     feel...different.
   - Be wary of keeping your sanity intact. Many elements can be used to overcome
     different obstacles, but some interactions come with a steeper price than others.
+  - If your sanity gets bad enough, you might just find yourself...losing control.
   - "Take care, Wren. I wish you luck on your journey. You\u2019ll need it, after
-    all. Should you fail to escape, well\u2026"
-  - Just hope you never get the chance to find out.
+    all. Should you fail to escape, well\u2026Just hope you never get the chance
+    to find out."
   - "Huh\u2026? Who am I\u2026?"
   - " Hah, well\u2026"
   - The answer to that question is up to you, Wren. I could be an enemy, or an ally.
     It all depends on what decisions you make.
-  - There's a flower behind me that will restore all your sanity. Be carefull, they
+  - There's a flower behind me that will restore all your sanity. Be careful, they
     are rare.
   - "Now you\u2019d better get a move on. Your life depends on it, after all."
   - Just keep moving forward, and you might just find yourself exactly where you're
@@ -4406,25 +4407,15 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
   dialogue:
-  - Good morning, sleepyhead! (press "F" to continue)
-  - "Careful! Don\u2019t move around too much. You  hit your head pretty hard on
-    the way down."
+  - Good morning, Wren! (press "F" to continue)
+  - "Careful! Don\u2019t move around too much. You hit your head pretty hard on the
+    way down."
   - "Looks like your wings are pretty banged up, too\u2026"
-  - Huh? Your name?
-  - "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
-  - "You\u2019re probably wondering where you are. Well, look around you. You\u2019re
-    certainly not that dim-witted. "
-  - "Wow, you must have hit your head a lot harder than I thought. Here\u2019s a
-    hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
-  - "Oh Good Heavens, you\u2019re in the forest!"
-  - "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not of any
-    importance to you just yet."
+  - You're probably wondering about a lot of things. Where you are, how you got here,
+    why a random forest spirit you've never met in your life knows your name...
+  - Well, why don't you just focus on getting your bearings first, and then we can
+    move on from there, hm?
   - "I know how you\u2019re feeling. You can\u2019t quite put your feather on it,
     can you? But something about this place feels oppressive. Like it\u2019s calling
     out to you, yes? But the words it\u2019s using aren\u2019t too kind. Somehow
@@ -4434,8 +4425,6 @@ MonoBehaviour:
     on out of this forest. It doesn\u2019t take too kindly to strangers."
   - 'GOAL: Escape the forest before you succumb to its power.                                                             
     INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
-  - Along your journey, you will meet other spirits who can give you hints if you
-    ask!
   textbox: {fileID: 1805500457}
   nameText: {fileID: 766544745}
   dialogueText: {fileID: 891170306}
@@ -6287,169 +6276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2ffcd944efe014a926f73223417f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!43 &1210454249
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 18
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
-      m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 224
-    _typelessdata: 113182bf6c89393e00000000351e8b3b68ff7fbf00000080000000802466903f18be19c0000000009e4d75bd5e8a7f3f0000008000000080de35993f9729433e00000000eae87fbfd26bd93c0000008000000080d15787bf602222c000000000cdf87f3fe6e072bc0000008000000080de35993f9729433e00000000351e8b3b68ff7fbf0000008000000080113182bf6c89393e00000000cdf87f3fe6e072bc00000080000000802466903f18be19c000000000eae87fbfd26bd93c0000008000000080d15787bf602222c0000000009e4d75bd5e8a7f3f0000008000000080
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
-    m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1252714115
 GameObject:
   m_ObjectHideFlags: 0
@@ -10325,6 +10151,169 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &1973065930
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
+      m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 224
+    _typelessdata: 113182bf6c89393e00000000351e8b3b68ff7fbf00000080000000802466903f18be19c0000000009e4d75bd5e8a7f3f0000008000000080de35993f9729433e00000000eae87fbfd26bd93c0000008000000080d15787bf602222c000000000cdf87f3fe6e072bc0000008000000080de35993f9729433e00000000351e8b3b68ff7fbf0000008000000080113182bf6c89393e00000000cdf87f3fe6e072bc00000080000000802466903f18be19c000000000eae87fbfd26bd93c0000008000000080d15787bf602222c0000000009e4d75bd5e8a7f3f0000008000000080
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
+    m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1973155176
 GameObject:
   m_ObjectHideFlags: 0
@@ -11100,7 +11089,7 @@ PrefabInstance:
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.size
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
@@ -11125,12 +11114,12 @@ PrefabInstance:
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: Good morning, sleepyhead! (press "F" to continue)
+      value: Good morning, Wren! (press "F" to continue)
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[2]
-      value: "Careful! Don\u2019t move around too much. You  hit your head pretty
+      value: "Careful! Don\u2019t move around too much. You hit your head pretty
         hard on the way down."
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
@@ -11141,35 +11130,40 @@ PrefabInstance:
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[4]
-      value: Huh? Your name?
+      value: You're probably wondering about a lot of things. Where you are, how
+        you got here, why a random forest spirit you've never met in your life knows
+        your name...
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[5]
-      value: "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
+      value: Well, why don't you just focus on getting your bearings first, and then
+        we can move on from there, hm?
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[6]
-      value: "You\u2019re probably wondering where you are. Well, look around you.
-        You\u2019re certainly not that dim-witted. "
+      value: "I know how you\u2019re feeling. You can\u2019t quite put your feather
+        on it, can you? But something about this place feels oppressive. Like it\u2019s
+        calling out to you, yes? But the words it\u2019s using aren\u2019t too kind.
+        Somehow this forest feels\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[7]
-      value: "Wow, you must have hit your head a lot harder than I thought. Here\u2019s
-        a hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
+      value: Alive.
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[8]
-      value: "Oh Good Heavens, you\u2019re in the forest!"
+      value: "Here\u2019s a piece of advice from me to you: You probably want to
+        get a move on out of this forest. It doesn\u2019t take too kindly to strangers."
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
       propertyPath: dialogue.Array.data[9]
-      value: "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not
-        of any importance to you just yet."
+      value: 'GOAL: Escape the forest before you succumb to its power.                                                             
+        INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
       objectReference: {fileID: 0}
     - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
         type: 3}
