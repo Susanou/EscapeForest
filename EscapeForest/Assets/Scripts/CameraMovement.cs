@@ -55,7 +55,7 @@ public class CameraMovement : MonoBehaviour
 
                 break;
             case "Level2":
-
+                yPos = 1.5f;
                 break;
             case "Level3":
 
