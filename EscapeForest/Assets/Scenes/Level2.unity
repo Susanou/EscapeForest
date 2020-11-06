@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 3328464462713857646, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3328464462713857646, guid: 8c891840944774ada9429cbfe24d2acc,
         type: 3}
@@ -295,7 +295,7 @@ MonoBehaviour:
   names:
   - 
   dialogue:
-  - Water the vines to create platforms
+  - Those vines seem a little dry...
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
   dialogueText: {fileID: 211101619}
@@ -335,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22812769}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -243.18102, y: -307.53635, z: 96.53977}
+  m_LocalPosition: {x: -186.98, y: -293.3, z: 96.53977}
   m_LocalScale: {x: 30, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 22381804}
@@ -731,12 +731,12 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 173.27
+      value: 203.87
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.900002
+      value: 26.65
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -840,13 +840,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 603703818}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &169286112 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2864554697607298253, guid: 043019b665081424482a8925fb72ba16,
-    type: 3}
-  m_PrefabInstance: {fileID: 873732863}
-  m_PrefabAsset: {fileID: 0}
---- !u!43 &196462402
+--- !u!43 &168360940
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1009,6 +1003,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &169286112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2864554697607298253, guid: 043019b665081424482a8925fb72ba16,
+    type: 3}
+  m_PrefabInstance: {fileID: 873732863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &211101617
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,7 +3032,7 @@ PrefabInstance:
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -3089,12 +3089,12 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 183.27
+      value: 232.21
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.9
+      value: 26.25
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -3124,7 +3124,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -3416,7 +3416,7 @@ PrefabInstance:
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7022066388509334766, guid: a8ea8683b0713464892b659d413d9551,
         type: 3}
@@ -4591,7 +4591,7 @@ PrefabInstance:
     - target: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3135646762718152635, guid: 66490acd59556f740a382c6e0cbeb04a,
         type: 3}
@@ -4838,12 +4838,12 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 163.27
+      value: 217.57
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.900002
+      value: 26.17
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -4873,7 +4873,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -5069,12 +5069,12 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.3
+      value: 145.56
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.600002
+      value: 32.93
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
@@ -6064,7 +6064,7 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
@@ -6144,7 +6144,6 @@ Transform:
   - {fileID: 1582672125}
   - {fileID: 1000365603}
   - {fileID: 1116236598}
-  - {fileID: 1493093082}
   - {fileID: 580206844}
   - {fileID: 917057304}
   - {fileID: 643668144}
@@ -6155,6 +6154,7 @@ Transform:
   - {fileID: 144027614}
   - {fileID: 137144150}
   - {fileID: 992575568}
+  - {fileID: 1695347237}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7556,37 +7556,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 501924388}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1493093077 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
-    type: 3}
-  m_PrefabInstance: {fileID: 1857506082}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1493093078
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493093077}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 80e67930a97df44598f440e2c2fe5341, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!4 &1493093082 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-    type: 3}
-  m_PrefabInstance: {fileID: 1857506082}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1494550182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5353670004882098836, guid: 74525860974488c46b0537898db7cfd2,
@@ -7648,6 +7617,86 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5077142875664788795, guid: 74525860974488c46b0537898db7cfd2,
     type: 3}
   m_PrefabInstance: {fileID: 1247661867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1506855628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1583541568}
+    m_Modifications:
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 93.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.602357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353670004882098836, guid: 74525860974488c46b0537898db7cfd2,
+        type: 3}
+      propertyPath: m_Name
+      value: Level2Ground (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74525860974488c46b0537898db7cfd2, type: 3}
+--- !u!4 &1506855629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1506855628}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1556831289
 PrefabInstance:
@@ -7862,6 +7911,7 @@ Transform:
   - {fileID: 1619397800}
   - {fileID: 169286112}
   - {fileID: 932151267}
+  - {fileID: 1506855629}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8273,7 +8323,7 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
@@ -8323,6 +8373,261 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 700624836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1695347236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1270224254}
+    m_Modifications:
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.30735326
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_Size.x
+      value: 7.1582475
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07683945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_Size.y
+      value: 6.1957445
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: textbox
+      value: 
+      objectReference: {fileID: 1611634669}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 242376091}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 211101619}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[0]
+      value: Should I repeat myself?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: Good morning, sleepyhead! (press "F" to continue)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[2]
+      value: "Careful! Don\u2019t move around too much. You  hit your head pretty
+        hard on the way down."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: "Looks like your wings are pretty banged up, too\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[4]
+      value: Huh? Your name?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[5]
+      value: "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[6]
+      value: "You\u2019re probably wondering where you are. Well, look around you.
+        You\u2019re certainly not that dim-witted. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[7]
+      value: "Wow, you must have hit your head a lot harder than I thought. Here\u2019s
+        a hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[8]
+      value: "Oh Good Heavens, you\u2019re in the forest!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[9]
+      value: "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not
+        of any importance to you just yet."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[10]
+      value: "I know how you\u2019re feeling. You can\u2019t quite put your feather
+        on it, can you? But something about this place feels oppressive. Like it\u2019s
+        calling out to you, yes? But the words it\u2019s using aren\u2019t too kind.
+        Somehow this forest feels\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[11]
+      value: Alive.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[12]
+      value: "Here\u2019s a piece of advice from me to you: You probably want to
+        get a move on out of this forest. It doesn\u2019t take too kindly to strangers."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[13]
+      value: 'GOAL: Escape the forest before you succumb to its power.                                                             
+        INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: dialogue.Array.data[14]
+      value: Along your journey, you will meet other spirits who can give you hints
+        if you ask!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: texts
+      value: 
+      objectReference: {fileID: 22812772}
+    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: recured
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542834, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e65dac747e354974952081c6a46c762,
+        type: 3}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 177.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_Name
+      value: 3rd spirt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
+--- !u!4 &1695347237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695347236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1695347238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695347236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1695347239
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695347238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a3f2622afe274d338e3d8de740a8f03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1702398130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6939750532038500141, guid: 00e4fd2d4bc8e674a9328d4482a3ad63,
@@ -8939,216 +9244,6 @@ SpriteRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 2017335942}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1857506082
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1270224254}
-    m_Modifications:
-    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.30735326
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
-      propertyPath: m_Size.x
-      value: 7.1582475
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.07683945
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813317772, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
-      propertyPath: m_Size.y
-      value: 6.1957445
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: textbox
-      value: 
-      objectReference: {fileID: 1611634669}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: nameText
-      value: 
-      objectReference: {fileID: 242376091}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 211101619}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[0]
-      value: Should I repeat myself?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[1]
-      value: Good morning, sleepyhead! (press "F" to continue)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[2]
-      value: "Careful! Don\u2019t move around too much. You  hit your head pretty
-        hard on the way down."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[3]
-      value: "Looks like your wings are pretty banged up, too\u2026"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[4]
-      value: Huh? Your name?
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[5]
-      value: "You really don\u2019t remember, do you? I think it was something like\u2026\u201DWren.\u201D"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[6]
-      value: "You\u2019re probably wondering where you are. Well, look around you.
-        You\u2019re certainly not that dim-witted. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[7]
-      value: "Wow, you must have hit your head a lot harder than I thought. Here\u2019s
-        a hint: it starts with an \u201CF\u201D and rhymes with \u201Cflorist.\u201D"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[8]
-      value: "Oh Good Heavens, you\u2019re in the forest!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[9]
-      value: "How did you get here? And why? Oh, don\u2019t worry, that\u2019s not
-        of any importance to you just yet."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[10]
-      value: "I know how you\u2019re feeling. You can\u2019t quite put your feather
-        on it, can you? But something about this place feels oppressive. Like it\u2019s
-        calling out to you, yes? But the words it\u2019s using aren\u2019t too kind.
-        Somehow this forest feels\u2026"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[11]
-      value: Alive.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[12]
-      value: "Here\u2019s a piece of advice from me to you: You probably want to
-        get a move on out of this forest. It doesn\u2019t take too kindly to strangers."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[13]
-      value: 'GOAL: Escape the forest before you succumb to its power.                                                             
-        INSTRUCTIONS: Use WASD to move, W or Spacebar to jump '
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: dialogue.Array.data[14]
-      value: Along your journey, you will meet other spirits who can give you hints
-        if you ask!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: texts
-      value: 
-      objectReference: {fileID: 22812772}
-    - target: {fileID: 1880960863332507811, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: recured
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 125.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542835, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
-        type: 3}
-      propertyPath: m_Name
-      value: 3rd spirit
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
 --- !u!1 &1859465031
 GameObject:
   m_ObjectHideFlags: 0
@@ -9990,7 +10085,7 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
