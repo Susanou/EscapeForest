@@ -133,11 +133,11 @@ public class InteractionObject : MonoBehaviour
     public IEnumerator OnAir()
     {
         playerAnimator.SetBool("usingElement", true);
-        playerAnimator.SetBool("air", true);
+        //playerAnimator.SetBool("air", true);
         player.addSanityOf(sanityCostAir);
         animator.SetBool("air", true);
         yield return new WaitForSeconds(airAnimationLength);
-        playerAnimator.SetBool("air", false);
+       // playerAnimator.SetBool("air", false);
         playerAnimator.SetBool("usingElement", false);
 
         if (onAirSignal != null)

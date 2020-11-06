@@ -20,6 +20,7 @@ public class FanWind : MonoBehaviour
         {
 
             col.attachedRigidbody.AddForce(new Vector2(xThrust, yThrust), ForceMode2D.Impulse);
+            StartCoroutine(WrenFly(col.gameObject));
         }
     }
 
@@ -27,5 +28,16 @@ public class FanWind : MonoBehaviour
     {
         fanOn = true;
         GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public IEnumerator WrenFly(GameObject wren)
+    {
+
+        wren.GetComponent<Animator>().SetBool("usingElement", true);
+        wren.GetComponent<Animator>().SetBool("air", true);
+        yield return new WaitForSeconds(1);
+        wren.GetComponent<Animator>().SetBool("air", false);
+        wren.GetComponent<Animator>().SetBool("usingElement", false);
+
     }
 }

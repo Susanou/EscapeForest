@@ -100,7 +100,7 @@ public class BasePlayer : MonoBehaviour
         else if (currentSanity.RuntimeValue + amount < 0)
         {
             currentSanity.RuntimeValue = currentSanity.initialValue;
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(GameOver());
         }
         else
         {
@@ -250,6 +250,15 @@ public class BasePlayer : MonoBehaviour
 
             waterEnabled = true;
         }
+
+    }
+
+    public IEnumerator GameOver()
+    {
+        GetComponent<Animator>().SetBool("dying", true);
+        GetComponent<CharacterController>().enabled = false;
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("GameOver");
 
     }
 }
