@@ -65,7 +65,7 @@ public class SanityVignetteEffect : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<BasePlayer>();
-        vignette = GetComponent<Image>();
+        vignette = this.gameObject.GetComponent<Image>();
         /*volume = this.GetComponent<Volume>();
         Vignette effect;
         if (volume.profile.TryGet<Vignette>(out effect))
