@@ -14,6 +14,7 @@ public class ObjectMove : MonoBehaviour
     
     private BasePlayer player;
     
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,7 @@ public class ObjectMove : MonoBehaviour
     }
     
     */
+   
     
     private void OnParticleCollision()
     {
@@ -80,7 +82,7 @@ public class ObjectMove : MonoBehaviour
             {
                 toMove.transform.position += Vector3.right*distance;
                 player.transform.position += Vector3.right*distance;
-                SceneManager.LoadScene("Conclusion");
+                SceneManager.LoadScene("level3");
                 
             }
             

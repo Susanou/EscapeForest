@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class ObstacleFall : MonoBehaviour
 {
-    public int movespeed = 10;
-    [SerializeField] GameObject obstacle;
-    
-    void Update()
+    Rigidbody2D r;
+    void Start()
     {
-        Vector3 Direction = Vector3.down;
-        obstacle.transform.Translate(Direction * movespeed * Time.deltaTime);
+        r = GetComponent<Rigidbody2D>();
+    }
+    
+    
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if(c.gameObject.name.Equals("Player"))
+        {
+            r.isKinematic = false;
+        }
+    }
+    
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if(c.gameObject.name.Equals("MaxHeight"))
+        {
+            // r.isKinematic = true;
+        }
     }
 }
