@@ -82,7 +82,7 @@ public class ObjectMove : MonoBehaviour
             {
                 toMove.transform.position += Vector3.right*distance;
                 player.transform.position += Vector3.right*distance;
-                SceneManager.LoadScene("level3");
+                SceneManager.LoadScene("Level2");
                 
             }
             
