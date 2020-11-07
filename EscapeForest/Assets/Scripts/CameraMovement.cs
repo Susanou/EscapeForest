@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
     private string currentScene;
     private bool upper = false;
 
-    [SerializeField] private float cameraWidth;
+
 
     public void setYPos(float newPos)
     {
@@ -29,18 +29,6 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-   
-        //widen camera view
-        Vector3 initialPos = Camera.main.rect.position;
-        float initialHeight = Camera.main.rect.height;
-
-        //Camera.main.rect = new Rect(initialPos.x, initialPos.y, cameraWidth, initialHeight);    //initial H and W = 1
-        
-        /*
-                Camera.main.aspect = aspectRatio;
-                Camera.main.ResetAspect();*/
-
-
         currentScene = SceneManager.GetActiveScene().name;
 
         switch (currentScene)
@@ -74,6 +62,7 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        
         Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
     }
 
