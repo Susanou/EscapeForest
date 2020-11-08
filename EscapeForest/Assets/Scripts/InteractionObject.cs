@@ -67,7 +67,7 @@ public class InteractionObject : MonoBehaviour
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
         animator = gameObject.GetComponent<Animator>();
 
-
+        /*
         
         if (GameObject.FindGameObjectWithTag("FireAudioSourcePF") != null)
         {
@@ -78,7 +78,7 @@ public class InteractionObject : MonoBehaviour
         {
             Debug.Log("audio null");
         }
-
+        */
 
     }
 
