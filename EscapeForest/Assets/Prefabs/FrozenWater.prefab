@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2559351432022166966}
   - component: {fileID: 2920193906765259898}
-  - component: {fileID: 7937160893590616456}
+  - component: {fileID: 465104140324235257}
   - component: {fileID: 4605705312172163111}
   - component: {fileID: 6470861027064665610}
   m_Layer: 8
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8827740888653079475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 56.18001, y: -2.9025989, z: 0}
-  m_LocalScale: {x: 4, y: 0.5, z: 0.10514624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e1845ea92007d4972834335ea34d363f, type: 3}
+  m_Sprite: {fileID: 1868758712686231550, guid: 151faf64e07eb5247a3530eee16b39f4,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7937160893590616456
+--- !u!61 &465104140324235257
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3492555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.51, y: 2.01}
+    oldSize: {x: 9.79, y: 2.5205817}
     newSize: {x: 2.51, y: 2.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.51, y: 2.01}
+  m_Size: {x: 9.79, y: 1.8220707}
   m_EdgeRadius: 0
 --- !u!114 &4605705312172163111
 MonoBehaviour:
@@ -143,6 +144,8 @@ MonoBehaviour:
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+  isWaterToPit: 0
+  yOffset: 0
 --- !u!95 &6470861027064665610
 Animator:
   serializedVersion: 3
@@ -153,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 8827740888653079475}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 308aaded5abc71447945ccfe00d8d7a4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
