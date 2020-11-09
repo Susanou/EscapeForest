@@ -689,7 +689,7 @@ PrefabInstance:
     - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
       propertyPath: UVModule.mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
@@ -737,6 +737,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8051051345057227684, guid: 242201a182a277549912fa6b0d592ba6,
         type: 3}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.tilesX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.tilesY
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640297214442078074, guid: 10a980c09f0081c4a90390e34c9f6d40,
+        type: 3}
+      propertyPath: UVModule.cycles
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2640297214442078075, guid: 10a980c09f0081c4a90390e34c9f6d40,
         type: 3}
       propertyPath: m_Mesh
