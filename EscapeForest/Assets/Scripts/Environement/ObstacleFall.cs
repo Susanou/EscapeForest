@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObstacleFall : MonoBehaviour
 {
+    private BasePlayer player;
     Rigidbody2D r;
     void Start()
     {
         r = GetComponent<Rigidbody2D>();
+         player = BasePlayer.instance;
     }
     
     
@@ -21,9 +23,11 @@ public class ObstacleFall : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D c)
     {
-        if(c.gameObject.name.Equals("MaxHeight"))
+        if(c.gameObject.name.Equals("Player"))
         {
-            // r.isKinematic = true;
+            player.addSanityOf(-20);
+            player.transform.position = new Vector3(56, 5, 0);
+            
         }
     }
 }
