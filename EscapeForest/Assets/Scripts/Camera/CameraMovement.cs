@@ -34,7 +34,7 @@ public class CameraMovement : MonoBehaviour
         switch (currentScene)
         {
             case "Tutorial":
-                yPos = 10f;
+                yPos = -1f;
                 break;
             case "Level1":
                 yPos = -1f;
