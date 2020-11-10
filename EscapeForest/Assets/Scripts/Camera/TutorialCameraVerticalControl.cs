@@ -49,7 +49,7 @@ public class TutorialCameraVerticalControl : MonoBehaviour
         {
             Camera.main.GetComponent<CameraMovement>().setYPos(initialY);
 
-            if (shiftedBackgroundUp)
+            if (shiftedBackgroundUp || shiftedBackgroundDown)
             {
                 resetBackground();
                 shiftedBackgroundUp = false;
