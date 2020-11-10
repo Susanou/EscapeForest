@@ -152,6 +152,13 @@ public class InteractionObject : MonoBehaviour
             {
                 airObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
             }*/
+
+            if (isWaterToPit)
+            {
+                airObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+            }
+
+
             Destroy(this.gameObject);
             
         }
@@ -293,7 +300,7 @@ public class InteractionObject : MonoBehaviour
 
             if (isWaterToPit)
             {
-                waterObj.transform.localScale = new Vector3(1.246768f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+                waterObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
             }
             Destroy(this.gameObject);
 
