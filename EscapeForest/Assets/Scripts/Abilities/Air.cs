@@ -9,7 +9,7 @@ public class Air : Element
         if(Input.GetMouseButtonDown(0)){
             if(!particle.isPlaying) particle.Play();
             player.addSanityOf(-this.universalCost);
-            audio.Play();
+            GetComponent<AudioSource>().Play();
         }
 
         if(Input.GetMouseButton(0)){
@@ -19,7 +19,7 @@ public class Air : Element
         if(Input.GetMouseButtonUp(0)){
             if(particle.isPlaying) particle.Stop();
             particle.Clear();
-            audio.Stop();
+            GetComponent<AudioSource>().Stop();
         }
     }
 
