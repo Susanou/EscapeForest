@@ -31,6 +31,7 @@ public class BasePlayer : MonoBehaviour
 
     public Signal sanitySignal;
     public Signal elementChanged;
+    public AudioSource playerAudio;
 
     // Sanity Variables
     private int maxSanity = 100;
