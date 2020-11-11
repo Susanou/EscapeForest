@@ -6,6 +6,7 @@ abstract public class Element : MonoBehaviour
 {
     
     public float universalCost = 0.01f;
+    public AudioSource audio;
 
     public virtual void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
