@@ -34,7 +34,10 @@ public class NPCInteraction : MonoBehaviour
 	void Start()
 	{
 		player = GameObject.FindObjectOfType<BasePlayer>();
-		original = hintText.text; //keep track of what the original message was
+		if (hintText != null) {
+			original = hintText.text; //keep track of what the original message was
+
+		}
 		hintText = hintPrompt.GetComponent<Text>();
 	}
 
