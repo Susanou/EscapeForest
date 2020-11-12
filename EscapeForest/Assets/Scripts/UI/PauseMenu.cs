@@ -8,6 +8,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     private bool paused = false;
 
+    private void Start() {
+        this.transform.SetAsLastSibling();
+    }
+
     //Want to catch player gitting escape here
     void Update()
     {
