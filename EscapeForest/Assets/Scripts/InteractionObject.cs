@@ -93,6 +93,10 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
+            if (destroyedByAir)
+            {
+                GetComponent<Collider2D> ().enabled = false;
+            }
             CreateSanityPopup(sanityCostAir);
             StartCoroutine(OnAir());
             
@@ -100,19 +104,29 @@ public class InteractionObject : MonoBehaviour
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
-
+            if (destroyedByEarth)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostEarth);
             StartCoroutine(OnEarth());
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
-
+            if (destroyedByFire)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostFire);
             StartCoroutine(OnFire());
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
+            if (destroyedByWater)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostWater);
             StartCoroutine(OnWater());
         }

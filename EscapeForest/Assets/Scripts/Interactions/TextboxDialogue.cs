@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TextboxDialogue : MonoBehaviour
 {
-	[SerializeField] private string[] names;
+	
 	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
@@ -39,7 +39,7 @@ public class TextboxDialogue : MonoBehaviour
 			nameText.enabled = true;
 			dialogueText.enabled = true;
 
-			nameText.text = names[convoComponent];
+
 			dialogueText.text = dialogue[convoComponent];
 
 			if (Input.GetKeyDown(KeyCode.F))
