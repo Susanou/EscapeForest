@@ -59,6 +59,9 @@ public class InteractionObject : MonoBehaviour
     private AudioSource onFireAudio = null;
 
 
+    private GameObject SanityLossPF = null;
+    private AudioSource sanityLossAudio;
+
 
     private void Start() {
         //CreateSanityPopup(39);
@@ -80,6 +83,17 @@ public class InteractionObject : MonoBehaviour
         }
         */
 
+
+        if (GameObject.FindGameObjectWithTag("SanityLossPF") != null)
+        {
+            SanityLossPF = Instantiate(GameObject.FindGameObjectWithTag("SanityLossPF"), this.transform.position, this.transform.rotation);
+            sanityLossAudio = SanityLossPF.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.Log("sanity audio null");
+        }
+
     }
 
     /*
@@ -93,6 +107,9 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
+
+
+
             CreateSanityPopup(sanityCostAir);
             StartCoroutine(OnAir());
             
@@ -351,5 +368,10 @@ public class InteractionObject : MonoBehaviour
         {
             //Debug.Log("prefab null");
         }
+
+        if (cost < 0 && sanityLossAudio != null && !sanityLossAudio.isPlaying) {
+            sanityLossAudio.Play();
+        }
+
     }
 }
