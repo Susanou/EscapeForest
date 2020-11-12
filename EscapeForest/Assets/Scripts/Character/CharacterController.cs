@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -21,8 +22,14 @@ public class CharacterController : MonoBehaviour
     private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D};
     private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
 
+    public GameObject walkAudio;
+    private AudioSource footsteps;
+
     private void Awake()
     {
+
+        footsteps = walkAudio.GetComponent<AudioSource>();
+
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         transform = gameObject.GetComponent<Transform>();
         animator = gameObject.GetComponent<Animator>();
@@ -44,6 +51,7 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("jumping", true);
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jump;
+            footsteps.Stop();
         }
 
         //The longer you stay pressed the higher you go
@@ -75,19 +83,35 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("walking", true);
             animator.SetBool("left", true);
             animator.SetBool("right", false);
+
+            if (!footsteps.isPlaying && onGround) {
+                footsteps.Play();
+            }
         }
 
-        if (Input.GetKey(inputKeyCodes[3]))
+        else if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
             animator.SetBool("walking", true);
             animator.SetBool("right", true);
             animator.SetBool("left", false);
             //isJumping = false;
+
+            if (!footsteps.isPlaying && onGround)
+            {
+                
+                footsteps.Play();
+            }
+
         }
         else
         {
             animator.SetBool("walking", false);
+            footsteps.Stop();
+        }
+
+        if (!onGround) {
+            footsteps.Stop();
         }
 
     }
