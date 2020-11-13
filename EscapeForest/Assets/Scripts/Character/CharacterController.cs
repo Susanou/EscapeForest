@@ -32,7 +32,7 @@ public class CharacterController : MonoBehaviour
             footsteps = walkAudio.GetComponent<AudioSource>();
         }
         else {
-            Debug.Log("attach walkaudiosource");
+            //Debug.Log("attach walkaudiosource");
         }
 
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
