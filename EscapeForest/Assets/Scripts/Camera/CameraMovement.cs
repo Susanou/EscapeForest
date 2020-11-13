@@ -9,6 +9,7 @@ public class CameraMovement : MonoBehaviour
     private float yPos;
     private string currentScene;
     private bool upper = false;
+    private float correction; //correct movement in camera
 
 
 
@@ -38,6 +39,7 @@ public class CameraMovement : MonoBehaviour
                 break;
             case "Level1":
                 yPos = -1f;
+                correction = 1.5f;
                 break;
             case "Level1Upper":
 
@@ -63,7 +65,7 @@ public class CameraMovement : MonoBehaviour
     private void LateUpdate()
     {
         
-        Camera.main.transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+        Camera.main.transform.position = new Vector3(transform.position.x, yPos-correction, transform.position.z);
     }
 
 
