@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2960331852074480131
+--- !u!1001 &610937162203474327
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -25,17 +25,17 @@ PrefabInstance:
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -64,12 +64,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: m_LocalScale.x
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: m_LocalScale.y
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1585759855282993073, guid: f06e28a7a0e0b4f389b042facff77764,
@@ -79,8 +79,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3036955874284737162, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_Offset.y
+      value: -0.96317255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036955874284737162, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7268074
       objectReference: {fileID: 0}
     - target: {fileID: 3075097376068878366, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
@@ -89,14 +94,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: isWaterToPit
+      propertyPath: sanityCostWater
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: destroyedByWater
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: changePitColliderSize
+      propertyPath: afterAir
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 14731984263091194, guid: a97d498b818810748a64580e6f04649b,
+        type: 3}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: afterFire
@@ -105,65 +116,34 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
-      propertyPath: yOffset
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4851366011334332585, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: sanityCostWater
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: afterWater
+      propertyPath: onFireSignal
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: destroyedByFire
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: destroyedByEarth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: destroyedByWater
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: afterFire
-      value: 
-      objectReference: {fileID: 3788324435658832231, guid: 5524a0956a6406545a9cca067a084b2b,
-        type: 3}
-    - target: {fileID: 6311938391702322094, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: onWaterSignal
-      value: 
-      objectReference: {fileID: 11400000, guid: ece386bd5001c9841838db214d83394e,
+      objectReference: {fileID: 11400000, guid: 03f331a2409c7d841a03720089f100de,
         type: 2}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368427609116653405, guid: f06e28a7a0e0b4f389b042facff77764,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6490177030519431456, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: resetX
-      value: 45
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 6490177030519431456, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: resetY
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292065896283262468, guid: f06e28a7a0e0b4f389b042facff77764,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8118723782395698402, guid: f06e28a7a0e0b4f389b042facff77764,
         type: 3}
       propertyPath: m_Name
-      value: VariantWater
+      value: Water Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f06e28a7a0e0b4f389b042facff77764, type: 3}
