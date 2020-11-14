@@ -9,6 +9,7 @@ public class TextboxDialogue : MonoBehaviour
 	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
+	[SerializeField] private Text contMesg;
 	[SerializeField] private Text dialogueText;
 	[SerializeField] private CharacterController controls; //put the player here
 
@@ -38,6 +39,7 @@ public class TextboxDialogue : MonoBehaviour
 			textbox.enabled = true;
 			nameText.enabled = true;
 			dialogueText.enabled = true;
+			contMesg.enabled = true;
 
 
 			dialogueText.text = dialogue[convoComponent];
@@ -59,6 +61,7 @@ public class TextboxDialogue : MonoBehaviour
 			textbox.enabled = false;
 			nameText.enabled = false;
 			dialogueText.enabled = false;
+			contMesg.enabled = false;
 
 
 			if (!reocurring)
