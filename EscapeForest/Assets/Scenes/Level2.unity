@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -542,6 +542,7 @@ MonoBehaviour:
   - Those vines seem a little dry...
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
+  contMesg: {fileID: 0}
   dialogueText: {fileID: 211101619}
   controls: {fileID: 0}
   reocurring: 0
@@ -1111,6 +1112,169 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!43 &79560766
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 18
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
+      m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010000000300020004000000000005000300010006000200030007000100
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 224
+    _typelessdata: 113182bf6c89393e00000000351e8b3b68ff7fbf00000080000000802466903f18be19c0000000009e4d75bd5e8a7f3f0000008000000080de35993f9729433e00000000eae87fbfd26bd93c0000008000000080d15787bf602222c000000000cdf87f3fe6e072bc0000008000000080de35993f9729433e00000000351e8b3b68ff7fbf0000008000000080113182bf6c89393e00000000cdf87f3fe6e072bc00000080000000802466903f18be19c000000000eae87fbfd26bd93c0000008000000080d15787bf602222c0000000009e4d75bd5e8a7f3f0000008000000080
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0.069794476, y: -1.1713799, z: 0}
+    m_Extent: {x: 1.127162, y: 1.3619682, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &81565420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2452,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 196.35999
+      value: 203.39
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -4708,6 +4872,7 @@ MonoBehaviour:
   - or you can use earth to create a platform
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
+  contMesg: {fileID: 0}
   dialogueText: {fileID: 211101619}
   controls: {fileID: 0}
   reocurring: 0
@@ -9147,7 +9312,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 224.7
+      value: 244
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -10312,6 +10477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1st spirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
@@ -15396,7 +15566,7 @@ PrefabInstance:
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 210.06
+      value: 223.61
       objectReference: {fileID: 0}
     - target: {fileID: 2928597820343329379, guid: 375ce2323927f224ca59083b6529b7b4,
         type: 3}
@@ -15720,7 +15890,7 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 138.04999
+      value: 147.76
       objectReference: {fileID: 0}
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
@@ -15775,7 +15945,7 @@ PrefabInstance:
     - target: {fileID: 3815559796957352336, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.602357
+      value: 0.8603553
       objectReference: {fileID: 0}
     - target: {fileID: 5353670004882098836, guid: 74525860974488c46b0537898db7cfd2,
         type: 3}
@@ -16614,6 +16784,7 @@ MonoBehaviour:
   - Use water to fill up the empty pit
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
+  contMesg: {fileID: 0}
   dialogueText: {fileID: 211101619}
   controls: {fileID: 0}
   reocurring: 0
@@ -22692,7 +22863,7 @@ PrefabInstance:
     - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -93.52834
+      value: -94.5
       objectReference: {fileID: 0}
     - target: {fileID: 9103754507822573011, guid: ab9236deeb2b44643a6c21081ca76b3b,
         type: 3}
@@ -24018,7 +24189,7 @@ PrefabInstance:
     - target: {fileID: 2309126143631148691, guid: 5524a0956a6406545a9cca067a084b2b,
         type: 3}
       propertyPath: m_Offset.y
-      value: -32.160156
+      value: -25.53
       objectReference: {fileID: 0}
     - target: {fileID: 2309126143631148691, guid: 5524a0956a6406545a9cca067a084b2b,
         type: 3}
@@ -27415,6 +27586,7 @@ MonoBehaviour:
   - 'You must jump into the dark to continue your journey... '
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
+  contMesg: {fileID: 0}
   dialogueText: {fileID: 211101619}
   controls: {fileID: 0}
   reocurring: 0
@@ -28665,6 +28837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 3rd spirt
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
@@ -32060,6 +32237,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2nd spirit
       objectReference: {fileID: 0}
+    - target: {fileID: 9116217828487542837, guid: 43121ecf96011424eaa5e0b7c18b0370,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43121ecf96011424eaa5e0b7c18b0370, type: 3}
 --- !u!1 &1917877924
@@ -34597,6 +34779,7 @@ MonoBehaviour:
   - Press "F" to open a open a gate with a key.
   textbox: {fileID: 1611634669}
   nameText: {fileID: 242376091}
+  contMesg: {fileID: 0}
   dialogueText: {fileID: 211101619}
   controls: {fileID: 0}
   reocurring: 0
@@ -34978,6 +35161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TallSpirit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3420167411181051241, guid: 8343d22ab9762cc4f8539720b126da5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420167411181051244, guid: 8343d22ab9762cc4f8539720b126da5d,
         type: 3}
