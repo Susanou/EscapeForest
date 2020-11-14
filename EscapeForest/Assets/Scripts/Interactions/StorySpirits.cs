@@ -7,12 +7,12 @@ public class StorySpirits : MonoBehaviour
 {
 	//[SerializeField] private string[] names;
 	[SerializeField] private TextboxDialogue texts;
-	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
 	[SerializeField] private Text dialogueText;
-
 	[SerializeField] private bool recured;
+
+	private string[] dialogue;
     private CharacterController controls; 
 	private int convoLength;
 	private bool convoStarted;
