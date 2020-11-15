@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2326618587025004789}
   - component: {fileID: -8223185070492067411}
   - component: {fileID: 1701956091389390189}
+  - component: {fileID: 4236887568110254095}
+  - component: {fileID: 4076229762653456266}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -212,3 +214,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4236887568110254095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299651165028599534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sanityCostAir: 0
+  sanityCostEarth: 0
+  sanityCostFire: 0
+  sanityCostWater: 0
+  airAnimationLength: 0
+  earthAnimationLength: 0
+  fireAnimationLength: 0
+  waterAnimationLength: 0
+  destroyedByAir: 0
+  destroyedByEarth: 0
+  destroyedByFire: 0
+  destroyedByWater: 1
+  afterAir: {fileID: 0}
+  afterEarth: {fileID: 0}
+  afterFire: {fileID: 0}
+  afterWater: {fileID: 5696740158423123352, guid: 0c183682f7adb4f1dbd09fb69d5cd9bc,
+    type: 3}
+  onAirSignal: {fileID: 0}
+  onEarthSignal: {fileID: 0}
+  onFireSignal: {fileID: 0}
+  onWaterSignal: {fileID: 11400000, guid: 88623ebe1c7e0ba44b736d00c98318c6, type: 2}
+  isWaterToPit: 0
+  yOffset: 0
+--- !u!70 &4076229762653456266
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2299651165028599534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046719015, y: -0.33893466}
+  m_Size: {x: 0.82233894, y: 2.2050078}
+  m_Direction: 0

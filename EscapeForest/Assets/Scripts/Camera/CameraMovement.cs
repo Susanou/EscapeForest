@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
     private float yPos;
     private string currentScene;
     private bool upper = false;
-    private float correction; //correct movement in camera
+    private float correction = 0; //correct movement in camera
 
 
 
@@ -41,11 +41,9 @@ public class CameraMovement : MonoBehaviour
                 yPos = -1f;
                 correction = 1.5f;
                 break;
-            case "Level1Upper":
-
-                break;
-            case "Level2":
-                yPos = 1.5f;
+   
+            case "SnowArea":
+                yPos = 25;
                 break;
             case "Level3":
 
