@@ -15,6 +15,10 @@ public class FireHarm : MonoBehaviour
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.GetComponent<BasePlayer>();
+
+        if(painValue > 0){
+            painValue = -painValue;
+        }
     }
 
     // Update is called once per frame
