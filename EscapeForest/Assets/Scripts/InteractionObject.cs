@@ -107,9 +107,10 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
-
-
-
+            if (destroyedByAir)
+            {
+                GetComponent<Collider2D> ().enabled = false;
+            }
             CreateSanityPopup(sanityCostAir);
             StartCoroutine(OnAir());
             
@@ -117,19 +118,29 @@ public class InteractionObject : MonoBehaviour
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
-
+            if (destroyedByEarth)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostEarth);
             StartCoroutine(OnEarth());
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
-
+            if (destroyedByFire)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostFire);
             StartCoroutine(OnFire());
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
+            if (destroyedByWater)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostWater);
             StartCoroutine(OnWater());
         }
@@ -169,6 +180,13 @@ public class InteractionObject : MonoBehaviour
             {
                 airObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
             }*/
+
+            if (isWaterToPit)
+            {
+                airObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+            }
+
+
             Destroy(this.gameObject);
             
         }
@@ -310,7 +328,7 @@ public class InteractionObject : MonoBehaviour
 
             if (isWaterToPit)
             {
-                waterObj.transform.localScale = new Vector3(1.246768f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+                waterObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
             }
             Destroy(this.gameObject);
 

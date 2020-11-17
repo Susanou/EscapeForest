@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: -5
-  sanityCostEarth: 10
-  sanityCostFire: -5
-  sanityCostWater: 10
+  sanityCostAir: -0.5
+  sanityCostEarth: 0
+  sanityCostFire: -0.5
+  sanityCostWater: 0
   airAnimationLength: 0
-  earthAnimationLength: 0
+  earthAnimationLength: 1
   fireAnimationLength: 0
   waterAnimationLength: 0
   destroyedByAir: 0
@@ -65,9 +65,11 @@ MonoBehaviour:
   afterWater: {fileID: 8118723782395698402, guid: f06e28a7a0e0b4f389b042facff77764,
     type: 3}
   onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
+  onEarthSignal: {fileID: 11400000, guid: 2fd95b2d3f13f52448f78ca491ed182f, type: 2}
   onFireSignal: {fileID: 0}
   onWaterSignal: {fileID: 0}
+  isWaterToPit: 0
+  yOffset: 0
 --- !u!61 &2309126143631148691
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,5 +127,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c8a89750953ed49a85b0bca8ff48ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xColliderSize: 50
-  yColliderSize: 25

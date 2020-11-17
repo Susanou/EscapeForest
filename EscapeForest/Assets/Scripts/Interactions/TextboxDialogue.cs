@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class TextboxDialogue : MonoBehaviour
 {
-	[SerializeField] private string[] names;
+	
 	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
+	[SerializeField] private Text contMesg;
 	[SerializeField] private Text dialogueText;
 	[SerializeField] private CharacterController controls; //put the player here
 
@@ -38,8 +39,9 @@ public class TextboxDialogue : MonoBehaviour
 			textbox.enabled = true;
 			nameText.enabled = true;
 			dialogueText.enabled = true;
+			contMesg.enabled = true;
 
-			nameText.text = names[convoComponent];
+
 			dialogueText.text = dialogue[convoComponent];
 
 			if (Input.GetKeyDown(KeyCode.F))
@@ -59,6 +61,7 @@ public class TextboxDialogue : MonoBehaviour
 			textbox.enabled = false;
 			nameText.enabled = false;
 			dialogueText.enabled = false;
+			contMesg.enabled = false;
 
 
 			if (!reocurring)

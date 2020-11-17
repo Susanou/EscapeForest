@@ -23,12 +23,17 @@ public class CharacterController : MonoBehaviour
     private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
 
     public GameObject walkAudio;
-    private AudioSource footsteps;
+    private AudioSource footsteps = null;
 
     private void Awake()
     {
-
-        footsteps = walkAudio.GetComponent<AudioSource>();
+        if (walkAudio != null)
+        {
+            footsteps = walkAudio.GetComponent<AudioSource>();
+        }
+        else {
+            //Debug.Log("attach walkaudiosource");
+        }
 
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         transform = gameObject.GetComponent<Transform>();
@@ -51,7 +56,11 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("jumping", true);
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jump;
-            footsteps.Stop();
+
+            if (footsteps != null) {
+                footsteps.Stop();
+
+            }
         }
 
         //The longer you stay pressed the higher you go
@@ -84,7 +93,7 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("left", true);
             animator.SetBool("right", false);
 
-            if (!footsteps.isPlaying && onGround) {
+            if (!footsteps.isPlaying && onGround && footsteps != null) {
                 footsteps.Play();
             }
         }
@@ -97,7 +106,7 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("left", false);
             //isJumping = false;
 
-            if (!footsteps.isPlaying && onGround)
+            if (!footsteps.isPlaying && onGround && footsteps != null)
             {
                 
                 footsteps.Play();
@@ -110,7 +119,7 @@ public class CharacterController : MonoBehaviour
             footsteps.Stop();
         }
 
-        if (!onGround) {
+        if (!onGround && footsteps != null) {
             footsteps.Stop();
         }
 

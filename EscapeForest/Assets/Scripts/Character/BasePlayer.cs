@@ -31,6 +31,7 @@ public class BasePlayer : MonoBehaviour
 
     public Signal sanitySignal;
     public Signal elementChanged;
+    public AudioSource playerAudio;
 
     // Sanity Variables
     private int maxSanity = 100;
@@ -91,7 +92,6 @@ public class BasePlayer : MonoBehaviour
 
     public void addSanityOf(float amount)
     { 
-        Debug.Log("SAnity drop   " + (currentSanity.RuntimeValue + amount));
         
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {

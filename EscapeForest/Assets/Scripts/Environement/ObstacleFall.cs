@@ -21,6 +21,7 @@ public class ObstacleFall : MonoBehaviour
         }
     }
     
+    /*
     void OnCollisionEnter2D(Collision2D c)
     {
         if(c.gameObject.name.Equals("Player"))
@@ -30,4 +31,5 @@ public class ObstacleFall : MonoBehaviour
             
         }
     }
+    */
 }

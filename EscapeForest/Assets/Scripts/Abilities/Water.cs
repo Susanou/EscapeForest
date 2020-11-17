@@ -10,6 +10,8 @@ public class Water : Element
         if (Input.GetMouseButtonDown(0)) {
             if(!particle.isPlaying) particle.Play();
             player.addSanityOf(-this.universalCost);
+            player.playerAudio.clip = this.audioEffect;
+            player.playerAudio.Play();
         }
 
         if(Input.GetMouseButtonDown(0)) player.addSanityOf(-this.universalCost);
@@ -17,6 +19,7 @@ public class Water : Element
         if (Input.GetMouseButtonUp(0)) {
             if(particle.isPlaying) particle.Stop();
             particle.Clear();
+            player.playerAudio.Stop();
         }
     }
 

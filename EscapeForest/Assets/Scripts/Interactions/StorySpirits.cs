@@ -7,12 +7,13 @@ public class StorySpirits : MonoBehaviour
 {
 	//[SerializeField] private string[] names;
 	[SerializeField] private TextboxDialogue texts;
-	[SerializeField] private string[] dialogue;
 	[SerializeField] private Image textbox;
 	[SerializeField] private Text nameText;
+	[SerializeField] private Text contMesg;
 	[SerializeField] private Text dialogueText;
-
 	[SerializeField] private bool recured;
+
+	private string[] dialogue;
     private CharacterController controls; 
 	private int convoLength;
 	private bool convoStarted;
@@ -36,7 +37,6 @@ public class StorySpirits : MonoBehaviour
 		convoEnded = false;
         convoComponent = 0;
 
-
 	}
 
 
@@ -49,6 +49,7 @@ public class StorySpirits : MonoBehaviour
 			textbox.enabled = true;
 			nameText.enabled = true;
 			dialogueText.enabled = true;
+			contMesg.enabled = true;
 
 			//nameText.text = names[convoComponent];
 			dialogueText.text = dialogue[convoComponent];
@@ -67,6 +68,7 @@ public class StorySpirits : MonoBehaviour
 				textbox.enabled = false;
 				nameText.enabled = false;
 				dialogueText.enabled = false;
+				contMesg.enabled = false;
 				recured = true;
 			}
 		}
@@ -93,6 +95,8 @@ public class StorySpirits : MonoBehaviour
             textbox.enabled = false;
 			nameText.enabled = false;
 			dialogueText.enabled = false;
+			contMesg.enabled = false;
+			recured = true;
 		}
 	}
 }
