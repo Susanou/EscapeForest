@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         if (currentLevel == 0) {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("OpeningSequence");
         }
         else if (currentLevel == 1)
         {

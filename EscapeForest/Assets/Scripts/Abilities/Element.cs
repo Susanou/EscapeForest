@@ -5,7 +5,9 @@ using UnityEngine;
 abstract public class Element : MonoBehaviour
 {
     
-    public int[] sanityCosts = new int[8]; // Order should be the same as on `Sanity meter Specifics` document in Drive
+    public float universalCost = 0.01f;
+
+    public AudioClip audioEffect;
 
     public virtual void OnLeftClick(){
         if(Input.GetMouseButtonDown(0)){
@@ -13,7 +15,7 @@ abstract public class Element : MonoBehaviour
         }
     }
 
-    public virtual void OnLeftClickDrag(ParticleSystem particule){
+    public virtual void OnLeftClickDrag(ParticleSystem particule, BasePlayer player){
         if(Input.GetMouseButton(0)){
             Debug.Log("LeftClick dragging");
         }

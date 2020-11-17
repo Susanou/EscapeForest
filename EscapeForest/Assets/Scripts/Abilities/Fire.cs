@@ -4,34 +4,21 @@ using UnityEngine;
 
 public class Fire : Element
 {
-    [SerializeField] private GameObject light;
-
-    private void Start() {
-        sanityCosts = new int[8] { 0, 0, 5, 5, -5, 5, -5, -10 };
-    }
-
-
-
-    //light
-    public override void OnRightClick() {
-        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonUp(1)) {
-            if (light.activeSelf){
-                light.SetActive(false);
-            }
-            else{
-                light.SetActive(true);
-            }
-        }
-    }
     //flamethrower
-    public override void OnLeftClickDrag(ParticleSystem particle) {
+    public override void OnLeftClickDrag(ParticleSystem particle, BasePlayer player) {
         if (Input.GetMouseButtonDown(0)) {
             if(!particle.isPlaying) particle.Play();
+            player.addSanityOf(-this.universalCost);
+            player.playerAudio.clip = this.audioEffect;
+            player.playerAudio.Play();
         }
+
+        if(Input.GetMouseButtonDown(0)) player.addSanityOf(-this.universalCost);
 
         if (Input.GetMouseButtonUp(0)) {
             if(particle.isPlaying) particle.Stop();
             particle.Clear();
+            player.playerAudio.Stop();
         }
     }
 

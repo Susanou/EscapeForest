@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2928597820343329382}
   - component: {fileID: 6466405949635936832}
   - component: {fileID: 9063760366855272219}
-  - component: {fileID: 1219648996435646419}
   m_Layer: 0
   m_Name: vine (2)
   m_TagString: Untagged
@@ -29,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2928597820343329378}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 512.28, y: 70.93, z: 23.906935}
   m_LocalScale: {x: 1, y: 1.4845409, z: 1}
   m_Children: []
@@ -109,7 +108,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.7235718, y: -0.06367016}
@@ -156,40 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityCostAir: 0
-  sanityCostEarth: 0
-  sanityCostFire: 0
-  sanityCostWater: 0
-  airAnimationLength: 0
-  earthAnimationLength: 0
-  fireAnimationLength: 0
-  waterAnimationLength: 0
-  destroyedByAir: 0
-  destroyedByEarth: 0
-  destroyedByFire: 0
-  destroyedByWater: 0
-  afterAir: {fileID: 0}
-  afterEarth: {fileID: 0}
-  afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
-  onAirSignal: {fileID: 0}
-  onEarthSignal: {fileID: 0}
-  onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
-  isWaterToPit: 0
-  yOffset: 0
---- !u!114 &1219648996435646419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2928597820343329378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64dcfd8743c59449fb8f9dbf3d7d34f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   sanityCostAir: -4
   sanityCostEarth: -4
   sanityCostFire: -4
@@ -201,14 +166,15 @@ MonoBehaviour:
   destroyedByAir: 0
   destroyedByEarth: 0
   destroyedByFire: 0
-  destroyedByWater: 0
+  destroyedByWater: 1
   afterAir: {fileID: 0}
   afterEarth: {fileID: 0}
   afterFire: {fileID: 0}
-  afterWater: {fileID: 0}
+  afterWater: {fileID: 2914101816037634020, guid: f58a18562569d9549a5416eb75f54fe1,
+    type: 3}
   onAirSignal: {fileID: 0}
   onEarthSignal: {fileID: 0}
   onFireSignal: {fileID: 0}
-  onWaterSignal: {fileID: 0}
+  onWaterSignal: {fileID: 11400000, guid: 53d4145f04e769a408193e04291d9aa0, type: 2}
   isWaterToPit: 0
   yOffset: 0

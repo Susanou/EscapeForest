@@ -59,6 +59,9 @@ public class InteractionObject : MonoBehaviour
     private AudioSource onFireAudio = null;
 
 
+    private GameObject SanityLossPF = null;
+    private AudioSource sanityLossAudio;
+
 
     private void Start() {
         //CreateSanityPopup(39);
@@ -67,7 +70,7 @@ public class InteractionObject : MonoBehaviour
         playerAnimator = playerObject.GetComponent<Animator>(); //BasePlayer script has no animator, have to go up to the Player object
         animator = gameObject.GetComponent<Animator>();
 
-
+        /*
         
         if (GameObject.FindGameObjectWithTag("FireAudioSourcePF") != null)
         {
@@ -78,7 +81,18 @@ public class InteractionObject : MonoBehaviour
         {
             Debug.Log("audio null");
         }
+        */
 
+
+        if (GameObject.FindGameObjectWithTag("SanityLossPF") != null)
+        {
+            SanityLossPF = Instantiate(GameObject.FindGameObjectWithTag("SanityLossPF"), this.transform.position, this.transform.rotation);
+            sanityLossAudio = SanityLossPF.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.Log("sanity audio null");
+        }
 
     }
 
@@ -93,6 +107,10 @@ public class InteractionObject : MonoBehaviour
     {
         if (player.getCurrentElement() == BasePlayer.element.Air)
         {
+            if (destroyedByAir)
+            {
+                GetComponent<Collider2D> ().enabled = false;
+            }
             CreateSanityPopup(sanityCostAir);
             StartCoroutine(OnAir());
             
@@ -100,19 +118,29 @@ public class InteractionObject : MonoBehaviour
         }
         if (player.getCurrentElement() == BasePlayer.element.Earth)
         {
-
+            if (destroyedByEarth)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostEarth);
             StartCoroutine(OnEarth());
 
         }
         if (player.getCurrentElement() == BasePlayer.element.Fire)
         {
-
+            if (destroyedByFire)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostFire);
             StartCoroutine(OnFire());
         }
         if (player.getCurrentElement() == BasePlayer.element.Water)
         {
+            if (destroyedByWater)
+            {
+                GetComponent<Collider2D>().enabled = false;
+            }
             CreateSanityPopup(sanityCostWater);
             StartCoroutine(OnWater());
         }
@@ -133,11 +161,11 @@ public class InteractionObject : MonoBehaviour
     public IEnumerator OnAir()
     {
         playerAnimator.SetBool("usingElement", true);
-        playerAnimator.SetBool("air", true);
+        //playerAnimator.SetBool("air", true);
         player.addSanityOf(sanityCostAir);
         animator.SetBool("air", true);
         yield return new WaitForSeconds(airAnimationLength);
-        playerAnimator.SetBool("air", false);
+       // playerAnimator.SetBool("air", false);
         playerAnimator.SetBool("usingElement", false);
 
         if (onAirSignal != null)
@@ -152,6 +180,13 @@ public class InteractionObject : MonoBehaviour
             {
                 airObj.GetComponent<Collider2D>().transform.localScale = gameObject.transform.localScale;
             }*/
+
+            if (isWaterToPit)
+            {
+                airObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+            }
+
+
             Destroy(this.gameObject);
             
         }
@@ -293,7 +328,7 @@ public class InteractionObject : MonoBehaviour
 
             if (isWaterToPit)
             {
-                waterObj.transform.localScale = new Vector3(0.7124388f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
+                waterObj.transform.localScale = new Vector3(1.538125f, 0.9028139f, 0.5496023f); //TODO make serialize fields or separate script
             }
             Destroy(this.gameObject);
 
@@ -351,5 +386,10 @@ public class InteractionObject : MonoBehaviour
         {
             //Debug.Log("prefab null");
         }
+
+        if (cost < 0 && sanityLossAudio != null && !sanityLossAudio.isPlaying) {
+            sanityLossAudio.Play();
+        }
+
     }
 }

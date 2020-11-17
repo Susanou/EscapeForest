@@ -46,11 +46,10 @@ public class ElementIndicator : MonoBehaviour
     public void changeColor()
     {
         BasePlayer player = GameObject.Find("Player").GetComponent<BasePlayer>();
-        //image.color = colors[currentElement];
-        //image.sprite = sprites[player.getCurrentElement()];
+        
         image.sprite = sprites[player.currentElement.RuntimeValue];
-        //player.particle.startColor = colors[player.getCurrentElement()];
-        player.particle.startColor = colors[player.currentElement.RuntimeValue];
+
+        //player.particle.startColor = colors[player.currentElement.RuntimeValue];
 
         player.particle.GetComponent<ParticleSystemRenderer>().material = materials[player.currentElement.RuntimeValue];
     }

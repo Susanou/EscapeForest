@@ -6,6 +6,7 @@ public class GemGet : MonoBehaviour
 {
 
     [SerializeField] private Signal stepSignal;
+    [SerializeField] private AudioSource gemNoise;
 
     private Animator animator;
 
@@ -21,7 +22,15 @@ public class GemGet : MonoBehaviour
         {
             animator.SetBool("activate", true);
             stepSignal.Raise();
+            StartCoroutine(GemDisappear());
         }
+    }
+
+    public IEnumerator GemDisappear()
+    {
+        gemNoise.Play();
+        yield return new WaitForSeconds(2);
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

@@ -27,9 +27,17 @@ public class FireHarm : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("Should be harming");
+            //Debug.Log("Should be harming");
             collision.gameObject.GetComponent<BasePlayer>().addSanityOf(painValue);
+            StartCoroutine(HarmAnimation(collision.gameObject));
         }
         
+    }
+
+    public IEnumerator HarmAnimation(GameObject wren)
+    {
+        wren.GetComponent<Animator>().SetBool("harm", true);
+        yield return new WaitForSeconds(1);
+        wren.GetComponent<Animator>().SetBool("harm", false);
     }
 }

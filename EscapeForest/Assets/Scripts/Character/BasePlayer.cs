@@ -31,6 +31,7 @@ public class BasePlayer : MonoBehaviour
 
     public Signal sanitySignal;
     public Signal elementChanged;
+    public AudioSource playerAudio;
 
     // Sanity Variables
     private int maxSanity = 100;
@@ -90,7 +91,8 @@ public class BasePlayer : MonoBehaviour
      */
 
     public void addSanityOf(float amount)
-    {
+    { 
+        
         if(currentSanity.RuntimeValue + amount > maxSanity)
         {
             currentSanity.RuntimeValue = 100;
@@ -98,7 +100,7 @@ public class BasePlayer : MonoBehaviour
         else if (currentSanity.RuntimeValue + amount < 0)
         {
             currentSanity.RuntimeValue = currentSanity.initialValue;
-            SceneManager.LoadScene("GameOver");
+            StartCoroutine(GameOver());
         }
         else
         {
@@ -111,20 +113,13 @@ public class BasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && waterEnabled)
-        {
-            currentElement.RuntimeValue = (element)Random.Range(0, 5);
-            usingElement = elementsArray[(int)currentElement.RuntimeValue];
-            elementChanged.Raise();
-        }
-
  
         if (Input.GetKeyDown(inputKeyCodes[0]) && airEnabled) // Air = 1
         {
             currentElement.RuntimeValue = element.Air;
             usingElement = elementsArray[0];
             elementChanged.Raise();
-            Debug.Log(currentElement.RuntimeValue);
+            particle.Clear();
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[1]) && earthEnabled) // Earth = 2
@@ -132,6 +127,7 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Earth;
             usingElement = elementsArray[1];
             elementChanged.Raise();
+            particle.Clear();
 
         }
         else if (Input.GetKeyDown(inputKeyCodes[2]) && fireEnabled) // Fire = 3
@@ -139,13 +135,14 @@ public class BasePlayer : MonoBehaviour
             currentElement.RuntimeValue = element.Fire;
             usingElement = elementsArray[2];
             elementChanged.Raise();
-
+            particle.Clear();
         }
         else if (Input.GetKeyDown(inputKeyCodes[3]) && waterEnabled) // Water = 4
         {
             currentElement.RuntimeValue = element.Water;
             usingElement = elementsArray[3];
             elementChanged.Raise();
+            particle.Clear();
         }
 
 
@@ -153,7 +150,7 @@ public class BasePlayer : MonoBehaviour
 
         if(currentElement.RuntimeValue != element.None){
             //usingElement.OnRightClick();
-            usingElement.OnLeftClickDrag(particle);
+            usingElement.OnLeftClickDrag(particle, this.GetComponent<BasePlayer>());
         }
     }
 
@@ -253,6 +250,15 @@ public class BasePlayer : MonoBehaviour
 
             waterEnabled = true;
         }
+
+    }
+
+    public IEnumerator GameOver()
+    {
+        GetComponent<Animator>().SetBool("dying", true);
+        GetComponent<CharacterController>().enabled = false;
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("GameOver");
 
     }
 }

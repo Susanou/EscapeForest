@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -18,11 +19,22 @@ public class CharacterController : MonoBehaviour
     private bool onGround;
     private bool isJumping;
 
-    private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
-    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.Space };
+    private KeyCode[] inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D};
+    private KeyCode[] arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
+
+    public GameObject walkAudio;
+    private AudioSource footsteps = null;
 
     private void Awake()
     {
+        if (walkAudio != null)
+        {
+            footsteps = walkAudio.GetComponent<AudioSource>();
+        }
+        else {
+            //Debug.Log("attach walkaudiosource");
+        }
+
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
         transform = gameObject.GetComponent<Transform>();
         animator = gameObject.GetComponent<Animator>();
@@ -38,16 +50,21 @@ public class CharacterController : MonoBehaviour
         onGround = Physics2D.OverlapCircle(feet.position, groundCheckRadius, groundLayer);
         
         //Starts the jump
-        if ((Input.GetKeyDown(inputKeyCodes[0]) || Input.GetKeyDown(inputKeyCodes[4])) && onGround)
+        if ((Input.GetKeyDown(inputKeyCodes[0])) && onGround)
         {
             isJumping = true;
             animator.SetBool("jumping", true);
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jump;
+
+            if (footsteps != null) {
+                footsteps.Stop();
+
+            }
         }
 
         //The longer you stay pressed the higher you go
-        if ((Input.GetKey(inputKeyCodes[0]) || Input.GetKey(inputKeyCodes[4])) && isJumping)
+        if ((Input.GetKey(inputKeyCodes[0])) && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -63,7 +80,7 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(inputKeyCodes[0]) || Input.GetKeyUp(inputKeyCodes[4])){
+        if (Input.GetKeyUp(inputKeyCodes[0])){
             isJumping = false;
             animator.SetBool("jumping", false);
         }
@@ -75,19 +92,35 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("walking", true);
             animator.SetBool("left", true);
             animator.SetBool("right", false);
+
+            if (!footsteps.isPlaying && onGround && footsteps != null) {
+                footsteps.Play();
+            }
         }
 
-        if (Input.GetKey(inputKeyCodes[3]))
+        else if (Input.GetKey(inputKeyCodes[3]))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
             animator.SetBool("walking", true);
             animator.SetBool("right", true);
             animator.SetBool("left", false);
             //isJumping = false;
+
+            if (!footsteps.isPlaying && onGround && footsteps != null)
+            {
+                
+                footsteps.Play();
+            }
+
         }
         else
         {
             animator.SetBool("walking", false);
+            footsteps.Stop();
+        }
+
+        if (!onGround && footsteps != null) {
+            footsteps.Stop();
         }
 
     }
@@ -96,7 +129,8 @@ public class CharacterController : MonoBehaviour
     {
         if (!random)
         {
-            inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.Space };
+            inputKeyCodes = new[] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D};
+            arrowInputCode = new[] { KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.DownArrow, KeyCode.RightArrow};
         }
         else
         {

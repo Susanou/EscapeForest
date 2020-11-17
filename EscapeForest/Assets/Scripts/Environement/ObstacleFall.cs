@@ -4,12 +4,32 @@ using UnityEngine;
 
 public class ObstacleFall : MonoBehaviour
 {
-    public int movespeed = 10;
-    [SerializeField] GameObject obstacle;
-    
-    void Update()
+    private BasePlayer player;
+    Rigidbody2D r;
+    void Start()
     {
-        Vector3 Direction = Vector3.down;
-        obstacle.transform.Translate(Direction * movespeed * Time.deltaTime);
+        r = GetComponent<Rigidbody2D>();
+         player = BasePlayer.instance;
     }
+    
+    
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if(c.gameObject.name.Equals("Player"))
+        {
+            r.isKinematic = false;
+        }
+    }
+    
+    /*
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if(c.gameObject.name.Equals("Player"))
+        {
+            player.addSanityOf(-20);
+            player.transform.position = new Vector3(56, 5, 0);
+            
+        }
+    }
+    */
 }
